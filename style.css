@@ -2,22 +2,22 @@ h1 {
 	font-size: 128x;
 }
 
-h1:link {
+a:link {
 	color: #10a899;
 	test-decorations: none;
 }
 
-h1:visited {
+a:visited {
 	color: #10a899;
 	text-decorations: none;
 }
 
-h1:hover {
+a:hover {
 	color: #a85a10;
 	text-decorations: none;
 }
 
-h1:active {
+a:active {
 	color: #10a899;
 	text-decorations: none;
 }
