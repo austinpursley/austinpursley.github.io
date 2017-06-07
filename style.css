@@ -1,19 +1,23 @@
 h1 {
-	font-size: 64x;
+	font-size: 128x;
 }
 
 h1:link {
 	color: #10a899;
+	test-decorations: none;
 }
 
 h1:visited {
 	color: #10a899;
+	text-decorations: none;
 }
 
 h1:hover {
 	color: #a85a10;
+	text-decorations: none;
 }
 
 h1:active {
 	color: #10a899;
+	text-decorations: none;
 }
