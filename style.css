@@ -1,5 +1,5 @@
 h1 {
-	font-size: 128x;
+	font-size: 64x;
 }
 
 a:link {
@@ -18,6 +18,6 @@ a:hover {
 }
 
 a:active {
-	color: #10a899;
+	color: #0b7c71;
 	text-decorations: none;
 }
