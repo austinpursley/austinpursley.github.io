@@ -1,6 +1,6 @@
 h1 {
-	font-size: 64px;
-	margin: 64px;
+	font-size: 32px;
+	margin: 16px;
 }
 
 a:link {
@@ -21,4 +21,8 @@ a:hover {
 a:active {
 	color: #0b7c71;
 	text-decorations: none;
+}
+
+th, td {
+	padding: 10px;
 }
