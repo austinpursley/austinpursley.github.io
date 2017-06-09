@@ -1,4 +1,15 @@
+body {
+	color: white;
+	background-color: black;
+	margin: 16px;
+}
+
+p {
+	margin: 16px;
+}
+
 h1 {
+	color: #40E0D0;
 	font-size: 32px;
 	margin: 16px;
 }
@@ -25,4 +36,5 @@ a:active {
 
 th, td {
 	padding: 16px;
+	color: white;
 }
