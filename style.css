@@ -1,11 +1,14 @@
 body {
 	color: white;
 	background-color: black;
-	margin: 16px;
+	text-align: center;
 }
 
 p {
-	margin: 16px;
+	margin:0 auto;
+	text-align: center;
+	width: 750px;
+	text-align: left;
 }
 
 h1 {
@@ -37,4 +40,15 @@ a:active {
 th, td {
 	padding: 16px;
 	color: white;
+}
+
+img {
+	display: block;
+	text-align: center;
+	margin:0 auto;
+	
+}
+
+figcaption {
+	color: lightgrey;
 }
