@@ -1,20 +1,40 @@
-body {
-	color: white;
-	background-color: black;
+#project {
 	text-align: center;
+	margin:0 auto;
 }
 
-p {
-	margin:0 auto;
-	text-align: center;
-	width: 664px;
-	text-align: left;
+body {
+	background-color: black;
+	color: white;
 }
 
 h1 {
 	color: #40E0D0;
 	font-size: 32px;
-	margin: 16px;
+}
+
+th, td {
+	padding: 16px;
+	color: white;
+}
+
+p {
+	width: 664px;
+	text-align: left;
+	margin: inherit;
+}
+
+img {
+	display: block;
+	text-align: center;
+	margin:0 auto;
+	
+}
+
+figcaption {
+	color: lightgrey;
+	width: 664px;
+	margin:0 auto;
 }
 
 a:link {
@@ -35,20 +55,4 @@ a:hover {
 a:active {
 	color: #0b7c71;
 	text-decorations: none;
-}
-
-th, td {
-	padding: 16px;
-	color: white;
-}
-
-img {
-	display: block;
-	text-align: center;
-	margin:0 auto;
-	
-}
-
-figcaption {
-	color: lightgrey;
 }
