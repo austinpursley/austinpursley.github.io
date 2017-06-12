@@ -14,12 +14,18 @@ th, td {
 img {
 	display: block;
 	margin: auto;
+	width: inherit
 }
 
 figcaption {
 	color: lightgrey;
 	width: 664px;
 	margin:0 auto;
+}
+
+iframe {
+	width: inherit;
+	height: 300px;
 }
 
 #index {
@@ -34,18 +40,22 @@ figcaption {
 #project {
 	text-align: center;
 	margin:0 auto;
+	width: 550px;
 }
 
 #project h1{
 	color: #40E0D0;
-	margin:16 auto;
-	font-size: 48px;
+	font-size: 40px;
+	text-align: left;
+}
+
+#project h2{
+	color: #ffbb32;
 }
 
 #project p {
-	width: 664px;
-	margin:0 auto;
 	text-align: left;
+	font-size: 22px;
 }
 
 #project img {
