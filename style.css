@@ -41,12 +41,12 @@ iframe {
 	text-align: center;
 	margin:0 auto;
 	width: 550px;
+	text-align: left;
 }
 
 #project h1{
 	color: #40E0D0;
 	font-size: 40px;
-	text-align: left;
 }
 
 #project h2{
@@ -62,11 +62,11 @@ iframe {
 	margin:0 auto;
 }
 
-#project a:link, #project_c {
+#project a:link, #project_c, #project_link_c a:link {
 	color: #40E0D0;
 }
 
-#project a:visited {
+#project a:visited, #project_link_c a:visited {
 	color: #18514b;
 }
 
