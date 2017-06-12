@@ -13,7 +13,7 @@ th, td {
 
 img {
 	display: block;
-	margin: 16px;
+	margin: auto;
 }
 
 figcaption {
@@ -21,7 +21,6 @@ figcaption {
 	width: 664px;
 	margin:0 auto;
 }
-
 
 #index {
 	font-size: 24px;
