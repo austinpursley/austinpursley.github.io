@@ -14,7 +14,8 @@ th, td {
 img {
 	display: block;
 	margin: auto;
-	width: inherit
+	width: inherit;
+	padding-bottom: 20px;
 }
 
 figcaption {
@@ -25,7 +26,16 @@ figcaption {
 
 iframe {
 	width: inherit;
-	height: 300px;
+	height: 400px;
+}
+
+.date_heading {
+	color: gray;
+}
+
+.date_heading h2{
+	display: inline-block;
+	margin-right: 32px;
 }
 
 #index {
@@ -38,19 +48,24 @@ iframe {
 }
 
 #project {
-	text-align: center;
 	margin:0 auto;
 	width: 700px;
-	text-align: left;
+	
 }
 
 #project h1{
 	color: #40E0D0;
 	font-size: 40px;
+	margin: 0;
 }
 
 #project h2{
 	color: #ffbb32;
+	font-size: 26px;
+}
+
+#project h3{
+	margin: 0;
 }
 
 #project p {
