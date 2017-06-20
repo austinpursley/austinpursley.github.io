@@ -13,9 +13,8 @@ th, td {
 
 img {
 	display: block;
-	margin: auto;
 	width: inherit;
-	padding-bottom: 20px;
+	margin: auto;
 }
 
 figcaption {
@@ -36,6 +35,8 @@ iframe {
 .date_heading h2{
 	display: inline-block;
 	margin-right: 32px;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 #index {
@@ -50,22 +51,17 @@ iframe {
 #project {
 	margin:0 auto;
 	width: 700px;
-	
 }
 
 #project h1{
 	color: #40E0D0;
 	font-size: 40px;
-	margin: 0;
+	margin-left: 0;
 }
 
 #project h2{
 	color: #ffbb32;
 	font-size: 26px;
-}
-
-#project h3{
-	margin: 0;
 }
 
 #project p {
@@ -74,7 +70,8 @@ iframe {
 }
 
 #project img {
-	margin:0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 #project_link {
@@ -107,6 +104,13 @@ iframe {
 	color: #f7e571;
 }
 
+#images_c {
+	color: red;
+}
+
+#adventure_c {
+	color: yellow;
+}
 
 
 
