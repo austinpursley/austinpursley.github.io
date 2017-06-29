@@ -13,8 +13,9 @@ th, td {
 
 img {
 	display: block;
-	width: inherit;
-	margin: auto;
+	margin:0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 figcaption {
@@ -27,6 +28,7 @@ iframe {
 	width: inherit;
 	height: 400px;
 }
+
 
 .date_heading {
 	color: gray;
@@ -69,11 +71,6 @@ iframe {
 	font-size: 22px;
 }
 
-#project img {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
 #project_link {
 	color: #40E0D0;
 }
@@ -98,6 +95,10 @@ iframe {
 
 #about_c {
 	color: #71f778;
+}
+
+#hiking img {
+	width: 60%;
 }
 
 #contact_c {
