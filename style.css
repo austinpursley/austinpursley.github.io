@@ -88,6 +88,11 @@ iframe {
 	color: #18514b;
 }
 
+#hiking {
+	width: 60%;
+	margin:0 auto;
+}
+
 h1.projects, #projects a:link, #projects h1 {
 	color: #40E0D0;
 }
