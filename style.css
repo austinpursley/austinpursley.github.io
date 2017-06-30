@@ -14,7 +14,6 @@ th, td {
 img {
 	margin: 10px 0px 10px 0px;
 	width: 100%;
-	height: 100%;
 }
 
 figure {
@@ -89,15 +88,26 @@ iframe {
 }
 
 #hiking {
-	width: 60%;
+	width: 80%;
+	max-width: 1000px;
 	margin:0 auto;
+}
+
+#hiking img {
+	width: 100%;
+	display: block;
+}
+
+#hiking h1 {
+	margin: 15px 0 5px 0px;
+	text-align: center;
 }
 
 h1.projects, #projects a:link, #projects h1 {
 	color: #40E0D0;
 }
 
-h1.hiking {
+h1.hiking, #hiking h1 {
 	color: yellow;
 }
 
