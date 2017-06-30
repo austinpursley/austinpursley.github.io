@@ -12,10 +12,13 @@ th, td {
 }
 
 img {
-	display: block;
-	margin:0 auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 10px 0px 10px 0px;
+	width: 100%;
+	height: 100%;
+}
+
+figure {
+	margin: 0;
 }
 
 figcaption {
@@ -29,7 +32,6 @@ iframe {
 	height: 400px;
 }
 
-
 .date_heading {
 	color: gray;
 }
@@ -41,6 +43,12 @@ iframe {
 	margin-bottom: 0;
 }
 
+#format1 {
+	margin:0 auto;
+	width: 700px;
+	font-size: 20px;
+}
+
 #index {
 	font-size: 24px;
 }
@@ -50,37 +58,11 @@ iframe {
 	text-decoration: none;
 }
 
-#project {
-	margin:0 auto;
-	width: 700px;
+#index h1 {
+	margin: 40px 5px 20px 50px;
 }
 
-#project h1{
-	color: #40E0D0;
-	font-size: 40px;
-	margin-left: 0;
-}
-
-#project h2{
-	color: #ffbb32;
-	font-size: 26px;
-}
-
-#project p {
-	text-align: left;
-	font-size: 22px;
-}
-
-#project_link {
-	color: #40E0D0;
-}
-
-#project a:link, #project_c, #project_link_c a:link {
-	color: #40E0D0;
-}
-
-#project a:visited, #project_link_c a:visited {
-	color: #18514b;
+#about {
 }
 
 #about p {
@@ -93,21 +75,31 @@ iframe {
 	font-size: 48px;
 }
 
-#about_c {
+#projects h1{
+	margin-left: 0;
+}
+
+#projects h2{
+	color: #ffbb32;
+	font-size: 26px;
+}
+
+#projects a:visited {
+	color: #18514b;
+}
+
+h1.projects, #projects a:link, #projects h1 {
+	color: #40E0D0;
+}
+
+h1.hiking {
+	color: yellow;
+}
+
+h1.about {
 	color: #71f778;
 }
 
-#hiking img {
-	width: 60%;
-}
-
-#contact_c {
+h1.contact {
 	color: #f7e571;
 }
-
-#hiking_c {
-	color: pink;
-}
-
-
-
