@@ -42,12 +42,6 @@ iframe {
 	margin-bottom: 0;
 }
 
-#format1 {
-	margin:0 auto;
-	width: 700px;
-	font-size: 20px;
-}
-
 #index {
 	font-size: 24px;
 }
@@ -74,47 +68,56 @@ iframe {
 	font-size: 48px;
 }
 
-#projects h1{
+#project_page {
+	margin:0 auto;
+	width: 700px;
+	font-size: 20px;
+}
+
+#project_page h1{
 	margin-left: 0;
 }
 
-#projects h2{
-	color: #ffbb32;
+#project_page h2{
 	font-size: 26px;
 }
 
-#projects a:visited {
-	color: #18514b;
-}
-
-#hiking {
+#hiking_page {
 	width: 80%;
-	max-width: 1000px;
+	max-width: 1500px;
 	margin:0 auto;
 }
 
-#hiking img {
+#hiking_page img {
 	width: 100%;
 	display: block;
 }
 
-#hiking h1 {
+#hiking_page h1 {
 	margin: 15px 0 5px 0px;
 	text-align: center;
 }
 
-h1.projects, #projects a:link, #projects h1 {
+h1.pjct_head_color, #pjct_colors h1, #pjct_colors a:link, #project_page h1, #project_page a:link {
 	color: #40E0D0;
 }
 
-h1.hiking, #hiking h1 {
+#pjct_colors a:visited, #project_page a:visited {
+	color: #18514b;
+}
+
+#project_page h2 {
+	color: #ffbb32;
+}
+
+h1.hike_head_color, #hiking_page h1 {
 	color: yellow;
 }
 
-h1.about {
+h1.abt_head_color {
 	color: #71f778;
 }
 
-h1.contact {
+h1.cont_head_color {
 	color: #f7e571;
 }
