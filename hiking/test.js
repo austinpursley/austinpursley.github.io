@@ -17,12 +17,11 @@ req.onload = function (event) {...};
 req.open('get', 'some-file.txt', true);
 req.send(); */
 
-//alert('Hello World');
+alert('Hello World');
 
 //from: Adapted from David Thomas at Stack Exchange 
 //https://stackoverflow.com/questions/26443828/press-left-and-right-arrow-to-change-image
-function imgCycle(e) {
-    // obviously use your own images here:
+function imgCycle(e) { //e is the event.
     var imgs = ["1.jpg", "2.jpg"],
         // reference to the img element:
         imgElement = document.getElementById('imgClickAndChange'),
@@ -53,9 +52,13 @@ function imgCycle(e) {
 				nextIndex = curIndex;
 				break;
         }
-        // if we don't have a keyCode, we check if the event-type (in lowercase)
-        // is a mousedown:
-    } else {
+    } else if (e.target.className == 'round previous') {
+		nextIndex = curIndex === 0 ? (imgs.length - 1) : curIndex - 1;
+	} else if (e.target.className == 'round next') {
+		nextIndex = curIndex + 1 === imgs.length ? 0 : curIndex + 1;
+	}
+	
+	else {
 		nextIndex = curIndex;
 	}
     // setting the src of the image to the relevant URL + the string from the array
@@ -64,5 +67,9 @@ function imgCycle(e) {
 }
 
 // binding the keydown event-handler to the 'body' element:
+
 document.body.addEventListener('keydown', imgCycle);
+document.querySelector('.previous').addEventListener('mousedown', imgCycle);
+document.querySelector('.next').addEventListener('mousedown', imgCycle);
+
        
