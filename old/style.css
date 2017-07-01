@@ -1,0 +1,113 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+h1 {
+	margin: 16px;
+}
+
+th, td {
+	padding: 16px;
+}
+
+img {
+	display: block;
+	margin:0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+figcaption {
+	color: lightgrey;
+	margin:0 auto;
+	text-align: center;
+}
+
+iframe {
+	width: inherit;
+	height: 400px;
+}
+
+
+.date_heading {
+	color: gray;
+}
+
+.date_heading h2{
+	display: inline-block;
+	margin-right: 32px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#index {
+	font-size: 24px;
+}
+
+#index a {
+	color: inherit;
+	text-decoration: none;
+}
+
+#project {
+	margin:0 auto;
+	width: 700px;
+}
+
+#project h1{
+	color: #40E0D0;
+	font-size: 40px;
+	margin-left: 0;
+}
+
+#project h2{
+	color: #ffbb32;
+	font-size: 26px;
+}
+
+#project p {
+	text-align: left;
+	font-size: 22px;
+}
+
+#project_link {
+	color: #40E0D0;
+}
+
+#project a:link, #project_c, #project_link_c a:link {
+	color: #40E0D0;
+}
+
+#project a:visited, #project_link_c a:visited {
+	color: #18514b;
+}
+
+#about p {
+	width: 700px;
+	margin: 16px;
+	font-size: 24px;
+}
+
+#about h1 {
+	font-size: 48px;
+}
+
+#about_c {
+	color: #71f778;
+}
+
+#hiking img {
+	width: 60%;
+}
+
+#contact_c {
+	color: #f7e571;
+}
+
+#hiking_c {
+	color: pink;
+}
+
+
+
