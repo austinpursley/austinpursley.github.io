@@ -86,6 +86,7 @@ iframe {
 	width: 80%;
 	max-width: 1500px;
 	margin:0 auto;
+	text-align: center;
 }
 
 #hiking_page img {
@@ -121,3 +122,23 @@ h1.abt_head_color {
 h1.cont_head_color {
 	color: #f7e571;
 }
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+	border-radius: 50%;
+}
+
+button {
+	display: inline;
+	margin:0 auto;
+}
+	
