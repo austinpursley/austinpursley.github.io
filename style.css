@@ -99,6 +99,10 @@ iframe {
 	text-align: center;
 }
 
+#numImg {
+	display: none;
+}
+
 h1.pjct_head_color, #pjct_colors h1, #pjct_colors a:link, #project_page h1, #project_page a:link {
 	color: #40E0D0;
 }

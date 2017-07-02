@@ -17,7 +17,7 @@ req.onload = function (event) {...};
 req.open('get', 'some-file.txt', true);
 req.send(); */
 
-alert('Hello World');
+//alert('Hello World');
 
 //from: Adapted from David Thomas at Stack Exchange 
 //https://stackoverflow.com/questions/26443828/press-left-and-right-arrow-to-change-image
