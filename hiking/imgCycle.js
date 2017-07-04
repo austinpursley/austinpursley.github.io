@@ -19,7 +19,6 @@ function imgCycle(e) { //e is the event.
     nextIndex;
     // if we have a keyCode (therefore we have a keydown or keyup event:
     if (e.keyCode) {
-		
         // we do different things based on which key was pressed:
         switch (e.keyCode) {
             // keyCode 37 is the left arrow key:
@@ -39,17 +38,16 @@ function imgCycle(e) { //e is the event.
 				nextIndex = curIndex;
 				break;
         }
-    } else if (e.target.className == 'round previous') {
+    } 
+	else if (e.target.className == 'round previous') {
 		nextIndex = curIndex === 0 ? (imgs.length - 1) : curIndex - 1;
-	} else if (e.target.className == 'round next') {
+	} 
+	else if (e.target.className == 'round next') {
 		nextIndex = curIndex + 1 === imgs.length ? 0 : curIndex + 1;
 	}
-	
 	else {
 		nextIndex = curIndex;
 	}
-    // setting the src of the image to the relevant URL + the string from the array
-    // at the 'nextIndex':
     imgElement.src = imgs[nextIndex];
 }
 
