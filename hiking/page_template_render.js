@@ -16,9 +16,10 @@ $(document).ready(function() {
 	alert("this far 0b");
 	$.getJSON("/../hiking/hiking_data.json", function(data) {
 		alert("this far 1");
-		$.each(data, function(key, value){
+		$.each(data.hiking_locations, function(key, value){
 			alert(key);
 			$.each(value, function(key, value){
+				
 				alert(key);
 				if (loc == key) {
 					alert("holt shit");
