@@ -14,10 +14,14 @@ $(document).ready(function() {
 	var elem = document.getElementById("location");
 	var loc = elem.innerText;
 	alert("this far 0");
-	$.getJSON("/../hiking_data.json", function(data) {
+	$.getJSON("/../hiking/hiking_data.json", function(data) {
+		alert("this far 1");
 		$.each(data, function(key, value){
+			alert("this far 2");
 			$.each(value, function(key, value){
+				alert("this far 3");
 				if (loc == key) {
+					alert("holt shit");
 				}
 			});
 		});
