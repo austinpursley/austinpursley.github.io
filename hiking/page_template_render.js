@@ -13,7 +13,7 @@ $(document).ready(function() {
 	
 	var elem = document.getElementById("location");
 	var loc = elem.innerText;
-	alert("this far 0a");
+	alert("this far 0b");
 	$.getJSON("hiking_data.json", function(data) {
 		alert("this far 1");
 		$.each(data, function(key, value){
