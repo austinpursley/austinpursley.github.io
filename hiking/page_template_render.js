@@ -16,8 +16,10 @@ $(document).ready(function() {
 	alert("this far 0");
 	$.getJSON("/../hiking_data.json", function(data) {
 		$.each(data, function(key, value){
+			alert("this far2");
 			alert(key);
 			$.each(value, function(key, value){
+				alert("this far3");
 				alert(key);
 				if (loc == key) {
 					alert("holy shit it worked");
