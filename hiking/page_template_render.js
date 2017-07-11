@@ -15,10 +15,11 @@ $(document).ready(function() {
 	var loc = elem.innerText;
 	alert("this far 0");
 	$.getJSON("/../hiking_data.json", function(data) {
+		alert("this far2");
 		$.each(data, function(key, value){
-			alert("this far2");
+			alert("this far3");
 			$.each(value, function(key, value){
-				alert("this far3");
+				alert("this far4");
 				if (loc == key) {
 					alert("holy shit it worked");
 				}
