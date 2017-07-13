@@ -3,20 +3,20 @@
 <html>
 
 <head> 
-	<title> 2014 Colorado Bend State Park </title>
+	<title id="loc">2014 Colorado Bend State Park</title>
 	<link rel="stylesheet" href="../../style.css">
 </head>
 
 <body id="hiking_page">
 	
-	<div id="location">2014_colorado_bend</div>
-	
-	<div id ="templateArea"></div>
-	
 	<script src="../jquery.min.js"></script>
 	<script src="../mustache.js"></script>
 	<script src="../page_template_render.js"></script>
+	<script src="../imgCycle.js"></script>
 	
+	<div id ="templateArea"></div>
+	
+	<!-- <script src="hiking_page_template.js" id="hiking_page_template" type="template"></script> -->
 	<script id="hiking_page_template" type="template">
 		<div class="top">
 			<div class="home-icon logo">
@@ -27,20 +27,17 @@
 				<a href="../hiking.html"> <img src="../hiking_logo_back.png"/> </a>
 			</div>
 			
-			<h1>2014 Colorado Bend State Park</h1>
+			<h1>{{title2}}</h1>
 		</div>
 
 		<div id="slideshow">
 			<img src="0.jpg" alt="2014 colorado bend state park pic" id="imgClickAndChange" />
-			<div id="numImg">2</div>
+			<div id="numImg">{{numImg}}</div>
 			<button class="round previous" onclick="imgCycle()">&#8249;</button>
 			<button class="round next" onClick="imgCycle()">&#8250;</button>
 		</div>
-			
-		<script src="../imgCycle.js"></script>
 	</script>
-	
-	
+		
 </body>
 
 

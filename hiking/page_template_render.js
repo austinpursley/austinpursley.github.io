@@ -10,26 +10,20 @@
 }); */
 
 $(document).ready(function() {
-	
-	var elem = document.getElementById("location");
-	var loc = elem.innerText;
-	alert("this far 0b");
-	$.getJSON("/../hiking/hiking_data.json", function(data) {
-		alert("this far 1");
-		$.each(data.hiking_locations, function(key, value){
-			alert(key);
-			$.each(value, function(key, value){
-				
-				alert(key);
-				if (loc == key) {
-					alert("holt shit");
-				}
+	var elem = document.getElementById("loc");
+	var hike_loc = elem.innerText;
+	// $.getJSON("/../hiking/hiking_data.json", function(data) {
+	$.getJSON("hiking_data.json", function(data) {
+		$.each(data.hiking_places, function(key, value1){
+			$.each(value1.place, function(key, value2){
+				if (hike_loc == value2.title2) {
+					var template = $('#hiking_page_template').html();
+					var html = Mustache.to_html(template, value2);
+					$('#templateArea').html(html);
+					return
+				};
 			});
 		});
-		
-		var template = $('#hiking_page_template').html();
-		var html = Mustache.to_html(template, data);
-		$('#templateArea').html(html);
 	});
 	
 });
