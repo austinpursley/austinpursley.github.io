@@ -3,34 +3,12 @@
 <html>
 
 <body>	
-	<!-- Index Template -->
-	<script id="hike_index_template" type="template">
-	
-		<div class="top">
-			<div class="logo home-icon">
-				<a href="../index.html"> <img src="home_logo_hike.png"/> </a>
-			</div>
-			<div class="logo secondary-icon">
-				<img src="hiking_logo.png"/>
-			</div>
-		</div>
-		
-		<table>
-			{{#hiking_places}}
-			<tr>
-				<td>{{date}}</td>
-					<td id="hiking_link_c">
-					<a href="javascript:document.location.href=get_url(&quot;{{id}}&quot;);"> {{title1}} </a>
-				</td>
-			</tr>
-			{{/hiking_places}}		
-		</table>
-	
-	</script>
 	
 	<!-- Hiking Page Template -->
 	<script id="hiking_page_template" type="template">	
 		
+		// It kind of bothers me that js is in html template, but don't know how
+		// yet to tell queryselector to look in this template from source
 		<script src="../imgCycle.js"></script>
 		
 		<div class="top">
