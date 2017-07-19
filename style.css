@@ -137,6 +137,11 @@ html {
 	text-align: center;
 }
 
+
+#hiking_page #numImg, #hiking_page #location {
+	display: none;
+}
+
 .top {
 	margin: 16px 16px 0px 16px;
 	height: 50px;
@@ -163,9 +168,7 @@ html {
 	top: 7px;
 }
 
-#numImg {
-	display: none;
-}
+
 
 .previous, .next {
     background-color: white;
