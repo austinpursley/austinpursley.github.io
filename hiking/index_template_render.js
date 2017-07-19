@@ -5,6 +5,7 @@ $(document).ready(function() {
 		$.get('templates.html', function(templates) {
 		// commented below works only online. uncomment later.
 		//$.get('/../hiking/templates.html', function(templates) {
+			alert(templates);
 			var template = $(templates).find('#hike_index_template').html();
 			var html = Mustache.to_html(template, data);
 			$('#templateArea').html(html);
