@@ -51,8 +51,8 @@ function imgCycle(e) { //e is the event.
     imgElement.src = imgs[nextIndex];
 }
 
-// binding the keydown event-handler to the 'body' element:
-
+//  for pressing a key on keyboard
 document.body.addEventListener('keydown', imgCycle);
-document.querySelector('.previous').addEventListener('click', imgCycle);
-document.querySelector('.next').addEventListener('click', imgCycle);
+//  for clicking the next and previous buttons
+document.querySelector(".next").addEventListener('click', imgCycle);
+document.querySelector(".previous").addEventListener('click', imgCycle);
