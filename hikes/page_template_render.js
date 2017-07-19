@@ -9,6 +9,7 @@ $(document).ready(function() {
 		$.each(data.hiking_places, function(key, value) {
 			if (hike_loc == value.title2) {
 				$.get('/../hikes/hike_page_template.html', function(templates) {
+					alert(templates);
 				//$.get('templates.html', function(templates) {
 				// /../hikes/hiking_data.json only works offline
 					var template = $(templates).find('#hiking_page_template').html();
