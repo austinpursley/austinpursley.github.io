@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+	<title> hiking </title>
+	<link rel="stylesheet" href="../style.css">
+	<!-- js libraries -->
+	<script src="jquery.min.js"></script>
+	<script src="mustache.js"></script>
+	<!-- My js -->
+	<script src="index_template_render.js" defer></script>
+</head>
+
+<body id ="hike_index">
+
+	<div id ="templateArea"></div>
+	
+	<!-- Index Template -->
+	<script id="hike_index_template" type="template">
+	
+		<div class="top">
+			<div class="logo home-icon">
+				<a href="../index.html"> <img src="home_logo_hike.png"/> </a>
+			</div>
+			<div class="logo secondary-icon">
+				<img src="hiking_logo.png"/>
+			</div>
+		</div>
+		
+		<table>
+			{{#hiking_places}}
+			<tr>
+				<td>{{date}}</td>
+					<td id="hiking_link_c">
+					<a href="javascript:document.location.href=get_url(&quot;{{id}}&quot;);"> {{title1}} </a>
+				</td>
+			</tr>
+			{{/hiking_places}}		
+		</table>
+	
+	</script>
+	
+</body>
+
+</html>

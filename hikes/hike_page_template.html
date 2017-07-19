@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>	
+	
+	<!-- Hiking Page Template -->
+	<script id="hiking_page_template" type="template">	
+		
+		// It kind of bothers me that js is in html template, but don't know how
+		// yet to tell queryselector to look in this template from source
+		<script src="../imgCycle.js"></script>
+		
+		<div class="top">
+			<div class="home-icon logo">
+				<a href="../../index.html"> <img src="../home_logo_hike.png"/> </a>
+			</div>
+			<div class="logo secondary-icon logo">
+				<a href="../hiking.html"> <img src="../hiking_logo_back.png"/> </a>
+			</div>
+			<h1>{{title2}}</h1>
+		</div>
+		
+		<div id="slideshow">
+			<img src="0.jpg" alt="2014 colorado bend state park pic" id="imgClickAndChange" />
+			<div id="numImg">{{numImg}}</div>	
+			<button class="round previous">&#8249;</button>
+			<button class="round next">&#8250;</button>
+		</div>
+		
+	</script>
+		
+</body>
+
+</html>
