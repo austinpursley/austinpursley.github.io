@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head> 
+	<title id="loc">2014 Dinosaur Valley State Park</title>
+	<link rel="stylesheet" href="../style.css">
+	<meta charset="utf-8"/>
+	<!-- js libraries -->
+	<script src="jquery.min.js"></script>
+	<script src="mustache.js"></script>
+	<!-- my javascript -->
+	<!--imgCycle.js included in templates.html -->
+	<script src="page_template_render.js" defer></script>
+	<!-- <script src="build_hike_pg.js" defer></script> -->
+</head>
+
+<body id="hiking_page">
+	
+	<div id ="templateArea"></div>
+	<script src="imgCycle.js" defer></script>
+	<!-- Hiking Page Template -->
+	<script id="hiking_page_template" type="template">	
+		<div class="top">
+			<div class="home-icon logo">
+				<a href="../index.html"> <img src="home_logo_hike.png"/> </a>
+			</div>
+			<div class="logo secondary-icon logo">
+				<a href="hikes.html"> <img src="hiking_logo_back.png"/> </a>
+			</div>
+			<h1>{{title2}}</h1>
+		</div>
+		
+		<div id="hike_id" class="hidden">{{id}}</div>
+		
+		<div id="slideshow">
+			<img src="{{id}}/0.jpg" alt="2014 colorado bend state park pic" id="imgClickAndChange" />
+			<div id="numImg" class="hidden">{{numImg}}</div>
+		</div>
+		
+	</script>
+	<div id="nxt_pre_bttns">
+		<button class="round previous">&#8249;</button>
+		<button class="round next">&#8250;</button>
+	</div>
+	
+	
+</body>
+
+</html>

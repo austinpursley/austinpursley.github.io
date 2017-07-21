@@ -118,26 +118,33 @@ html {
 	height: 100%;
 }
 
+#hiking_page h1 {
+	font-size: 24px;
+	text-align: center;
+}
+
+#hiking_page .hidden, #hiking_page #location {
+	display: none;
+}
+
+#hiking_page #templateArea {
+	height: 100%;
+}
+
 #slideshow {
 	height: 95%;
 	text-align: center;
 	margin-top: 16px;
 }
 
+#nxt_pre_bttns {
+	text-align: center;
+}
+
 #slideshow img {
 	height: 95%;
 	margin:16px auto;
 	display: block;
-}
-
-#hiking_page h1 {
-	font-size: 24px;
-	text-align: center;
-}
-
-
-#hiking_page #numImg, #hiking_page #location {
-	display: none;
 }
 
 .top {
@@ -165,8 +172,6 @@ html {
 	left: 88px;
 	top: 7px;
 }
-
-
 
 .previous, .next {
     background-color: white;

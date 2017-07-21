@@ -2,21 +2,26 @@
 //https://stackoverflow.com/questions/26443828/press-left-and-right-arrow-to-change-image
 
 function imgCycle(e) { //e is the event.
-	var element = document.getElementById('numImg');
-	var numImg = parseInt(element.innerText);
+	var elem = document.getElementById('numImg');
+	var numImg = parseInt(elem.innerText);
+	if (numImg == 1) {
+		return false;
+	}
+	var hike_id = document.getElementById('hike_id').innerHTML;
 	var imgs = [];
 	//var imgs = ["1.jpg", "2.jpg",...]
 	for (i = 0; i < numImg; i++) {
-		imgs.push(i.toString() + ".jpg");
+		imgs.push(hike_id + "/" + i.toString() + ".jpg");
 	}
 	// reference to the img element:
 	var imgElement = document.getElementById('imgClickAndChange'),
 	// finding the string of the src after the last '/' character:
 	curImg = imgElement.src.split('/').pop(),
 	// finding that string from the array of images:
-	curIndex = imgs.indexOf(curImg),
+	curIndex = imgs.indexOf(hike_id + "/" + curImg),
 	// initialising the nextIndex variable:
     nextIndex;
+
     // if we have a keyCode (therefore we have a keydown or keyup event:
     if (e.keyCode) {
         // we do different things based on which key was pressed:
@@ -32,18 +37,18 @@ function imgCycle(e) { //e is the event.
             case 39:
                 // if curIndex + 1 is equal to the length of the images array,
                 // we show the first element from the array, otherwise we use the next:
-                nextIndex = curIndex + 1 === imgs.length ? 0 : curIndex + 1;
+                nextIndex = curIndex + 1 === imgs.length ? 0 : curIndex + 1; 
                 break;
 			default:
-				nextIndex = curIndex;
+				nextIndex = curIndex; 
 				break;
         }
     } 
 	else if (e.target.className == 'round previous') {
-		nextIndex = curIndex === 0 ? (imgs.length - 1) : curIndex - 1;
+		nextIndex = curIndex === 0 ? (imgs.length - 1) : curIndex - 1; 
 	} 
 	else if (e.target.className == 'round next') {
-		nextIndex = curIndex + 1 === imgs.length ? 0 : curIndex + 1;
+		nextIndex = curIndex + 1 === imgs.length ? 0 : curIndex + 1; 
 	}
 	else {
 		nextIndex = curIndex;
@@ -54,5 +59,12 @@ function imgCycle(e) { //e is the event.
 //  for pressing a key on keyboard
 document.body.addEventListener('keydown', imgCycle);
 //  for clicking the next and previous buttons
-document.querySelector(".next").addEventListener('click', imgCycle);
-document.querySelector(".previous").addEventListener('click', imgCycle);
+/* document.getElementById("templateArea").addEventListener("click", imgCycle(e) {
+	//e.target is the clicked element!
+	if(e.target && e.target.class == "next") {
+		//List item found!  Output the ID!
+		alert('smell beans');
+	}
+}); */
+// document.querySelector(".next").addEventListener('click', imgCycle);
+// document.querySelector(".previous").addEventListener('click', imgCycle);

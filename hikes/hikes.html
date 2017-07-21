@@ -3,21 +3,25 @@
 
 <head> 
 	<title> hiking </title>
+	<meta charset="utf-8"/>
 	<link rel="stylesheet" href="../style.css">
 	<!-- js libraries -->
-	<script src="jquery.min.js"></script>
-	<script src="mustache.js"></script>
+	<script src="jquery.min.js" defer></script>
+	<script src="mustache.js" defer></script>
 	<!-- My js -->
 	<script src="index_template_render.js" defer></script>
+	<script src="build_hike_pg.js" defer></script>
+	<script src="imgCycle.js" defer></script>
+	
 </head>
 
-<body id ="hike_index">
-
+<body id="hiking_page">
+	
 	<div id ="templateArea"></div>
 	
 	<!-- Index Template -->
 	<script id="hike_index_template" type="template">
-	
+	<div id="hike_index">
 		<div class="top">
 			<div class="logo home-icon">
 				<a href="../index.html"> <img src="home_logo_hike.png"/> </a>
@@ -27,17 +31,43 @@
 			</div>
 		</div>
 		
-		<table>
+		<table id="hike_table">
 			{{#hiking_places}}
 			<tr>
 				<td>{{date}}</td>
-					<td id="hiking_link_c">
-					<a href="javascript:document.location.href=get_url(&quot;{{id}}&quot;);"> {{title1}} </a>
+				<td id="hiking_link_c">
+					<!-- <a href="#" id={{id}} class="hike_link"> {{title1}} </a> -->
+					<a href="#{{id}}" id={{id}}> {{title1}} </a>
 				</td>
 			</tr>
 			{{/hiking_places}}		
 		</table>
+	</div>
+	</script>
 	
+	<!-- Hiking Page Template -->
+	<script id="hiking_page_template" type="template">
+	
+		<div class="top">
+			<div class="home-icon logo">
+				<a href="../index.html"> <img src="home_logo_hike.png"/> </a>
+			</div>
+			<div class="logo secondary-icon logo">
+				<a href="hikes.html"> <img src="hiking_logo_back.png"/> </a>
+			</div>
+			<h1>{{title2}}</h1>
+			<div id="hike_id" class="hidden">{{id}}</div>
+		</div>
+		
+		<div id="slideshow">
+			<img src="{{id}}/0.jpg" alt="2014 colorado bend state park pic" id="imgClickAndChange" />
+			<div id="numImg" class="hidden">{{numImg}}</div>
+		</div>
+		
+		<div id="nxt_pre_bttns">
+			<button class="round previous">&#8249;</button>
+			<button class="round next">&#8250;</button>
+		</div>
 	</script>
 	
 </body>

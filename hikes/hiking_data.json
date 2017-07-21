@@ -59,12 +59,14 @@
 			"id": "2015_cross_timbers",
 			"title1": "Cross Timbers Trail, TX",
 			"title2": "2015 Cross Timbers Trail",
-			"date": "03.21.2015"
+			"date": "03.21.2015",
+			"numImg": 6
 		},{
 			"id": "2014_dino_valley",
 			"title1": "Dinosaur Valley State Park, TX",
 			"title2": "2014 Dinosaur Valley State Park",
-			"date": "06.29.2014"
+			"date": "06.29.2014",
+			"numImg": 4
 		},{
 			"id": "2014_colorado_bend",
 			"title1": "Colorado Bend State Park, TX",
@@ -75,7 +77,8 @@
 			"id": "2014_cedar_hill",
 			"title1": "Cedar Hill State Park, TX",
 			"title2": "2014 Cedar HIll State Park",
-			"date": "06.14.2014"
+			"date": "06.14.2014",
+			"numImg": 1
 		}
 		]	
 }
