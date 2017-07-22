@@ -6,12 +6,10 @@
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" href="../style.css">
 	<!-- js libraries -->
-	<script src="jquery.min.js" defer></script>
-	<script src="mustache.js" defer></script>
+	<script src="jquery.min.js"></script>
+	<script src="mustache.js"></script>
 	<!-- My js -->
-	<script src="index_template_render.js" defer></script>
-	<script src="build_hike_pg.js" defer></script>
-	<script src="imgCycle.js" defer></script>
+	<script src="hikes_main.js" defer></script>
 	
 </head>
 
@@ -19,7 +17,7 @@
 	
 	<div id ="templateArea"></div>
 	
-	<!-- Index Template -->
+	<!-- Hike Index Template -->
 	<script id="hike_index_template" type="template">
 	<div id="hike_index">
 		<div class="top">
@@ -45,23 +43,28 @@
 	</div>
 	</script>
 	
-	<!-- Hiking Page Template -->
+	<!-- Hike Page Template -->
 	<script id="hiking_page_template" type="template">
 	
 		<div class="top">
+		
 			<div class="home-icon logo">
 				<a href="../index.html"> <img src="home_logo_hike.png"/> </a>
 			</div>
+			
 			<div class="logo secondary-icon logo">
 				<a href="hikes.html"> <img src="hiking_logo_back.png"/> </a>
 			</div>
+			
 			<h1>{{title2}}</h1>
+			
 			<div id="hike_id" class="hidden">{{id}}</div>
+			<div id="numImg" class="hidden">{{numImg}}</div>
+			
 		</div>
 		
 		<div id="slideshow">
-			<img src="{{id}}/0.jpg" alt="2014 colorado bend state park pic" id="imgClickAndChange" />
-			<div id="numImg" class="hidden">{{numImg}}</div>
+			<img src="{{id}}/{{img_array.0}}" alt="2014 colorado bend state park pic" id="imgClickAndChange" />
 		</div>
 		
 		<div id="nxt_pre_bttns">

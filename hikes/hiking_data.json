@@ -1,84 +1,238 @@
 {
-	"hiking_places": [
-		{
-			"id": "2017_gov_canyon",
-			"title1": "Government Canyon State Natural Area, TX",
-			"title2": "2017 Government Canyon State Natural Area",
-			"date": "06.17.2017"
-		},{
-			"id": "2017_sam_houston",
-			"title1": "Sam Houston National Forest, TX",
-			"title2": "2017 Sam Houston National Forest",
-			"date": "0.4.(14-16).2017"
-		},{
-			"id": "2017_pedernales",
-			"title1": "Pedernales Falls Stat Park, TX",
-			"title2": "2017 Pedernales Fass State Park",
-			"date": "0.1.28.2017"
-		},{
-			"id": "2016_caprock_canyons",
-			"title1": "Caprock Canyons State Park and Trailway, TX",
-			"title2": "2017 Caprock Canyons State Park and Trailway",
-			"date": "0.8.(21-23).2016"
-		},{
-			"id": "2016_dino_valley",
-			"title1": "Dinosaur Valley State Park, TX",
-			"title2": "2016 Dinosaur Valley State Park",
-			"date": "0.8.5.2016"
-		},{
-			"id": "2016_padre_island",
-			"title1": "Padre Island National Seashore, TX",
-			"title2": "2016 Padre Island National Seashore",
-			"date": "0.3.(25-27).2016"
-		},{
-			"id": "2016_big_thicket",
-			"title1": "Big Thicket National Forest, TX",
-			"title2": "2016 Big Thicket National Forest",
-			"date": "02.13.2016"
-		},{
-			"id": "2016_balcones",
-			"title1": "Balcones Canyonlands National Wildlife Reserve, TX",
-			"title2": "2016 Balcones Canyonlands",
-			"date": "01.23.2016"
-		},{
-			"id": "2016_lost_maples",
-			"title1": "Lost Maples State Park, TX",
-			"title2": "2016 Lost Maples State Park",
-			"date": "01.(10-12).2016"
-		},{
-			"id": "2015_guad_mountains",
-			"title1": "Guadalupe Mountains NP, TX",
-			"title2": "2015 Guadalupe Mountains",
-			"date": "07.(13-17).2015"
-		},{
-			"id": "2015_dino_valley",
-			"title1": "Dinosaur Valley State Park, TX",
-			"title2": "2015 Dinosaur Valley State Park",
-			"date": "07.01.2015"
-		},{
-			"id": "2015_cross_timbers",
-			"title1": "Cross Timbers Trail, TX",
-			"title2": "2015 Cross Timbers Trail",
-			"date": "03.21.2015",
-			"numImg": 6
-		},{
-			"id": "2014_dino_valley",
-			"title1": "Dinosaur Valley State Park, TX",
-			"title2": "2014 Dinosaur Valley State Park",
-			"date": "06.29.2014",
-			"numImg": 4
-		},{
-			"id": "2014_colorado_bend",
-			"title1": "Colorado Bend State Park, TX",
-			"title2": "2014 Colorado Bend State Park",
-			"date": "06.21.2014",
-			"numImg": 2
-		},{
-			"id": "2014_cedar_hill",
-			"title1": "Cedar Hill State Park, TX",
-			"title2": "2014 Cedar HIll State Park",
-			"date": "06.14.2014",
-			"numImg": 1
-		}
-		]	
+    "hiking_places": [
+        {
+            "id": "2017_gov_canyon",
+            "title1": "Government Canyon State Natural Area, TX",
+            "title2": "2017 Government Canyon State Natural Area",
+            "date": "06.17.2017",
+            "img_array": [
+                "20170617_095348.jpg",
+                "20170617_104417_HDR.jpg",
+                "20170617_111320.jpg",
+                "20170617_111350.jpg",
+                "20170617_140927_HDR.jpg",
+                "20170617_143054_HDR.jpg",
+                "20170617_145239.jpg"
+            ]
+        },
+        {
+            "id": "2017_sam_houston",
+            "title1": "Sam Houston National Forest, TX",
+            "title2": "2017 Sam Houston National Forest",
+            "date": "0.4.(14-16).2017",
+            "img_array": [
+                "20170414_0754.JPG",
+                "20170414_0802.JPG",
+                "20170414_0820.JPG",
+                "20170414_0821.JPG",
+                "20170414_0825.JPG",
+                "20170414_0828.JPG",
+                "20170415_0736.JPG",
+                "20170415_0931.JPG",
+                "20170415_1325.JPG",
+                "20170416_0714.JPG"
+            ]
+        },
+        {
+            "id": "2017_pedernales",
+            "title1": "Pedernales Falls Stat Park, TX",
+            "title2": "2017 Pedernales Fass State Park",
+            "date": "0.1.28.2017",
+            "img_array": [
+                "20170128_110733.jpg",
+                "20170128_112631.jpg",
+                "20170128_124341_HDR-1.jpg",
+                "20170128_140124_HDR.jpg",
+                "20170128_142954.jpg",
+                "20170128_154005.jpg",
+                "20170128_172849_HDR.jpg",
+                "20170128_180146.jpg"
+            ]
+        },
+        {
+            "id": "2016_caprock_canyons",
+            "title1": "Caprock Canyons State Park and Trailway, TX",
+            "title2": "2017 Caprock Canyons State Park and Trailway",
+            "date": "0.8.(21-23).2016",
+            "img_array": [
+                "20160821_112137.jpg",
+                "20160821_113129.jpg",
+                "20160821_121146.jpg",
+                "20160821_144712.jpg",
+                "20160821_144746.jpg",
+                "20160821_155916.jpg",
+                "20160821_161107.jpg",
+                "20160821_162336.jpg",
+                "20160821_163029.jpg",
+                "20160821_203127.jpg",
+                "20160822_114743_HDR.jpg",
+                "20160822_151612.jpg",
+                "20160822_175735_Pano.jpg",
+                "20160823_073504_HDR.jpg",
+                "20160823_091955_HDR.jpg"
+            ]
+        },
+        {
+            "id": "2016_dino_valley",
+            "title1": "Dinosaur Valley State Park, TX",
+            "title2": "2016 Dinosaur Valley State Park",
+            "date": "0.8.5.2016",
+            "img_array": [
+                "20160805_073024_HDR.jpg",
+                "20160805_084044.jpg",
+                "20160805_084118.jpg",
+                "20160805_090843_HDR.jpg",
+                "20160805_091213.jpg",
+                "20160805_091756.jpg",
+                "20160805_095129.jpg",
+                "20160805_100257.jpg",
+                "20160805_111133.jpg",
+                "20160805_113959.jpg"
+            ]
+        },
+        {
+            "id": "2016_padre_island",
+            "title1": "Padre Island National Seashore, TX",
+            "title2": "2016 Padre Island National Seashore",
+            "date": "0.3.(25-27).2016",
+            "img_array": [
+                "20160325_093254.jpg",
+                "20160325_093351.jpg",
+                "20160325_110115.jpg",
+                "20160325_133106.jpg",
+                "20160325_155914.jpg",
+                "20160325_172648.jpg",
+                "20160325_172814.jpg",
+                "20160325_174008.jpg",
+                "20160326_065743.jpg",
+                "20160326_070932.jpg",
+                "20160326_071415_HDR.jpg",
+                "20160326_072103.jpg"
+            ]
+        },
+        {
+            "id": "2016_big_thicket",
+            "title1": "Big Thicket National Forest, TX",
+            "title2": "2016 Big Thicket National Forest",
+            "date": "02.13.2016",
+            "img_array": [
+                "20160213_071448_HDR.jpg",
+                "20160213_093554_HDR.jpg",
+                "20160213_101603_HDR.jpg",
+                "20160213_102334.jpg",
+                "20160213_103339.jpg",
+                "20160213_105623.jpg",
+                "20160213_134855.jpg"
+            ]
+        },
+        {
+            "id": "2016_balcones",
+            "title1": "Balcones Canyonlands National Wildlife Reserve, TX",
+            "title2": "2016 Balcones Canyonlands",
+            "date": "01.23.2016",
+            "img_array": [
+                "20160123_090443_HDR.jpg",
+                "20160123_090541_HDR.jpg",
+                "20160123_092304_HDR.jpg",
+                "20160123_113826_HDR.jpg",
+                "20160123_114134_HDR.jpg",
+                "20160123_124651_HDR.jpg"
+            ]
+        },
+        {
+            "id": "2016_lost_maples",
+            "title1": "Lost Maples State Park, TX",
+            "title2": "2016 Lost Maples State Park",
+            "date": "01.(10-12).2016",
+            "img_array": [
+                "20160110_142820_HDR.jpg",
+                "20160110_151348_HDR.jpg",
+                "20160110_163450_HDR.jpg",
+                "20160111_101848_HDR.jpg",
+                "20160111_102816_HDR.jpg",
+                "20160111_130825_HDR.jpg",
+                "20160111_132051_HDR.jpg",
+                "20160111_152806_HDR.jpg",
+                "20160111_154918_HDR.jpg",
+                "20160111_180019_HDR.jpg",
+                "20160112_072446.jpg",
+                "20160112_081205_HDR.jpg"
+            ]
+        },
+        {
+            "id": "2015_guad_mountains",
+            "title1": "Guadalupe Mountains NP, TX",
+            "title2": "2015 Guadalupe Mountains",
+            "date": "07.(13-17).2015",
+            "img_array": [
+                "20150714_182618.jpg",
+                "20150715_095610_HDR.jpg",
+                "20150715_105119.jpg",
+                "20150715_110951.jpg",
+                "20150716_094713.jpg",
+                "20150716_160346.jpg",
+                "20150716_161713.jpg"
+            ]
+        },
+        {
+            "id": "2015_dino_valley",
+            "title1": "Dinosaur Valley State Park, TX",
+            "title2": "2015 Dinosaur Valley State Park",
+            "date": "07.01.2015",
+            "img_array": [
+                "20150701_100413.png",
+                "20150701_110610.jpg",
+                "20150701_113909.jpg",
+                "20150701_140523.jpg",
+                "20150701_140952.jpg"
+            ]
+        },
+        {
+            "id": "2015_cross_timbers",
+            "title1": "Cross Timbers Trail, TX",
+            "title2": "2015 Cross Timbers Trail",
+            "date": "03.21.2015",
+            "img_array": [
+                "0.jpg",
+                "1.jpg",
+                "2.jpg",
+                "3.jpg",
+                "4.jpg",
+                "5.jpg",
+                "6.jpg"
+            ]
+        },
+        {
+            "id": "2014_dino_valley",
+            "title1": "Dinosaur Valley State Park, TX",
+            "title2": "2014 Dinosaur Valley State Park",
+            "date": "06.29.2014",
+            "img_array": [
+                "0.jpg",
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ]
+        },
+        {
+            "id": "2014_colorado_bend",
+            "title1": "Colorado Bend State Park, TX",
+            "title2": "2014 Colorado Bend State Park",
+            "date": "06.21.2014",
+            "img_array": [
+                "0.jpg",
+                "1.jpg"
+            ]
+        },
+        {
+            "id": "2014_cedar_hill",
+            "title1": "Cedar Hill State Park, TX",
+            "title2": "2014 Cedar HIll State Park",
+            "date": "06.14.2014",
+            "img_array": [
+                "0.jpg",
+				"1.jpg"
+            ]
+        }
+    ]
 }
