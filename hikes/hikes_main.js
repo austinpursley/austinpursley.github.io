@@ -15,6 +15,7 @@ function render_page_templ(id) {
 				var template = $('#hiking_page_template').html();
 				var html = Mustache.to_html(template, place);
 				$('#templateArea').html(html);
+				contain_img();
 			}
 		});
 	});
@@ -31,6 +32,7 @@ document.getElementById("templateArea").addEventListener("click", function(e) {
 	
 	if(e.target && e.target.nodeName == "BUTTON") {
 		imgCycle(e);
+		contain_img();
 	}
 });
 
@@ -74,10 +76,10 @@ function imgCycle(e) { //e is the event.
 							break;
 					}
 				} 
-				else if (e.target.className == 'round previous') {
+				else if (e.target.className == 'previous') {
 					nextIndex = curIndex === 0 ? (imgs.length - 1) : curIndex - 1; 
 				} 
-				else if (e.target.className == 'round next') {
+				else if (e.target.className == 'next') {
 					nextIndex = curIndex + 1 === imgs.length ? 0 : curIndex + 1; 
 				}
 				else {
@@ -94,6 +96,46 @@ function imgCycle(e) { //e is the event.
 }
 
 document.body.addEventListener('keydown', imgCycle);
+
+function contain_img() {
+	// not working, main lead is here: https://stackoverflow.com/questions/1397478/forcing-a-dom-refresh-in-internet-explorer-after-javascript-dom-manipulation
+	//var style = document.getElementById("img_style").href;
+	flushThis('img_style');
+	flushThis('imgClickAndChange');
+	flushThis('slideshow');
+	var img = document.getElementById('imgClickAndChange');
+	var img_ar = img.offsetWidth / img.offsetHeight;
+	var win_ar = window.innerWidth / window.innerHeight;
+	var thresh = 1.0;
+	console.log("img_ar", img_ar);
+	console.log("win_ar", win_ar);
+	console.log("img src", img.src);
+	if (win_ar < thresh) {
+		document.getElementById("img_style").href = "narrow_win_img_style.css";
+		console.log('narrow');
+	}
+	
+	else if (win > thresh) {
+		document.getElementById("img_style").href = "wide_win_img_style.css";
+		console.log('wide');
+	}
+	flushThis('img_style');
+	flushThis('imgClickAndChange');
+	return false;
+}
+
+window.addEventListener("resize", contain_img);
+
+function flushThis(id){
+   var msie = 'Microsoft Internet Explorer';
+   var tmp = 0;
+   var elementOnShow = document.getElementById(id);
+   if (navigator.appName == msie){
+      tmp = elementOnShow.parentNode.offsetTop  +  'px';
+   }else{
+      tmp = elementOnShow.offsetTop;
+   }
+}
 
 
 //save this, might need it later.
