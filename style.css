@@ -110,46 +110,77 @@ iframe {
 
 
 /*This works for web browser aspect ratio > 1*/
-html {
-	height: 90%;
+/* html {
+	height: 100%;
 }
 
 #hiking_page {
 	height: 100%;
+	margin: 0;
+}
+
+#hiking_page #templateArea {
+	height: inherit;
+}
+
+#slideshow {
+	height: 80%;
+}
+#hiking_page img {
+	height: 100%;
+	margin:0px auto;
+	display: block;
 }
 
 #hiking_page h1 {
 	font-size: 24px;
 	text-align: center;
-}
+	padding: 20px;
+	margin: 0px;
+} */
+/*------------------------*/
 
-#hiking_page .hidden, #hiking_page #location {
-	display: none;
+/*This works for windows aspect ratio < 1*/
+/* #hiking_page {
+	margin: 0;
 }
 
 #hiking_page #templateArea {
-	height: 100%;
+	width: 100%;
 }
 
 #slideshow {
-	height: 95%;
+	width: 90%;
+	margin:0 auto;
+}
+
+#hiking_page img {
+	width: 100%;
+	display: block; 
+}
+*/
+
+/*------------------------*/
+
+#hiking_page h1 {
+	font-size: 24px;
 	text-align: center;
-	margin-top: 16px;
+	padding: 20px;
+	margin: 0px;
 }
 
 #nxt_pre_bttns {
 	text-align: center;
+	margin-top: 16px;
 }
 
-#slideshow img {
-	height: 95%;
-	margin:16px auto;
-	display: block;
+#hiking_page .hidden {
+	display: none;
 }
 
 .top {
-	margin: 16px 16px 0px 16px;
-	height: 50px;
+	height: 75px;
+	display: block;
 }
 
 .logo {
@@ -176,9 +207,6 @@ html {
 .previous, .next {
     background-color: white;
     color: black;
-}
-
-.round {
 	border-radius: 50%;
 	width: 25px;
 	height: 25px;
