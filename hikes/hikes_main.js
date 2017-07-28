@@ -6,7 +6,7 @@ $(document).ready(function() {
 			$('#templateArea').html(html);
 			history.pushState( { 
 					id: "index"
-			}, null, ("hikes/hikes.html/index"));
+			}, null, ("hikes/hikes.html"));
 	});
 });
 
