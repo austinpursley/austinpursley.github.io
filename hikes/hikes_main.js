@@ -16,10 +16,17 @@ function render_page_templ(id) {
 				var html = Mustache.to_html(template, place);
 				$('#templateArea').html(html);
 				contain_img();
+				history.pushState( { 
+					id: place.id
+				}, null, ("/" + place.id));
 			}
 		});
 	});
 	return false;
+}
+
+window.onpopstate = function (event) {  
+  console.log(event.state.id);
 }
 
 // Even listener for hike page click and imgage cycle buttons.
@@ -98,11 +105,7 @@ function imgCycle(e) { //e is the event.
 document.body.addEventListener('keydown', imgCycle);
 
 function contain_img() {
-	// not working, main lead is here: https://stackoverflow.com/questions/1397478/forcing-a-dom-refresh-in-internet-explorer-after-javascript-dom-manipulation
-	//var style = document.getElementById("img_style").href;
-	flushThis('img_style');
-	flushThis('imgClickAndChange');
-	flushThis('slideshow');
+
 	var img = document.getElementById('imgClickAndChange');
 	var img_ar = img.offsetWidth / img.offsetHeight;
 	var win_ar = window.innerWidth / window.innerHeight;
@@ -115,30 +118,12 @@ function contain_img() {
 		console.log('narrow');
 	}
 	
-	else if (win > thresh) {
+	else if (win_ar > thresh) {
 		document.getElementById("img_style").href = "wide_win_img_style.css";
 		console.log('wide');
 	}
-	flushThis('img_style');
-	flushThis('imgClickAndChange');
+
 	return false;
 }
 
 window.addEventListener("resize", contain_img);
-
-function flushThis(id){
-   var msie = 'Microsoft Internet Explorer';
-   var tmp = 0;
-   var elementOnShow = document.getElementById(id);
-   if (navigator.appName == msie){
-      tmp = elementOnShow.parentNode.offsetTop  +  'px';
-   }else{
-      tmp = elementOnShow.offsetTop;
-   }
-}
-
-
-//save this, might need it later.
-/* function get_url(id) {
-	return id + "/" + id + ".html";
-} */
