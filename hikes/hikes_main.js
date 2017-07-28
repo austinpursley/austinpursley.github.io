@@ -6,7 +6,7 @@ $(document).ready(function() {
 			$('#templateArea').html(html);
 			history.pushState( { 
 					id: "index"
-			}, null, ("/index"));
+			}, null, ("hikes.html/index"));
 	});
 });
 
@@ -30,6 +30,9 @@ function render_page_templ(id) {
 
 window.onpopstate = function (event) {  
   console.log(event.state.id);
+  if (event.state.id == "index") {
+	  window.location.href = "../index.html"
+  }
 }
 
 // Even listener for hike page click and imgage cycle buttons.
