@@ -4,6 +4,9 @@ $(document).ready(function() {
 			var template = $('#hike_index_template').html();
 			var html = Mustache.to_html(template, data);
 			$('#templateArea').html(html);
+			history.pushState( { 
+					id: "index"
+			}, null, ("/index"));
 	});
 });
 
@@ -16,9 +19,9 @@ function render_page_templ(id) {
 				var html = Mustache.to_html(template, place);
 				$('#templateArea').html(html);
 				contain_img();
-				history.pushState( { 
+/* 				history.pushState( { 
 					id: place.id
-				}, null, ("/" + place.id));
+				}, null, ("/" + place.id)); */
 			}
 		});
 	});
