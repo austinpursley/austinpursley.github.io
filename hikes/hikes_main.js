@@ -4,9 +4,9 @@ $(document).ready(function() {
 			var template = $('#hike_index_template').html();
 			var html = Mustache.to_html(template, data);
 			$('#templateArea').html(html);
-			history.pushState( { 
+			history.replaceState( { 
 					id: "index"
-			}, null, ("hikes/hikes.html"));
+			}, null, ("hikes.html"));
 	});
 });
 
@@ -19,19 +19,21 @@ function render_page_templ(id) {
 				var html = Mustache.to_html(template, place);
 				$('#templateArea').html(html);
 				contain_img();
-/* 				history.pushState( { 
+				history.replaceState( { 
 					id: place.id
-				}, null, ("/" + place.id)); */
+				}, null, "/hikes/#" + place.id);
+				
 			}
 		});
 	});
 	return false;
 }
 
-window.onpopstate = function (event) {  
-  console.log(event.state.id);
-  if (event.state.id == "index") {
-	  window.location.href = "../index.html"
+window.addEventListener("resize", contain_img);
+
+window.onpopstate = function (event) { 
+  if (event.state.id == "index"){
+	window.location.href = "hikes.html";
   }
 }
 
@@ -116,20 +118,20 @@ function contain_img() {
 	var img_ar = img.offsetWidth / img.offsetHeight;
 	var win_ar = window.innerWidth / window.innerHeight;
 	var thresh = 1.0;
-	console.log("img_ar", img_ar);
+/* 	console.log("img_ar", img_ar);
 	console.log("win_ar", win_ar);
-	console.log("img src", img.src);
+	console.log("img src", img.src); */
 	if (win_ar < thresh) {
 		document.getElementById("img_style").href = "narrow_win_img_style.css";
-		console.log('narrow');
+		// console.log('narrow');
 	}
 	
 	else if (win_ar > thresh) {
 		document.getElementById("img_style").href = "wide_win_img_style.css";
-		console.log('wide');
+		// console.log('wide');
 	}
 
 	return false;
 }
 
-window.addEventListener("resize", contain_img);
+
