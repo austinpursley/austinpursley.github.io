@@ -27,6 +27,7 @@ function render_page_templ(id) {
 			}
 		});
 	});
+	//contain_img();
 	return false;
 }
 
@@ -44,6 +45,7 @@ window.onpopstate = function (event) {
 document.getElementById("templateArea").addEventListener("click", function(e) {
 	if(e.target && e.target.nodeName == "A") {
 		render_page_templ(e.target.id);
+		
 	}
 	
 	if(e.target && e.target.nodeName == "BUTTON") {
@@ -93,17 +95,21 @@ function imgCycle(e) { //e is the event.
 
 
 function contain_img() {
-	//To-Do: hide image when loading, maybe hide scrollbars, fix button on bottom of screen.
-	var img = document.getElementById('imgClickAndChange');
-	var title_width = document.getElementById('title').offsetWidth;
+	//To-Do: hide image when loading, maybe hide scrollbars, fix button on bottom of screen,
+	//style variable, set document.getElementById("img_style").href at end
+	
+	
 	var win_w = window.innerWidth;
 	var win_h = window.innerHeight;
 	var win_ar = win_w / win_h;
-	var img_w = img.offsetWidth;
-	var img_h = img.offsetHeight;
-	var img_ar = img_w / img_h;
+	
 	var thresh = 1.0;
 	setTimeout(function(){
+		var title_width = document.getElementById('title').offsetWidth;
+		var img = document.getElementById('imgClickAndChange');
+		var img_w = img.offsetWidth;
+		var img_h = img.offsetHeight;
+		var img_ar = img_w / img_h;
 		console.log("img_ar", img_ar);
 		console.log("win_ar", win_ar);
 	//save_img_display = img.style.display;
@@ -150,7 +156,7 @@ function contain_img() {
 		else if(document.getElementById('title').style.visibility == "hidden") {
 			document.getElementById('title').style.visibility = "visible"
 		}
-	}, 100);
+	}, 200);
 	return false;
 }
 
