@@ -102,6 +102,8 @@ function contain_img() {
 	var win_w = window.innerWidth;
 	var win_h = window.innerHeight;
 	var win_ar = win_w / win_h;
+	document.getElementById('imgClickAndChange').style.visibility = 'hidden';
+	document.getElementById('hiking_page').style.overflow = "hidden";
 	
 	var thresh = 1.0;
 	setTimeout(function(){
@@ -114,6 +116,7 @@ function contain_img() {
 		console.log("win_ar", win_ar);
 	//save_img_display = img.style.display;
 	//img.style.display = 'none';
+		
 		var img_style = document.getElementById("img_style").href.split('/').pop();
 		if (win_ar > thresh) { // wide window
 			
@@ -156,7 +159,10 @@ function contain_img() {
 		else if(document.getElementById('title').style.visibility == "hidden") {
 			document.getElementById('title').style.visibility = "visible"
 		}
+		img.style.visibility = 'visible';
+		document.getElementById('hiking page').style.overflow = "visible";
 	}, 200);
+	
 	return false;
 }
 
