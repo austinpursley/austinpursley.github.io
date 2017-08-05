@@ -84,8 +84,8 @@ function imgCycle(e) { //e is the event.
 					}
 					if (nextIndex != curIndex) {
 						imgElement.src = hike_id + "/" + imgs[nextIndex];
-						contain_img();
 					}
+					contain_img();
 				}
 			});	
 		});
@@ -160,7 +160,7 @@ function contain_img() {
 			document.getElementById('title').style.visibility = "visible"
 		}
 		img.style.visibility = 'visible';
-		document.getElementById('hiking page').style.overflow = "visible";
+		document.getElementById('hiking_page').style.overflow = "visible";
 	}, 200);
 	
 	return false;

@@ -161,7 +161,7 @@ html {
 #nxt_pre_bttns {
 	position:absolute;
 	width: 300px;
-	height: 15%;
+	height: 10%;
 	bottom: 0px;
 	right:25%;
     left:50%;
@@ -202,10 +202,11 @@ html {
 
 .previous, .next {
     background-color: white;
+	font-size: 20px;
     color: black;
 	border-radius: 50%;
-	width: 25px;
-	height: 25px;
+	width: 40px;
+	height: 40px;
 }
 
 button {
