@@ -1,52 +1,17 @@
-// Index template render
 $(document).ready(function() {
-	$.getJSON('hiking_data.json', function(data) {
-			var template = $('#hike_index_template').html();
-			var html = Mustache.to_html(template, data);
-			$('#templateArea').html(html);
-			history.replaceState( { 
-					id: "index"
-			}, null, ("hikes.html"));
-	});
+	contain_img();
+	window.addEventListener("resize", contain_img);
+	document.body.addEventListener('keydown', imgCycle);
 });
-
-//Function for hiking page render, called when url for hiking page is clicked.
-function render_page_templ(id) {
-	$.getJSON("hiking_data.json", function(data) {
-		$.each(data.hiking_places, function(key, place) {
-			if (id == place.id) {
-				var template = $('#hiking_page_template').html();
-				var html = Mustache.to_html(template, place);
-				$('#templateArea').html(html);
-				contain_img();
-				history.replaceState( { 
-					id: place.id
-				}, null, "/hikes/#" + place.id);
-				window.addEventListener("resize", contain_img);
-				document.body.addEventListener('keydown', imgCycle);
-			}
-		});
-	});
-	//contain_img();
-	return false;
-}
-
-
-
-window.onpopstate = function (event) { 
-  if (event.state && event.state.id == "index"){
-	window.location.href = "hikes.html";
-  }
-}
 
 // Even listener for hike page click and imgage cycle buttons.
 //This comes from David Walsh's website article "How JavaScript Even Delegation Works"
 //https://davidwalsh.name/event-delegate
-document.getElementById("templateArea").addEventListener("click", function(e) {
-	if(e.target && e.target.nodeName == "A") {
+document.getElementById("hiking_page").addEventListener("click", function(e) {
+/* 	if(e.target && e.target.nodeName == "A") {
 		render_page_templ(e.target.id);
 		
-	}
+	} */
 	
 	if(e.target && e.target.nodeName == "BUTTON") {
 		imgCycle(e);
@@ -92,12 +57,9 @@ function imgCycle(e) { //e is the event.
 	}
 }
 
-
-
 function contain_img() {
 	//To-Do: hide image when loading, maybe hide scrollbars, fix button on bottom of screen,
 	//style variable, set document.getElementById("img_style").href at end
-	
 	
 	var win_w = window.innerWidth;
 	var win_h = window.innerHeight;
@@ -165,5 +127,3 @@ function contain_img() {
 	
 	return false;
 }
-
-

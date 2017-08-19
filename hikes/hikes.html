@@ -10,7 +10,7 @@
 	<script src="jquery.min.js"></script>
 	<script src="mustache.js"></script>
 	<!-- My js -->
-	<script src="hikes_main.js" defer></script>
+	<script src="hikes_index.js" defer></script>
 	
 </head>
 
@@ -35,43 +35,13 @@
 			<tr>
 				<td>{{date}}</td>
 				<td id="hiking_link_c">
-					<a href="#{{id}}" id={{id}}> {{title1}} </a>
+					<a id={{id}} href={{href}} > {{title1}} </a>
 					<!-- <a href="#" id={{id}}> {{title1}} </a> -->
 				</td>
 			</tr>
 			{{/hiking_places}}		
 		</table>
 	</div>
-	</script>
-	
-	<!-- Hike Page Template -->
-	<script id="hiking_page_template" type="template">
-	
-		<div class="top">
-		
-			<div class="home-icon logo">
-				<a href="../index.html"> <img src="home_logo_hike.png"/> </a>
-			</div>
-			
-			<div class="logo secondary-icon logo">
-				<a href="hikes.html"> <img src="hiking_logo_back.png"/> </a>
-			</div>
-			
-			<h1 id="title">{{title2}}</h1>
-			
-			<div id="hike_id" class="hidden">{{id}}</div>
-			
-		</div>
-		
-		<div id="slideshow">
-			<img src="{{id}}/{{img_array.0}}" alt="hiking pic" id="imgClickAndChange" />
-		</div>
-		
-		<div id="nxt_pre_bttns">
-			<button class="previous">&#8249;</button>
-			<button class="next">&#8250;</button>
-		</div>
-		
 	</script>
 	
 </body>
