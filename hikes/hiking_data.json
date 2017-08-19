@@ -1,6 +1,24 @@
 {
     "hiking_places": [
         {
+            "date": "08.16.2017",
+            "title1": "Dinosaur Valley State Park, TX",
+            "title2": "2017 Dinosaur Valley State Park",
+            "id": "2017_dino_valley",
+            "img_array": [
+                "20170812_070337_HDR_crop1.jpg",
+                "20170812_071507_HDR.jpg",
+                "20170812_072949_HDR.jpg",
+                "20170812_073458_HDR.jpg",
+                "20170812_080003_HDR.jpg",
+                "20170812_080150_HDR.jpg",
+                "20170812_082537_HDR.jpg",
+                "20170812_083500_HDR.jpg",
+                "20170812_094138_HDR.jpg"
+            ],
+            "href": "2017_dino_valley.html"
+        },
+        {
             "date": "06.17.2017",
             "title1": "Government Canyon State Natural Area, TX",
             "title2": "2017 Government Canyon State Natural Area",
