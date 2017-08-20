@@ -1,22 +1,24 @@
 document.getElementById('hiking_page').style.overflow = "hidden";
 
-//wait until image loads to contain it and make it visible
 window.onload = function(){
 	contain_img();
 	hide_title();
+	
+	$(document).ready(function() {
+		//listen for event of a windows resize and keyboard input
+		window.addEventListener("resize", function() {
+			contain_img();
+			hide_title();
+		});
+		document.body.addEventListener('keydown', imgCycle);
+		//hide the scrollbar
+		document.getElementById('hiking_page').style.overflow = "hidden";
+		//display image now that it should be modified by
+		document.getElementById('imgClickAndChange').style.visibility = 'visible';
+	});
 };
 
-$(document).ready(function() {
-	//listen for event of a windows resize and keyboard input
-	window.addEventListener("resize", function() {
-		contain_img();
-		hide_title();
-	});
-	document.body.addEventListener('keydown', imgCycle);
-	//hide the scrollbar
-	document.getElementById('hiking_page').style.overflow = "hidden";
-	document.getElementById('imgClickAndChange').style.visibility = 'visible';
-});
+
 
 // Even listener for image cycle buttons.
 //This comes from David Walsh's website article "How JavaScript Even Delegation Works"
@@ -57,7 +59,7 @@ function imgCycle(e) { //e is the event.
 						nextIndex = curIndex;
 					}
 					
-					document.getElementById('imgClickAndChange').style.visibility = 'hidden';
+					imgElement.style.visibility = 'hidden';
 					
 					var newImg = new Image();
 					newImg.onload = function() {
