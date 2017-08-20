@@ -1,5 +1,8 @@
-$(document).ready(function() {
+window.onload = function(){
 	contain_img();
+};
+
+$(document).ready(function() {
 	window.addEventListener("resize", contain_img);
 	document.body.addEventListener('keydown', imgCycle);
 });
