@@ -3,9 +3,7 @@ import os
 
 html_temp = """
 <!DOCTYPE html>
-
 <html>
-
 <head> 
 	<title> title2 </title>
 	<link rel="stylesheet" href="../style.css">
@@ -13,11 +11,9 @@ html_temp = """
     <!-- js libraries -->
 	<script src="jquery.min.js"></script>
     <!-- My js -->
-	<script src="hike_page.js" defer></script>
+	<script src="hikes_page.js" defer></script>
 </head>
-
 <body id="hiking_page">
-
 	<div class="top">
 	
 		<div class="home-icon logo">
@@ -33,7 +29,6 @@ html_temp = """
 		<div id="hike_id" class="hidden">this_id</div>
 		
 	</div>
-
 	<div id="slideshow">
 		<img src="img_array0" alt="title2" id="imgClickAndChange" />
 	</div>
@@ -44,7 +39,6 @@ html_temp = """
 	</div>
 	
 </body>
-
 </html>
 """
 #json and python

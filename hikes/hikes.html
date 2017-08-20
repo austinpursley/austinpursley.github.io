@@ -1,49 +1,41 @@
 <!DOCTYPE html>
 <html>
-
-<head> 
-	<title> hiking </title>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" href="../style.css">
-	<link id="img_style" rel="stylesheet" href = "wide_win_img_style.css">
+<head>
+	<title>hiking</title>
+	<meta charset="utf-8">
+	<link href="../style.css" rel="stylesheet">
+	<link href="wide_win_img_style.css" id="img_style" rel="stylesheet">
 	<!-- js libraries -->
 	<script src="jquery.min.js"></script>
 	<script src="mustache.js"></script>
 	<!-- My js -->
-	<script src="hikes_index.js" defer></script>
-	
+	<script defer src="hikes_index.js"></script>
 </head>
-
 <body id="hiking_page">
-	
-	<div id ="templateArea"></div>
-	
-	<!-- Hike Index Template -->
+	<div id="templateArea"></div><!-- Hike Index Template -->
 	<script id="hike_index_template" type="template">
-	<div id="hike_index">
-		<div class="top">
-			<div class="logo home-icon">
-				<a href="../index.html"> <img src="home_logo_hike.png"/> </a>
-			</div>
-			<div class="logo secondary-icon">
-				<img src="hiking_logo.png"/>
-			</div>
-		</div>
-		
-		<table id="hike_table">
-			{{#hiking_places}}
-			<tr>
-				<td>{{date}}</td>
-				<td id="hiking_link_c">
-					<a id={{id}} href={{href}} > {{title1}} </a>
-					<!-- <a href="#" id={{id}}> {{title1}} </a> -->
-				</td>
-			</tr>
-			{{/hiking_places}}		
-		</table>
-	</div>
+	   <div id="hike_index">
+	       <div class="top">
+	           <div class="logo home-icon">
+	               <a href="../index.html"> <img src="home_logo_hike.png"/> </a>
+	           </div>
+	           <div class="logo secondary-icon">
+	               <img src="hiking_logo.png"/>
+	           </div>
+	       </div>
+	       
+	       <table id="hike_table">
+	           {{#hiking_places}}
+	           <tr>
+	               <td>{{date}}</td>
+	               <td id="hiking_link_c">
+	                   <a id={{id}} href={{href}} > {{title1}} </a>
+	                   <!-- <a href="#" id={{id}}> {{title1}} </a> -->
+	               </td>
+	           </tr>
+	           {{/hiking_places}}      
+	       </table>
+	   </div>
 	</script>
-	
 </body>
-
 </html>
