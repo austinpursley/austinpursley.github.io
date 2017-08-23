@@ -1,4 +1,4 @@
-document.getElementById('hiking_page').style.overflow = "hidden";
+document.body.overflow = "hidden";
 
 window.onload = function(){
 	contain_img();
@@ -12,7 +12,7 @@ window.onload = function(){
 		});
 		document.body.addEventListener('keydown', imgCycle);
 		//hide the scrollbar
-		document.getElementById('hiking_page').style.overflow = "hidden";
+		document.body.style.overflow = "hidden";
 		//display image now that it should be modified by
 		document.getElementById('img_click_change').style.visibility = 'visible';
 	});
@@ -21,7 +21,7 @@ window.onload = function(){
 // Even listener for image cycle buttons.
 //This comes from David Walsh's website article "How JavaScript Even Delegation Works"
 //https://davidwalsh.name/event-delegate
-document.getElementById("hiking_page").addEventListener("click", function(e) {
+document.body.addEventListener("click", function(e) {
 	if(e.target && e.target.nodeName == "BUTTON") {
 		imgCycle(e);
 	}
@@ -36,17 +36,16 @@ function imgCycle(e) { //e is the event.
 	nxt_button = (e.target.className == 'next');
 	
 	if (left_arrow_key || right_arrow_key || pre_button || nxt_button) {
-		var hike_id = document.getElementById('hike_id').innerHTML;
-		$.getJSON("hiking_data.json", function(data) {
-			$.each(data.hiking_places, function(key, place) {
-				
-				if (hike_id == place.id) {
-					var imgs = place.img_array,
+		var id = document.getElementById('id').innerHTML;
+		$.getJSON("data.json", function(data) {
+			$.each(data.image_set, function(key, item) {
+				if (id == item.id) {
+					var imgs = item.img_array,
 					imgElement = document.getElementById('img_click_change'),
 					curImg = imgElement.src.split('/').pop(),
 					curIndex = imgs.indexOf(curImg),
 					nextIndex;
-					
+					console.log(imgElement, curImg, curIndex, nextIndex);
 					if (left_arrow_key || pre_button) {
 						nextIndex = curIndex === 0 ? (imgs.length - 1) : curIndex - 1;
 					}
@@ -69,7 +68,9 @@ function imgCycle(e) { //e is the event.
 					};
 					
 					if (nextIndex != curIndex) {
-						newImg.src = hike_id + "/" + imgs[nextIndex];
+						console.log(nextIndex);
+						newImg.src = id + "/" + imgs[nextIndex];
+						
 					}
 				}
 			});	
@@ -124,13 +125,15 @@ function contain_img() {
 }
 
 function hide_title() {
-	//hide the title if screen is too narrow
-	var title_width = document.getElementById('title').offsetWidth;
-	if (title_width < 600) {
-		document.getElementById('title').style.visibility = "hidden";
-	}
-	//display title if it was hidden and screen is wide enough
-	else if(document.getElementById('title').style.visibility == "hidden") {
-		document.getElementById('title').style.visibility = "visible"
+	if (document.getElementById('title') != null) {
+		//hide the title if screen is too narrow
+		var title_width = document.getElementById('title').offsetWidth;
+		if (title_width < 600) {
+			document.getElementById('title').style.visibility = "hidden";
+		}
+		//display title if it was hidden and screen is wide enough
+		else if(document.getElementById('title').style.visibility == "hidden") {
+			document.getElementById('title').style.visibility = "visible"
+		}
 	}
 }

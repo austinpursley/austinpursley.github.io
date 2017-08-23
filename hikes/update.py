@@ -7,9 +7,9 @@ html_temp = """
 <head> 
 	<title> title2 </title>
 	<link rel="stylesheet" href="../style.css">
-	<link id="img_style" rel="stylesheet" href = "wide_win_img_style.css">
+	<link id="img_style" rel="stylesheet" href = "../wide_win_img_style.css">
     <!-- js libraries -->
-	<script src="jquery.min.js"></script>
+	<script src="../jquery.min.js"></script>
     <!-- My js -->
 	<script src="hikes_page.js" defer></script>
 </head>
@@ -30,7 +30,7 @@ html_temp = """
 		
 	</div>
 	<div id="slideshow">
-		<img src="img_array0" alt="title2" id="imgClickAndChange" />
+		<img src="img_array0" alt="title2" id="img_click_change" />
 	</div>
 	
 	<div id="nxt_pre_bttns">

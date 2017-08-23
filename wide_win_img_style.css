@@ -2,7 +2,7 @@ html {
 	height: 100%;
 }
 
-#hiking_page {
+#hiking_page, #img_page {
 	height: 100%;
 	margin: 0;
 }
@@ -12,12 +12,19 @@ html {
 	width: auto;
 }
 
-#slideshow {
+#hiking_page #slideshow {
 	height: 75%;
 	width: auto;
 	margin:0 auto;
 }
-#hiking_page img {
+
+#img_page #slideshow {
+	height: 85%;
+	width: auto;
+	margin:0 auto;
+}
+
+#hiking_page img, #img_page img {
 	height: 100%;
 	margin:0px auto;
 	display: block;

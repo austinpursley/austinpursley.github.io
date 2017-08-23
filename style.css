@@ -1,78 +1,58 @@
-
-#project_index h1, #about h1, #contact h1 {
-	margin: 16px 16px 6px 16px;
+html {
+	height: 100%;
 }
 
-
-#project_index table, #hike_index table {
-	border: 0;
-}
-
-
-#project_index th, #project_index td, #hike_index th, #hike_index td {
-	padding: 16px;
-}
-
-/* img {
-	margin: 10px 0px 10px 0px;
-	width: 100%;
-} */
-
-figure {
-	margin: 0;
-}
-
-figcaption {
-	color: lightgrey;
-	margin:0 auto;
-	text-align: center;
-}
-
-iframe {
-	width: inherit;
-	height: 400px;
-}
-
-.date_heading {
-	color: gray;
-}
-
-.date_heading h2{
-	display: inline-block;
-	margin-right: 32px;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-/* Style index page */
+/* Index style */
 #index {
+	background-color: black;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 24px;
+	text-align: center;
+	height: 100%;
 }
 
-#index a {
-	color: inherit;
-	text-decoration: none;
+#index img {
+	width: 15%;
+	margin: 5px;
 }
 
 #index h1 {
-	margin: 40px 5px 20px 50px;
+	font-size: 15%;
 }
 
-/* Style about page */
-#about {
+#index a {
+	text-decoration: none;
+	width: 15%;
 }
 
-#about p {
-	width: 700px;
-	margin: 16px;
-	font-size: 24px;
+#index .title {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+	width: 60%;
 }
 
-#about h1 {
-	font-size: 48px;
+/* Colors for Project pages */
+#project_index, #project_page{background-color: black;color: white;}
+
+#project_index h1, #project_index a:link, #project_page h1, #project_page a:link {
+	color: #40E0D0;
 }
 
-/* Style project pagess */
+#project_index a:visited, #project_page a:visited {
+	color: #2a8e84;
+}
+
+#project_page h2 {
+	color: #ffbb32;
+}
+
+#project_index a:link {
+	text-decoration: none;
+}
+
+/* Project style */
 #project_page {
 	margin:0 auto;
 	width: 700px;
@@ -92,143 +72,44 @@ iframe {
 	margin: 10px 0px 10px 0px;
 }
 
-/*This works for web browser aspect ratio > 1*/
-/* html {
-	height: 100%;
+#project_index h1, #about h1, #contact h1 {
+	margin: 16px 16px 6px 16px;
 }
 
-#hiking_page {
-	height: 100%;
-	margin: 0;
+
+#project_index table, #hike_index table {
+	border: 0;
 }
 
-#hiking_page #templateArea {
-	height: inherit;
+
+#project_index th, #project_index td, #hike_index th, #hike_index td {
+	padding: 16px;
 }
 
-#slideshow {
-	height: 80%;
-}
-#hiking_page img {
-	height: 100%;
-	margin:0px auto;
-	display: block;
+#project_page iframe {
+	width: inherit;
+	height: 400px;
 }
 
-#hiking_page h1 {
-	font-size: 24px;
-	text-align: center;
-	padding: 20px;
-	margin: 0px;
-} */
-/*------------------------*/
-
-/*This works for windows aspect ratio < 1*/
-/* #hiking_page {
-	margin: 0;
-}
-
-#hiking_page #templateArea {
-	width: 100%;
-}
-
-#slideshow {
-	width: 90%;
-	margin:0 auto;
-}
-
-#hiking_page img {
-	width: 100%;
-	display: block; 
-}
-*/
-
-/*------------------------*/
-
-html {
-	height: 100%;
-	box
-
-}
-
-#hiking_page h1 {
-	font-size: 24px;
-	text-align: center;
-	padding: 20px;
+#project_page figure {
 	margin: 0px;
 }
 
-#nxt_pre_bttns {
-	position:absolute;
-	width: 300px;
-	height: 10%;
-	bottom: 0px;
-	right:25%;
-    left:50%;
-	margin-left:-150px;
+#project_page figcaption {
+	color: lightgrey;
+	margin:6px auto;
 	text-align: center;
-	margin-top: 16px;
 }
 
-#hiking_page .hidden {
-	display: none;
+#project_page .date_heading {
+	color: gray;
 }
 
-.top {
-	height: 75px;
-	display: block;
-}
-
-.logo {
+#project_page .date_heading h2{
 	display: inline-block;
-	width: 50px;
-}
-
-.logo img {
-	width: 100%;
-}
-
-.home-icon {
-	position: absolute;
-	left: 24px;
-	top: 7px;
-}
-
-.secondary-icon {
-	position: absolute;
-	left: 88px;
-	top: 7px;
-}
-
-.previous, .next {
-    background-color: white;
-	font-size: 20px;
-    color: black;
-	border-radius: 50%;
-	width: 40px;
-	height: 40px;
-}
-
-button {
-	border: none;
-	text-decoration: none;
-}
-
-/* Colors for Project pages */
-h1.pjct_head_color, #project_index h1, #project_index a:link, #project_page h1, #project_page a:link {
-	color: #40E0D0;
-}
-
-#project_index a:visited, #project_page a:visited {
-	color: #2a8e84;
-}
-
-#project_page h2 {
-	color: #ffbb32;
-}
-
-#project_index a:link {
-	text-decoration: none;
+	margin-right: 32px;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 /* Colors for hiking pages */
@@ -236,7 +117,7 @@ h1.pjct_head_color, #project_index h1, #project_index a:link, #project_page h1, 
 	text-decoration: none;
 }
 /*Pallete 1*/
-h1.hike_head_color, #hike_index h1, #hiking_page h1 {
+#hiking_page h1 {
 	color: #f6ed79;
 }
 
@@ -252,24 +133,133 @@ h1.hike_head_color, #hike_index h1, #hiking_page h1 {
 	color: #689f46;
 }
 
+#hiking_index, #hiking_page{background-color: black;color: white;}
+
+/* Hikes Style */
+#hiking_page h1 {
+	font-size: 24px;
+	text-align: center;
+	padding: 20px;
+	margin: 0px;
+}
+
+#hiking_page #nxt_pre_bttns {
+	position:absolute;
+	width: 300px;
+	height: 10%;
+	bottom: 0px;
+	right:25%;
+    left:50%;
+	margin-left:-150px;
+	text-align: center;
+	margin-top: 16px;
+}
+
+#hiking_page #img_hike {
+	visibility: hidden;
+}
+
+#hiking_page .top {
+	height: 75px;
+	display: block;
+}
+
+#hiking_page .logo {
+	display: inline-block;
+	width: 50px;
+}
+
+#hiking_page .logo img {
+	width: 100%;
+}
+
+#hiking_page .home-icon {
+	position: absolute;
+	left: 24px;
+	top: 7px;
+}
+
+#hiking_page .secondary-icon {
+	position: absolute;
+	left: 88px;
+	top: 7px;
+}
+
+#hiking_page .previous, #hiking_page .next {
+    background-color: white;
+	font-size: 20px;
+    color: black;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+
+#hiking_page button {
+	border: none;
+	text-decoration: none;
+}
+
+#hiking_page #hike_id {
+	visibility: hidden;
+}
+
+/* style images page */
+#img_page .previous, #img_page .next {
+    background-color: lightgray;
+	font-size: 20px;
+    color: black;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+
+#img_page button {
+	border: none;
+	text-decoration: none;
+}
+#img_page #nxt_pre_bttns {
+	position:absolute;
+	width: 300px;
+	height: 10%;
+	bottom: 0px;
+	right:25%;
+    left:50%;
+	margin-left:-150px;
+	text-align: center;
+	margin-top: 16px;
+}
+
+#img_page #id {
+	visibility: hidden;
+} 
+
+/* Colors for images page */
+#img_page {background-color: #312b33;color: black;}
+
 /*Colors for about page */
-h1.abt_head_color {
+#about h1 {
 	color: #71f778;
 }
 
+#about{background-color: black;color: white;}
+
+/* Style about page */
+#about {
+}
+
+#about p {
+	width: 700px;
+	margin: 16px;
+	font-size: 24px;
+}
+
+#about h1 {
+	font-size: 48px;
+}
+
 /*Colors for contact page */
-h1.cont_head_color {
+#contact h1 {
 	color: #f7e571;
 }
 
-/*background-color and color*/
-#index,#project_page,#project_index,#about,#contact{background-color: black;color: white;}
-#hiking_page, #hike_index {background-color: black; color: white;}
-
-
-
-
-
-
-
-	
+#contact{background-color: black;color: white;}
