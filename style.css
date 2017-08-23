@@ -34,18 +34,36 @@ html {
 }
 
 /* Colors for Project pages */
-#project_index, #project_page{background-color: black;color: white;}
+#project_index{background-color: black;color: white;}
 
-#project_index h1, #project_index a:link, #project_page h1, #project_page a:link {
+#project_page{background-color: #D1D1D1;color: #02463b;}
+
+#project_index h1, #project_index a:link {
 	color: #40E0D0;
 }
 
-#project_index a:visited, #project_page a:visited {
+#project_index a:visited {
 	color: #2a8e84;
 }
 
-#project_page h2 {
-	color: #ffbb32;
+ #project_page h1 {
+	 color: #02463b;
+ }
+ 
+ #project_page h2, #project_page .date_heading {
+	color: #632d47;
+}
+
+/* #project_page .date_heading {
+	color: #c9c684;
+} */
+ 
+ #project_page a:link {
+	 color: #0b0edd;
+ }
+
+#project_page a:visited {
+	color: #9d0ace;
 }
 
 #project_index a:link {
@@ -53,23 +71,47 @@ html {
 }
 
 /* Project style */
+
 #project_page {
 	margin:0 auto;
-	width: 700px;
-	font-size: 20px;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#project_page #content_wrapper {
+	width: 800px;
+	margin: 32px auto;
+}
+
+#project_page #content_area {
+	width: 550px;
+	
+}
+
+#project_page p {
+	letter-spacing: 0px;
+	line-height: 30px;
+	margin: 0px 0px 32px 0px;
 }
 
 #project_page h1{
-	margin-left: 0;
+	margin: 0px 0px 20px 0px;
 }
 
 #project_page h2{
 	font-size: 26px;
 }
 
+#project_page .date_heading h2{
+	display: inline-block;
+	margin-right: 32px;
+	margin-top: 0px;
+	margin-bottom: 6px;
+}
+
 #project_page img {
 	width: 100%;
-	margin: 10px 0px 10px 0px;
+	margin: 0px 0px 24px 0px;
 }
 
 #project_index h1, #about h1, #contact h1 {
@@ -81,13 +123,13 @@ html {
 	border: 0;
 }
 
-
 #project_index th, #project_index td, #hike_index th, #hike_index td {
 	padding: 16px;
 }
 
 #project_page iframe {
 	width: inherit;
+	margin: 0px 0px 32px 0px;
 	height: 400px;
 }
 
@@ -96,21 +138,14 @@ html {
 }
 
 #project_page figcaption {
-	color: lightgrey;
-	margin:6px auto;
+	color: gray;
+	margin:0px 0px 42px 0px;
 	text-align: center;
 }
 
-#project_page .date_heading {
-	color: gray;
-}
 
-#project_page .date_heading h2{
-	display: inline-block;
-	margin-right: 32px;
-	margin-top: 0;
-	margin-bottom: 0;
-}
+
+
 
 /* Colors for hiking pages */
 #hike_index a:link {
@@ -171,6 +206,12 @@ html {
 
 #hiking_page .logo img {
 	width: 100%;
+}
+
+#hike_index h1 {
+	position: absolute;
+	left: 140px;
+	top: 7px;
 }
 
 #hiking_page .home-icon {
