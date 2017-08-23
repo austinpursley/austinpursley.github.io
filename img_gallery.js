@@ -38,14 +38,13 @@ function imgCycle(e) { //e is the event.
 	if (left_arrow_key || right_arrow_key || pre_button || nxt_button) {
 		var id = document.getElementById('id').innerHTML;
 		$.getJSON("data.json", function(data) {
-			$.each(data.image_set, function(key, item) {
+			$.each(data.set, function(key, item) {
 				if (id == item.id) {
 					var imgs = item.img_array,
 					imgElement = document.getElementById('img_click_change'),
 					curImg = imgElement.src.split('/').pop(),
 					curIndex = imgs.indexOf(curImg),
 					nextIndex;
-					console.log(imgElement, curImg, curIndex, nextIndex);
 					if (left_arrow_key || pre_button) {
 						nextIndex = curIndex === 0 ? (imgs.length - 1) : curIndex - 1;
 					}
@@ -68,7 +67,6 @@ function imgCycle(e) { //e is the event.
 					};
 					
 					if (nextIndex != curIndex) {
-						console.log(nextIndex);
 						newImg.src = id + "/" + imgs[nextIndex];
 						
 					}

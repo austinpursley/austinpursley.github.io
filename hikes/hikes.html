@@ -22,10 +22,12 @@
 	           <div class="logo secondary-icon">
 	               <img src="hiking_logo.png"/>
 	           </div>
+			   
+			   <h1>hikes</h1>
 	       </div>
 	       
 	       <table id="hike_table">
-	           {{#hiking_places}}
+	           {{#set}}
 	           <tr>
 	               <td>{{date}}</td>
 	               <td id="hiking_link_c">
@@ -33,7 +35,7 @@
 	                   <!-- <a href="#" id={{id}}> {{title1}} </a> -->
 	               </td>
 	           </tr>
-	           {{/hiking_places}}      
+	           {{/set}}      
 	       </table>
 	   </div>
 	</script>

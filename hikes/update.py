@@ -11,7 +11,7 @@ html_temp = """
     <!-- js libraries -->
 	<script src="../jquery.min.js"></script>
     <!-- My js -->
-	<script src="hikes_page.js" defer></script>
+	<script src="../img_gallery.js" defer></script>
 </head>
 <body id="hiking_page">
 	<div class="top">
@@ -26,7 +26,7 @@ html_temp = """
 		
 		<h1 id = "title">title2</h1>
 		
-		<div id="hike_id" class="hidden">this_id</div>
+		<div id="id" class="hidden">this_id</div>
 		
 	</div>
 	<div id="slideshow">
@@ -45,7 +45,7 @@ html_temp = """
 #import name from json, have all files written with that name
 #edit the string to respective whatever
 
-with open('hiking_data.json', "r+") as data_file:
+with open('data.json', "r+") as data_file:
     data = json.load(data_file)
 
     for i in data['hiking_places']:
