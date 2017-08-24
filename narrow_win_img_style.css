@@ -2,7 +2,7 @@ html {
 	height: auto;
 }
 
-#hiking_page, #img_page {
+#hiking_page, #img_carousel {
 	height: auto;
 	margin: 0;
 }
@@ -18,7 +18,7 @@ html {
 	margin:0 auto;
 }
 
-#hiking_page img, #img_page img {
+#hiking_page img, #img_carousel img {
 	height: auto;
 	width: 100%;
 	margin:0px auto;

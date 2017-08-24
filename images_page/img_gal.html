@@ -1,0 +1,42 @@
+<head>
+	<link href="img_gal_style.css" rel="stylesheet">
+	<link href="../style.css" rel="stylesheet">
+	<script src="../jquery.min.js"></script>
+	<script src="../mustache.js"></script>
+	<script defer src="img_gal.js"></script>
+</head>
+
+
+<body id="img_gal">
+	<div class="top">
+	   <div class="logo home-icon">
+		   <a href="../index.html"> <img src="home_logo_images.png"/> </a>
+	   </div>
+	   <div class="logo secondary-icon">
+		   <a href="img_carousel.html"><img src="img_carousel_logo.png"/> </a>
+	   </div>
+	</div>
+	
+	<div id="lightbox_temp_area"></div>
+	
+	<script id="lightbox_temp" type="template">
+	
+	<div id="content_area">
+		{{#img_array}}
+		<a class="lightbox" href="#{{.}}">
+		   <img src="images/{{.}}"/>
+		</a>
+		{{/img_array}}
+	</div>
+	
+	{{#img_array}}
+	<div class="lightbox-target" id="{{.}}">
+	   <img src="images/{{.}}"/>
+	   <a class="lightbox-close" href="#"></a>
+	</div>
+	{{/img_array}}
+	
+	</script>
+</body>
+
+
