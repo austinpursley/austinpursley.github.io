@@ -6,3 +6,7 @@ $(document).ready(function() {
 			$('#lightbox_temp_area').html(html);
 	});
 });
+
+$('a[href^="#"]').click(function(e) {
+		e.preventDefault();
+});

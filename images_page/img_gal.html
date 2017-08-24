@@ -24,7 +24,7 @@
 	<div id="content_area">
 		{{#img_array}}
 		<a class="lightbox" href="#{{.}}">
-		   <img src="images/{{.}}"/>
+		   <img id="{{.}}anch" src="images/{{.}}"/>
 		</a>
 		{{/img_array}}
 	</div>
@@ -32,7 +32,7 @@
 	{{#img_array}}
 	<div class="lightbox-target" id="{{.}}">
 	   <img src="images/{{.}}"/>
-	   <a class="lightbox-close" href="#"></a>
+	   <a class="lightbox-close" href="#{{.}}anch"></a>
 	</div>
 	{{/img_array}}
 	
