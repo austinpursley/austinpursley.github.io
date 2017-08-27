@@ -23,16 +23,14 @@
 	
 	<div id="content_area">
 		{{#img_array}}
-		<a class="lightbox" href="#{{.}}">
-		   <img id="{{.}}anch" src="thumbnails/{{.}}"/>
-		</a>
+		<a class="lightbox" href="#{{.}}"><img id="{{.}}anchor" src="thumbnails/{{.}}"/></a>
 		{{/img_array}}
 	</div>
 	
 	{{#img_array}}
 	<div class="lightbox-target" id="{{.}}">
 	   <img src="images/{{.}}"/>
-	   <a class="lightbox-close" href="#{{.}}anch"></a>
+	   <a class="lightbox-close" href="#{{.}}anchor"></a>
 	</div>
 	{{/img_array}}
 	

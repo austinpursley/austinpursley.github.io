@@ -349,9 +349,35 @@ body {
 	font-size: 48px;
 }
 
+#about a {
+	text-decoration: none;
+	color: white;
+}
+
 /*Colors for contact page */
 #contact h1 {
 	color: #f7e571;
 }
 
 #contact{background-color: black;color: white;}
+
+/* bio style */
+#bio {
+	width: 500px;
+}
+
+#bio_index a{
+}
+
+#bio_index {
+	width: 500px;
+}
+
+#bio_index ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+#bio_index li{
+	margin: 4px;
+}

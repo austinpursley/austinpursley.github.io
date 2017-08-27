@@ -1,3 +1,5 @@
+/*https://codepen.io/ongtiffany/pen/BoOeQV */
+
 /*Eliminates padding, centers the thumbnail */
 
 body, html {
@@ -12,7 +14,6 @@ text-align: center;
 }
 
 /* Styles the thumbnail */
-/*https://codepen.io/ongtiffany/pen/BoOeQV */
 
 a.lightbox img {
 height: 300px;
@@ -20,6 +21,10 @@ border: 3px solid white;
 box-shadow: 0px 0px 8px rgba(0,0,0,.3);
 margin: 50px 20px 20px 20px;
 }
+
+a.lightbox {
+	text-decoration: none;
+} 
 
 /* Styles the lightbox, removes it from sight and adds the fade-in transition */
 
