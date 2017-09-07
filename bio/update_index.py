@@ -25,9 +25,9 @@ html_txt = ""
 
 for file in file_list:
 	if os.path.splitext(file)[1] == ".html":
-		html_txt += "<li><a href=files/" + file+ ">" + os.path.splitext(file)[0] + ".txt" + "</a></li>\n"
+		html_txt += "<li><a href='files/" + file+ "'>" + os.path.splitext(file)[0] + ".txt" + "</a></li>\n"
 	else:
-		html_txt += "<li><a href=files/" + file + ">" + file + "</a></li>\n"
+		html_txt += "<li><a href='files/" + file + "'>" + file + "</a></li>\n"
 
 
 html_str = html_temp.replace("_text_", html_txt)
