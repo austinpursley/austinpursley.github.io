@@ -1,9 +1,82 @@
 {
     "set": [
         {
-            "date": "08.16.2017",
+            "date": "11.16.2017",
+            "title1": "Lost Maples State Park, TX",
+            "title2": "2017 Lost Maples",
+            "id": "2017_lost_maples",
+            "img_array": [
+                "20171116_121444_HDR.jpg",
+                "20171116_122231_HDR_crop2.jpg",
+                "20171116_132331_HDR.jpg",
+                "20171116_151032_HDR_crop2.jpg",
+                "20171116_151824_HDR_crop3.jpg",
+                "20171116_152250_HDR.jpg",
+                "20171116_153036_HDR.jpg",
+                "20171116_153437_HDR_crop0.jpg",
+                "20171116_161112_HDR.jpg",
+                "20171117_064029.jpg",
+                "20171117_071630_HDR_edit3.jpg",
+                "20171117_073617_HDR.jpg"
+            ],
+            "href": "2017_lost_maples.html"
+        },
+        {
+            "date": "10.22.2017",
+            "title1": "McKinney Falls State Park, TX",
+            "title2": "2017 McKinney Falls",
+            "id": "2017_mckinney_falls",
+            "img_array": [
+                "20171022_092604_HDR.jpg",
+                "20171022_093045_HDR_crop3.jpg",
+                "20171022_093515_HDR.jpg",
+                "20171022_093712_HDR-1_crop1.jpg",
+                "20171022_094316_HDR.jpg",
+                "20171022_094427_HDR.jpg",
+                "20171022_101552_HDR.jpg",
+                "20171022_104420_HDR_4.jpg",
+                "20171022_104850_HDR.jpg",
+                "20171022_110248_HDR.jpg"
+            ],
+            "href": "2017_mckinney_falls.html"
+        },
+        {
+            "date": "09.10.2017",
+            "title1": "Sam Houston National Forest, TX",
+            "title2": "2017 September Sam Houston National Forest",
+            "id": "2017_sam_houston2",
+            "img_array": [
+                "20170910_062658.jpg",
+                "20170910_064718_HDR.jpg",
+                "20170910_064829.jpg",
+                "20170910_071841.jpg",
+                "20170910_073732.jpg",
+                "20170910_074947_HDR.jpg",
+                "20170910_075103_HDR.jpg",
+                "20170910_080442.jpg",
+                "20170910_080850_HDR.jpg"
+            ],
+            "href": "2017_sam_houston2.html"
+        },
+        {
+            "date": "08.(17-18).2017",
+            "title1": "Enchanted Rock State Natural Area, TX",
+            "title2": "2017 Enchanted Rock",
+            "id": "2017_enchanted_rock",
+            "img_array": [
+                "20170817_082504_HDR.jpg",
+                "20170817_084204_HDR.jpg",
+                "20170817_084223_HDR.jpg",
+                "20170817_084442_HDR.jpg",
+                "20170817_091348_HDR.jpg",
+                "20170817_093910_HDR.jpg"
+            ],
+            "href": "2017_enchanted_rock.html"
+        },
+        {
+            "date": "08.12.2017",
             "title1": "Dinosaur Valley State Park, TX",
-            "title2": "2017 Dinosaur Valley State Park",
+            "title2": "2017 Dinosaur Valley",
             "id": "2017_dino_valley",
             "img_array": [
                 "20170812_070337_HDR_crop1.jpg",
@@ -21,7 +94,7 @@
         {
             "date": "06.17.2017",
             "title1": "Government Canyon State Natural Area, TX",
-            "title2": "2017 Government Canyon State Natural Area",
+            "title2": "2017 Government Canyon",
             "id": "2017_gov_canyon",
             "img_array": [
                 "20170617_095348.jpg",
@@ -36,7 +109,7 @@
         {
             "date": "0.4.(14-16).2017",
             "title1": "Sam Houston National Forest, TX",
-            "title2": "2017 Sam Houston National Forest",
+            "title2": " April 2017 Sam Houston National Forest",
             "id": "2017_sam_houston",
             "img_array": [
                 "20170414_0754.jpg",
@@ -54,7 +127,7 @@
         {
             "date": "0.1.28.2017",
             "title1": "Pedernales Falls Stat Park, TX",
-            "title2": "2017 Pedernales Fass State Park",
+            "title2": "2017 Pedernales Falls",
             "id": "2017_pedernales",
             "img_array": [
                 "20170128_110733.jpg",
@@ -71,7 +144,7 @@
         {
             "date": "0.8.(21-23).2016",
             "title1": "Caprock Canyons State Park and Trailway, TX",
-            "title2": "2017 Caprock Canyons State Park and Trailway",
+            "title2": "2017 Caprock Canyons",
             "id": "2016_caprock_canyons",
             "img_array": [
                 "20160821_112137.jpg",
@@ -93,7 +166,7 @@
         {
             "date": "0.8.5.2016",
             "title1": "Dinosaur Valley State Park, TX",
-            "title2": "2016 Dinosaur Valley State Park",
+            "title2": "2016 Dinosaur Valley",
             "id": "2016_dino_valley",
             "img_array": [
                 "20160805_073024_HDR.jpg",
@@ -160,7 +233,7 @@
         {
             "date": "01.(10-12).2016",
             "title1": "Lost Maples State Park, TX",
-            "title2": "2016 Lost Maples State Park",
+            "title2": "2016 Lost Maples",
             "id": "2016_lost_maples",
             "img_array": [
                 "20160110_142820_HDR.jpg",
@@ -196,7 +269,7 @@
         {
             "date": "07.01.2015",
             "title1": "Dinosaur Valley State Park, TX",
-            "title2": "2015 Dinosaur Valley State Park",
+            "title2": "2015 Dinosaur Valley",
             "id": "2015_dino_valley",
             "img_array": [
                 "20140627_202721.jpg",
@@ -225,7 +298,7 @@
         {
             "date": "06.29.2014",
             "title1": "Dinosaur Valley State Park, TX",
-            "title2": "2014 Dinosaur Valley State Park",
+            "title2": "2014 Dinosaur Valley",
             "id": "2014_dino_valley",
             "img_array": [
                 "dv0.jpg",

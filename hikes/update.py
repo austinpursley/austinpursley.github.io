@@ -48,11 +48,11 @@ html_temp = """
 with open('data.json', "r+") as data_file:
     data = json.load(data_file)
 
-    for i in data['hiking_places']:
+    for i in data['set']:
         # Update directories according to JSON data.
         newpath = os.path.dirname(os.path.realpath(__file__)) + '/'
-        print(newpath)
         newpath += i['id']
+        print(newpath)
         if not os.path.exists(newpath):
             os.makedirs(newpath)
         # thought: prompt user, ask if they would like to add some photos here.
