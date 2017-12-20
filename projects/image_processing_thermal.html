@@ -16,8 +16,8 @@
 	<p>
 	The senior design project I have been working on in school is a "smart mirror". 
 	Equipped with a thermal and RGB camera, it's primary purpose is to analyze a user's face and give health feedback. 
-	The subsystem I have been responsibile is image processing.
-	My goal was to take the images and analyze them to obtain the health metrics to track and analyze.
+	The subsystem I have been responsibile for is image processing.
+	My goal was to analyze the images to obtain health metrics.
 	Here we go over getting a skin tempeprature metric from thermal images.
 	</p>
 	
@@ -29,7 +29,7 @@
 	<h2> Skin Temperature </h2>
 	
 	<p>
-	Skin temperature is a health metric we care about because it acts as an approximation of internal body temperature. Changes in body temperature may be a health concern such as a fever so it seemed important to measure and track.
+	Skin temperature is a health metric we care about because it acts as an approximation of internal body temperature. Changes in body temperature may be a health concern such as a fever so it seems important to measure and track.
 	</p>
 	
 	
@@ -40,9 +40,9 @@
 		<figcaption>Diagram for the process of getting skin temperature.</figcaption>
 	</figure>
 	<p>
-	Thermal images come from a
-	<a href="http://www.flir.com/cores/lepton/">FLiR Lepton</a>
-	and it's dimensions are 80x60 pixels. From this we want to extrac the user's skin temperature.
+	The thermal images have dimensions of 80x60 pixels and come from a
+	<a href="http://www.flir.com/cores/lepton/">FLiR Lepton</a>. 
+	From this we want to extrac the user's skin temperature.
 	</p>
 	<p>
 	Altough it may be intuitive to just take the highest value as the skin temperature, it is not guaranteed that a person will be the warmest thing in the room. There may be a light bulb, a candle, or a cup of coffe in the background. We perform some simple image processing techniques to remove these "hot spots".
@@ -58,13 +58,13 @@
 	The second step is to apply some morphology operations. The first is called a close and it will remove any small white blobs in the image. These white blobs are often background objects that are warm and so not blacked out by the threshold. The second morphology operation is called a close. It does exactley what it sounds like, it will close any "holes" left in the white area of our image. One cause of potential holes in the mask is glasses and thick beards.
 	</p>
 	<p>
-	What we are left over with is a mask where the white pixels correspond approximatly to the user's skin. The third step is to look for the highest pixel value in that skin area of the mask. This highest value will then be our skin temperature metric and the process is complete.
+	What we are left over with is a mask where the white pixels correspond approximately to the user's skin. The third step is to look for the highest pixel value in the parts of the original image that correspond to that skin area of the mask. This highest value will then be our skin temperature metric and the process is complete.
 	</p>
 	
 	<h2> Corner Cases </h2>
 	<p>
 	My assumption is that the there is one user and that they are the prominent object in the image. 
-	Any object hotter than skin that is in front or on the edge of the user will not be removed from the mask and cause an error. The user should also consistently either wear or not-wear glasses. This is because they block one of the warmest areas of the face from the view of the thermal camera, and so one reading without glasses may be higher than without.
+	Any object hotter than skin that is in front or on the edge of the user will not be removed from the mask and cause an error. The user should also consistently either wear or not-wear glasses. This is because the glass blocks one of the warmest areas of the face from the view of the thermal camera, and so one reading without glasses may be higher than without.
 	</p>
 	
 	
