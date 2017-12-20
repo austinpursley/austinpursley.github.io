@@ -87,8 +87,7 @@ body {
 }
 
 #project_page #content_area {
-	width: 550px;
-	
+	width: 700px;
 }
 
 #project_page p {
@@ -103,6 +102,10 @@ body {
 
 #project_page h2{
 	font-size: 26px;
+}
+
+#project_page h3{
+	font-size: 20px;
 }
 
 #project_page .date_heading h2{

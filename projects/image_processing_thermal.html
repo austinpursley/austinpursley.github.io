@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head> 
+	<title> Thermal Image Processing </title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body id="project_page">
+
+	<div id="content_wrapper"><div id="content_area">
+	
+	<h1>Image Processing, Part 1: Skin Temperature From Thermal Images</h1> 
+	
+	<figure>
+		<img src="images/fever.png" alt="fever">
+		<figcaption>Ever wanted your mirror to tell you if you're catching a fever?</figcaption>
+	</figure>
+	
+	<p>
+	The senior project I have been working on in school is a "smart mirror". 
+	Equipped with a thermal and RGB camera, it's primary purpose is to analyze a user's face and give health feedback. 
+	The subsystem I have been responsibile is image processing.
+	My goal was to take the images and analyze them to obtain the health metrics to track and analyze.
+	Here we go over getting a skin tempeprature metric from thermal images.
+	</p>
+	
+	<h2> Skin Temperature </h2>
+	
+	<p>
+	Skin temperature is a health metric we care about because it acts as an approximation of internal body temperature. Changes in body temperature may be a health concern such as a fever so it seemed important to measure and track.
+	</p>
+	
+	
+	
+	<h2> Process </h2>
+	<figure>
+		<img src="images/thermal_diagram.png" alt="flow diagram">
+		<figcaption>Diagram for the process of getting skin temperature.</figcaption>
+	</figure>
+	<p>
+	Thermal images come from a
+	<a href="http://www.flir.com/cores/lepton/">FLiR Lepton</a>
+	and it's dimensions are 80x60 pixels. From this we want to extrac the user's skin temperature.
+	</p>
+	<p>
+	Altough it may be intuitive to just take the highest value as the skin temperature, it is not guaranteed that a person will be the warmest thing in the room. There may be a light bulb, a candle, or a cup of coffe in the background. We perform some simple image processing techniques to remove these "hot spots".
+	</p>
+	<p>
+	The first step is to find the median of the thermal image and use that as a threshold value. We use the median because it is less affected by very hot or cold objects caught in the image. Any pixel with a value over that value will be white and any under will be black. This leaves a "mask" that approximtes the user's skin.
+	</p>
+	<figure>
+		<img src="images/thermal_img_process.jpg" alt="skin temperature process images" />
+		<figcaption>Thermal Image Process Steps: Original, Thresholded, Morphology, and Masked</figcaption>
+	</figure>
+	<p>
+	The second step is to apply some morphology operations. The first is called a close and it will remove any small white blobs in the image. These white blobs are often background objects that are warm and so not blacked out by the threshold. The second morphology operation is called a close. It does exactley what it sounds like, it will close any "holes" left in the white area of our image. One cause of potential holes in the mask is glasses and thick beards.
+	</p>
+	<p>
+	What we are left over with is a mask where the white pixels correspond approximatly to the user's skin. The third step is to look for the highest pixel value in that skin area of the mask. This highest value will then be our skin temperature metric and the process is complete.
+	</p>
+	
+	<h2> Corner Cases </h2>
+	<p>
+	My assumption is that the there is one user and that they are the prominent object in the image. 
+	Any object hotter than skin that is in front or to the side the user will not be removed from the mask and cause an error. The user should also consistent wear or not-wear glasses. This is because they block one of the warmest areas of the face from the view of the thermal camera, and so one reading without glasses may be higher than without.
+	</p>
+	
+	
+	<p><a href="https://github.com/austinpursley/ECEN-403-Smart-Mirror-Image-Analysis/tree/master/thermal">Github</a></p>
+	
+	<br>
+	
+	</div></div>
+	
+</body>
+
+
+
+</html>
