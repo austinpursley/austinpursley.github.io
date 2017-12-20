@@ -14,7 +14,7 @@
 	<h1>Image Processing Part 1: Skin Temperature From Thermal Images</h1> 
 	
 	<p>
-	The senior project I have been working on in school is a "smart mirror". 
+	The senior design project I have been working on in school is a "smart mirror". 
 	Equipped with a thermal and RGB camera, it's primary purpose is to analyze a user's face and give health feedback. 
 	The subsystem I have been responsibile is image processing.
 	My goal was to take the images and analyze them to obtain the health metrics to track and analyze.
@@ -64,7 +64,7 @@
 	<h2> Corner Cases </h2>
 	<p>
 	My assumption is that the there is one user and that they are the prominent object in the image. 
-	Any object hotter than skin that is in front or to the side the user will not be removed from the mask and cause an error. The user should also consistent wear or not-wear glasses. This is because they block one of the warmest areas of the face from the view of the thermal camera, and so one reading without glasses may be higher than without.
+	Any object hotter than skin that is in front or on the edge of the user will not be removed from the mask and cause an error. The user should also consistently either wear or not-wear glasses. This is because they block one of the warmest areas of the face from the view of the thermal camera, and so one reading without glasses may be higher than without.
 	</p>
 	
 	
