@@ -7,11 +7,13 @@ with open('data.json', "r+") as data_file:
     for i in data['set']:
         # Update directories according to JSON data.
         newpath = os.path.dirname(os.path.realpath(__file__)) + '/'
+        #new path is directory of images
         newpath += i['id']
-        # thought: prompt user, ask if they would like to add some photos here.
-        # Update JSON data, img_array, according to imgages in directory.
+        #href of images href
+        #i['href'] = i['id'] + '.html'
+        # JSON img_array is equal to list of images in image directory
         i['img_array'] = os.listdir(newpath)
-        i['href'] = i['id'] + '.html'
+
 
     data_file.seek(0)
     json.dump(data, data_file, indent=4)
