@@ -1,6 +1,6 @@
 import json
 import os
-
+#run this to update HTML page
 with open('data.json', "r+") as data_file:
     data = json.load(data_file)
 
