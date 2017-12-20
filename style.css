@@ -276,9 +276,8 @@ body {
 	visibility: hidden;
 } 
 
-
 #img_gal .top {
-	height: 80px;
+	height: 75px;
 	display: block;
 	margin:0 auto;
 }
@@ -286,11 +285,12 @@ body {
  #img_carousel .top {
 	height: 75px;
 	display: block;
+	margin:0 auto;
  }
 
 #img_gal .logo {
 	display: inline-block;
-	width: 75px;
+	width: 50px;
 }
 
  #img_carousel .logo  {
@@ -305,7 +305,7 @@ body {
 #img_gal .home-icon {
 	position: absolute;
 	left: 24px;
-	top: 7px;
+	top: 16px;
 }
 
 #img_carousel .home-icon {
@@ -316,8 +316,8 @@ body {
 
 #img_gal .secondary-icon {
 	position: absolute;
-	left: 140px;
-	top: 13px;
+	left: 88px;
+	top: 16px;
 }
 
 #img_carousel .secondary-icon {
