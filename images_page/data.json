@@ -3,6 +3,7 @@
         {
             "id": "images",
             "img_array": [
+                "20171228_image_proc_accident.jpg",
                 "20171121_4.jpg",
                 "20171116_153437_HDR_crop0.jpg",
                 "20171102_1.jpg",
@@ -19,7 +20,6 @@
                 "20170615_124211_HDR_exprmnt1.jpg",
                 "20170604_play_life_with_passion_2.jpg",
                 "20170604_mountain_2.jpg",
-                "20170604_body_in_clouds.jpg",
                 "20170526_green_thang.jpg",
                 "20170521_160144_HDR.jpg",
                 "20170414_0820.jpg",
@@ -46,7 +46,6 @@
                 "20160114_073004_HDR.jpg",
                 "20150715_105119.jpg",
                 "20150529_Stepping_Outside.jpg",
-                "20150511_crack_in_the_wall.jpg",
                 "2012.04.06.jpg",
                 "2011.04.02.JPG"
             ],
@@ -54,6 +53,7 @@
         }
     ],
     "img_array": [
+        "20171228_image_proc_accident.jpg",
         "20171121_4.jpg",
         "20171116_153437_HDR_crop0.jpg",
         "20171102_1.jpg",
@@ -70,7 +70,6 @@
         "20170615_124211_HDR_exprmnt1.jpg",
         "20170604_play_life_with_passion_2.jpg",
         "20170604_mountain_2.jpg",
-        "20170604_body_in_clouds.jpg",
         "20170526_green_thang.jpg",
         "20170521_160144_HDR.jpg",
         "20170414_0820.jpg",
@@ -97,7 +96,6 @@
         "20160114_073004_HDR.jpg",
         "20150715_105119.jpg",
         "20150529_Stepping_Outside.jpg",
-        "20150511_crack_in_the_wall.jpg",
         "2012.04.06.jpg",
         "2011.04.02.JPG"
     ]
