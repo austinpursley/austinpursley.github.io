@@ -3,7 +3,6 @@
         {
             "id": "images",
             "img_array": [
-                "r",
                 "20171228_image_proc_accident.jpg",
                 "20171121_4.jpg",
                 "20171116_153437_HDR_crop0.jpg",
@@ -52,7 +51,6 @@
         }
     ],
     "img_array": [
-        "r",
         "20171228_image_proc_accident.jpg",
         "20171121_4.jpg",
         "20171116_153437_HDR_crop0.jpg",
