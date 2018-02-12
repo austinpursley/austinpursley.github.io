@@ -11,7 +11,7 @@ html_temp = """
     <!-- js libraries -->
 	<script src="../jquery.min.js"></script>
     <!-- My js -->
-	<script src="../img_gallery.js" defer></script>
+	<script src="../img_carousel.js" defer></script>
 </head>
 <body id="hiking_page">
 	<div class="top">
