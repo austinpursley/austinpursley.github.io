@@ -9,7 +9,6 @@ with open('data.json', "r+") as data_file:
     data = json.load(data_file)
         # thought: prompt user, ask if they would like to add some photos here.
 
-
     for i in data['set']:
         # Update directories according to JSON data.
         newpath = os.path.dirname(os.path.realpath(__file__)) + '/'
