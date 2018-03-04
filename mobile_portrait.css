@@ -1,3 +1,32 @@
+/* Hikes Style */
+
+#hike_index h1 {
+	position: absolute;
+	left: 250px;
+	top: 7px;
+	font-size: 64px;
+}
+
+#hiking_page .top {
+	height: 125px;
+}
+
+#hiking_page .logo {
+	width: 100px;
+}
+
+#hiking_page .home-icon {
+	position: absolute;
+	left: 28px;
+	top: 7px;
+}
+
+#hiking_page .secondary-icon {
+	position: absolute;
+	left: 140px;
+	top: 8px;
+}
+
 /* Index table settings */
 #project_index th, #project_index td, #hike_index th, #hike_index td {
 	padding: 16px 0px 16px 16px;
