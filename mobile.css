@@ -40,30 +40,31 @@ body {
 
 #project_page {
 	margin:0 auto;
-	font-size: 18px;
+	font-size: 24px;
 }
 
 #project_page #content_wrapper {
-	width: 800px;
 	margin: 32px auto;
+	width: 90%;
 }
 
 #project_page #content_area {
-	width: 700px;
+	width: 100%;
 }
 
 #project_page p {
-	letter-spacing: 0px;
-	line-height: 30px;
+	letter-spacing: 1px;
+	line-height: 36px;
 	margin: 0px 0px 32px 0px;
 }
 
 #project_page h1{
+	font-size: 38px;
 	margin: 0px 0px 20px 0px;
 }
 
 #project_page h2{
-	font-size: 26px;
+	font-size: 34px;
 }
 
 #project_page h3{
