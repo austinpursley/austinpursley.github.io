@@ -7,10 +7,10 @@
 }
 
 #hiking_page h1 {
-	visibility: visible;
+	visibility: hidden;
 	font-size: 32px;
 	text-align: center;
-	padding: 40px;
+	padding: 50px;
 	margin: 0px;
 }
 

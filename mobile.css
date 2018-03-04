@@ -241,6 +241,28 @@ body {
 	z-index:1;
 }
 
+#img_gal .top {
+	height: 100px;
+	margin:0 auto;
+}
+
+#img_gal .logo {
+	display: inline-block;
+	width: 75px;
+}
+
+#img_gal .home-icon {
+	position: absolute;
+	left: 24px;
+	top: 16px;
+}
+
+#img_gal .secondary-icon {
+	position: absolute;
+	left: 124px;
+	top: 18px;
+}
+
 /*wide_win_img_style*/
 
 #hiking_page, #img_carousel {
