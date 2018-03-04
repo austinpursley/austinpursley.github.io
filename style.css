@@ -129,10 +129,6 @@ body {
 	border: 0;
 }
 
-#project_index th, #project_index td, #hike_index th, #hike_index td {
-	padding: 16px;
-}
-
 #project_page iframe {
 	width: inherit;
 	margin: 0px 0px 32px 0px;
@@ -147,6 +143,12 @@ body {
 	color: gray;
 	margin:0px 0px 16px 0px;
 	text-align: center;
+}
+
+/* Index table settings */
+
+#project_index th, #project_index td, #hike_index th, #hike_index td {
+	padding: 8px 16px 8px 16px;
 }
 
 /* Colors for hiking pages */
