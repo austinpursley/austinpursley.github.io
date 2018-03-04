@@ -111,3 +111,25 @@ td.date {
 	left: 140px;
 	top: 18px;
 }
+
+#img_gal .top {
+	height: 125px;
+	margin:0 auto;
+}
+
+#img_gal .logo {
+	display: inline-block;
+	width: 100px;
+}
+
+#img_gal .home-icon {
+	position: absolute;
+	left: 24px;
+	top: 16px;
+}
+
+#img_gal .secondary-icon {
+	position: absolute;
+	left: 154px;
+	top: 18px;
+}
