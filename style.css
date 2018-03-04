@@ -242,6 +242,7 @@ body {
 #hiking_page button {
 	border: none;
 	text-decoration: none;
+	display: inline-block;
 }
 
 #hiking_page #id {

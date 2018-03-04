@@ -127,12 +127,13 @@ body {
 #hiking_page .secondary-icon {
 	display: block;
 	position: absolute;
-	left: 28px;
-	top: 8px;
+	left: 6px;
+	top: 6px;
+	z-index:1;
 }
 
 #hiking_page .top {
-	height: 15px;
+	height: 0px;
 }
 
 #hike_index h1 {
@@ -155,33 +156,35 @@ body {
 	position: absolute;
 	left: 130px;
 	top: 8px;
+	
 }
 
 #hike_index .top {
 	height: 100px;
 }
 
-#hiking_page #nxt_pre_bttns {
-	position:absolute;
-	width: 300px;
-	height: 19%;
-	bottom: 0px;
-	right: 25%;
-    left: 50%;
-	margin-left:-150px;
-	text-align: center;
-	margin-top: 16px;
-}
-
 #hiking_page .logo {
 	width: 75px;
 }
 
+#hiking_page #nxt_pre_bttns {
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0px;
+	right: 50%;
+    left: 50%;
+	margin-left:-50%;
+	text-align: center;
+	margin-top: 16px;
+}
+
 #hiking_page .previous, #hiking_page .next {
+	opacity:0;
 	font-size: 37px;
-	border-radius: 50%;
-	width: 75px;
-	height: 75px;
+	border-radius: 0px;
+	width: 42%;
+	height: 100%;
 }
 
 #hiking_page button {
@@ -190,33 +193,34 @@ body {
 }
 
 /* style images page */
-#img_carousel .previous, #img_carousel .next {
-	font-size: 37px;
-	border-radius: 50%;
-	width: 75px;
-	height: 75px;
-}
-
 #img_carousel #nxt_pre_bttns {
 	position:absolute;
-	width: 600px;
-	height: 17%;
+	width: 100%;
+	height: 100%;
 	bottom: 0px;
-	right:25%;
-    left:50%;
-	margin-left:-300px;
+	right: 50%;
+    left: 50%;
+	margin-left:-50%;
 	text-align: center;
 	margin-top: 16px;
 }
 
+#img_carousel .previous, #img_carousel .next {
+	opacity:0;
+	font-size: 37px;
+	border-radius: 0px;
+	width: 48%;
+	height: 100%;
+}
+
 #img_carousel .top {
-	height: 15px;
+	height: 0px;
 	margin:0 auto;
 }
 
 #img_carousel .logo {
 	display: inline-block;
-	width: 70px;
+	width: 50px;
 }
 
 #img_carousel .logo img {
@@ -225,14 +229,46 @@ body {
 
 #img_carousel .home-icon {
 	position: absolute;
-	left: 24px;
-	top: 18px;
+	left: 8px;
+	top: 10px;
+	z-index:1;
 }
 
 #img_carousel .secondary-icon {
 	position: absolute;
-	left: 24px;
-	top: 120px;
+	left: 8px;
+	top: 75px;
+	z-index:1;
+}
+
+/*wide_win_img_style*/
+
+#hiking_page, #img_carousel {
+	height: 100%;
+	margin: 0;
+}
+
+#hiking_page #templateArea {
+	height: inherit;
+	width: auto;
+}
+
+#hiking_page #slideshow {
+	height: 100%;
+	width: auto;
+	margin:0 auto;
+}
+
+#img_carousel #slideshow {
+	height: 100%;
+	width: auto;
+	margin:0 auto;
+}
+
+#hiking_page img, #img_carousel img {
+	height: 100%;
+	margin:0px auto;
+	display: block;
 }
 
 /* Style about page */
