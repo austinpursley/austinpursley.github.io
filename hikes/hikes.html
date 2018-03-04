@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 	<link href="../style.css" rel="stylesheet">
 	<link href="../wide_win_img_style.css" id="img_style" rel="stylesheet">
+	<link rel="stylesheet" href="../mobile.css" media="screen and (max-device-width: 850px)" />
+	<link rel="stylesheet" href="../mobile_portrait.css" media="screen and (max-device-width: 500px)" />
 	<!-- js libraries -->
 	<script src="../jquery.min.js"></script>
 	<script src="../mustache.js"></script>
@@ -29,7 +31,7 @@
 	       <table id="hike_table">
 	           {{#set}}
 	           <tr>
-	               <td>{{date}}</td>
+	               <td class = "date" >{{date}}</td>
 	               <td id="hiking_link_c">
 	                   <a id={{id}} href={{href}} > {{title1}} </a>
 	                   <!-- <a href="#" id={{id}}> {{title1}} </a> -->

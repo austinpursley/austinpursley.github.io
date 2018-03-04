@@ -1,0 +1,10 @@
+/* Index table settings */
+#project_index th, #project_index td, #hike_index th, #hike_index td {
+	padding: 16px 0px 16px 16px;
+	font-size: 36px;
+	white-space: normal;
+}
+
+td.date {
+	display:none;
+}
