@@ -36,10 +36,6 @@ body {
 	width: 90%;
 }
 
-#project_index a:link {
-	text-decoration: none;
-}
-
 /* Project style */
 
 #project_page {
@@ -87,7 +83,7 @@ body {
 }
 
 #project_index h1, #about h1, #contact h1 {
-	margin: 32px 32px 12px 32px;
+	margin: 32px 32px 12px 16px;
 	font-size: 64px;
 }
 
