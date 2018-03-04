@@ -245,7 +245,7 @@ body {
 }
 
 #hiking_page #id {
-	visibility: hidden;
+	display: none;
 }
 
 /* style images page */
@@ -275,7 +275,7 @@ body {
 }
 
 #img_carousel #id {
-	visibility: hidden;
+	display:none;
 } 
 
 #img_gal .top {

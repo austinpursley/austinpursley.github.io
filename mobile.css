@@ -117,6 +117,22 @@ body {
 
 /* Hikes Style */
 #hiking_page h1 {
+	visibility: hidden;
+}
+
+#hiking_page .home-icon {
+	display: none;
+}
+
+#hiking_page .secondary-icon {
+	display: block;
+	position: absolute;
+	left: 28px;
+	top: 8px;
+}
+
+#hiking_page .top {
+	height: 15px;
 }
 
 #hike_index h1 {
@@ -124,12 +140,31 @@ body {
 	left: 220px;
 	top: 7px;
 	font-size: 48px;
+	visibility: visible;
+}
+
+#hike_index .home-icon {
+	display: block;
+	position: absolute;
+	left: 28px;
+	top: 7px;
+}
+
+#hike_index .secondary-icon {
+	display: block;
+	position: absolute;
+	left: 130px;
+	top: 8px;
+}
+
+#hike_index .top {
+	height: 100px;
 }
 
 #hiking_page #nxt_pre_bttns {
 	position:absolute;
 	width: 300px;
-	height: 10%;
+	height: 19%;
 	bottom: 0px;
 	right: 25%;
     left: 50%;
@@ -138,31 +173,15 @@ body {
 	margin-top: 16px;
 }
 
-#hiking_page .top {
-	height: 100px;
-}
-
 #hiking_page .logo {
 	width: 75px;
 }
 
-#hiking_page .home-icon {
-	position: absolute;
-	left: 28px;
-	top: 7px;
-}
-
-#hiking_page .secondary-icon {
-	position: absolute;
-	left: 130px;
-	top: 8px;
-}
-
 #hiking_page .previous, #hiking_page .next {
-	font-size: 64px;
+	font-size: 37px;
 	border-radius: 50%;
-	width: 120px;
-	height: 120px;
+	width: 75px;
+	height: 75px;
 }
 
 #hiking_page button {
@@ -172,80 +191,48 @@ body {
 
 /* style images page */
 #img_carousel .previous, #img_carousel .next {
-	font-size: 20px;
+	font-size: 37px;
 	border-radius: 50%;
-	width: 40px;
-	height: 40px;
+	width: 75px;
+	height: 75px;
 }
 
-#img_carousel button {
-	border: none;
-	text-decoration: none;
-}
 #img_carousel #nxt_pre_bttns {
 	position:absolute;
-	width: 300px;
-	height: 10%;
+	width: 600px;
+	height: 17%;
 	bottom: 0px;
 	right:25%;
     left:50%;
-	margin-left:-150px;
+	margin-left:-300px;
 	text-align: center;
 	margin-top: 16px;
 }
 
-#img_carousel #id {
-	visibility: hidden;
-} 
-
-#img_gal .top {
-	height: 75px;
-	display: block;
+#img_carousel .top {
+	height: 15px;
 	margin:0 auto;
 }
 
- #img_carousel .top {
-	height: 75px;
-	display: block;
-	margin:0 auto;
- }
-
-#img_gal .logo {
+#img_carousel .logo {
 	display: inline-block;
-	width: 50px;
+	width: 70px;
 }
 
- #img_carousel .logo  {
-	display: inline-block;
-	width: 50px;
- }
-
-#img_gal .logo img, #img_carousel .logo img {
+#img_carousel .logo img {
 	width: 100%;
-}
-
-#img_gal .home-icon {
-	position: absolute;
-	left: 24px;
-	top: 16px;
 }
 
 #img_carousel .home-icon {
 	position: absolute;
 	left: 24px;
-	top: 16px;
-}
-
-#img_gal .secondary-icon {
-	position: absolute;
-	left: 88px;
 	top: 18px;
 }
 
 #img_carousel .secondary-icon {
 	position: absolute;
-	left: 88px;
-	top: 16px;
+	left: 24px;
+	top: 120px;
 }
 
 /* Style about page */

@@ -1,10 +1,17 @@
 /* Hikes Style */
-
 #hike_index h1 {
 	position: absolute;
 	left: 250px;
 	top: 7px;
 	font-size: 64px;
+}
+
+#hiking_page h1 {
+	visibility: visible;
+	font-size: 32px;
+	text-align: center;
+	padding: 40px;
+	margin: 0px;
 }
 
 #hiking_page .top {
@@ -16,15 +23,36 @@
 }
 
 #hiking_page .home-icon {
+	display: block;
 	position: absolute;
 	left: 28px;
 	top: 7px;
 }
 
 #hiking_page .secondary-icon {
+	display: block;
 	position: absolute;
 	left: 140px;
 	top: 8px;
+}
+
+#hiking_page #nxt_pre_bttns {
+	position:absolute;
+	width: 400px;
+	height: 13%;
+	bottom: 0px;
+	right: 25%;
+    left: 50%;
+	margin-left:-200px;
+	text-align: center;
+	margin-top: 16px;
+}
+
+#hiking_page .previous, #hiking_page .next {
+	font-size: 64px;
+	border-radius: 50%;
+	width: 125px;
+	height: 125px;
 }
 
 /* Index table settings */
@@ -36,4 +64,50 @@
 
 td.date {
 	display:none;
+}
+
+/* style images page */
+#img_carousel .previous, #img_carousel .next {
+	font-size: 64px;
+	border-radius: 50%;
+	width: 125px;
+	height: 125px;
+}
+
+#img_carousel #nxt_pre_bttns {
+	position:absolute;
+	width: 600px;
+	height: 13%;
+	bottom: 0px;
+	right:25%;
+    left:50%;
+	margin-left:-300px;
+	text-align: center;
+	margin-top: 16px;
+}
+
+#img_carousel .top {
+	height: 125px;
+	margin:0 auto;
+}
+
+#img_carousel .logo {
+	display: inline-block;
+	width: 100px;
+}
+
+#img_carousel .logo img {
+	width: 100%;
+}
+
+#img_carousel .home-icon {
+	position: absolute;
+	left: 24px;
+	top: 18px;
+}
+
+#img_carousel .secondary-icon {
+	position: absolute;
+	left: 140px;
+	top: 18px;
 }
