@@ -1,6 +1,25 @@
 {
     "set": [
         {
+            "date": "03.13.2018",
+            "title1": "Eagle Rock Loop, AR",
+            "title2": "2018 Eagle Rock Loop",
+            "id": "2018_eagle_rock_loop",
+            "img_array": [
+                "20180313_081047_HDR.jpg",
+                "20180313_082457_HDR_2.jpg",
+                "20180313_092103_HDR.jpg",
+                "20180313_095713_HDR_2.jpg",
+                "20180313_095755_HDR_crop5_2.jpg",
+                "20180313_095812_HDR_crop1_2.jpg",
+                "20180313_111955_HDR_crop2_2.jpg",
+                "20180313_112056_HDR_crop3.jpg",
+                "20180313_124838_HDR_crop1_2.jpg",
+                "20180313_125303_HDR_crop1_2.jpg"
+            ],
+            "href": "2018_eagle_rock_loop.html"
+        },
+        {
             "date": "11.16.2017",
             "title1": "Lost Maples State Natural Area, TX",
             "title2": "2017 Lost Maples",
