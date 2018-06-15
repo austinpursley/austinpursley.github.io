@@ -12,7 +12,7 @@
 
 	<div id="content_wrapper"><div id="content_area">
 	
-	<h1>Image Processing Part 3: Skin Extraction.</h1> 
+	<h1>Image Processing Part 3: Skin Extraction</h1> 
 	<p>
 	The senior design project I have been working on in school is a "smart mirror". 
 	Equipped with a thermal and RGB camera, it's primary purpose is to analyze a user's face and give health feedback. 
@@ -21,11 +21,11 @@
 	Here I go over extracting the user's skin.
 	</p>
 
-	<h2> Skin Extraction </h2>	
+	<h2> Skin </h2>	
 	<p>
 	If you take a picture of someone and want to do some image analysis of their
 	skin lesions, first you have to determine which part of the image is their skin.
-	A big  reqiurment for this process was that it had to be more flexible than
+	A major requirment for this process was that it had to be more flexible than
 	simply providing a fixed range of color values meant to include all human 
 	skin types.
 	</p>
@@ -41,8 +41,8 @@
 	the face is then you have an approximation of what the rest of the skin 
 	looks like.	This works well because of how easy it is to incorporate face 
 	detection and is indifferent to what that face color may actually be.
-	The process can be improved by detecting and removing eyes and mouth before skin 
-	color range is calculated.
+	The process can also be improved by detecting and removing eyes and mouth 
+	before skin color range is calculated.
 	</p>
 	<figure>
 		<img src="images/skin_extract_pic1.png" alt="skin extraction sample results">
@@ -54,7 +54,7 @@
 	This process will still include any background areas or hair that are too similar to the skin
 	color of the user. In addition, accuracy of skin detection depends on the 
 	accuracy of face and face feature detection. For the length of this project 
-	I used OpenCV's haar cascade classifiers for this detection because they 
+	I used OpenCV's Haar Cascade classifiers for this detection because they 
 	were the easiest solution on hand. However they were not all that accurate, 
 	especially for lip and eye detection; if I were to go back I would look at 
 	alternatives such as
