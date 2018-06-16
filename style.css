@@ -40,22 +40,22 @@ body {
 /* Colors for Project pages */
 #project_index{background-color: black;color: white;}
 
-#project_page{background-color: #D1D1D1;color: #02463b;}
+#project_page{background-color: #fafafa;color: #262626;}
 
 #project_index h1, #project_index a:link {
 	color: #40E0D0;
 }
 
 #project_index a:visited {
-	color: #2a8e84;
+	color: #126e64;
 }
 
- #project_page h1 {
-	 color: #632d47;
- }
- 
- #project_page h2, #project_page .date_heading {
-	color: #632d47;
+#project_page h1 {
+	color: #008080;
+}
+
+#project_page h2, #project_page .date_heading {
+	color: #660033;
 }
 
 /* #project_page .date_heading {
@@ -93,7 +93,7 @@ body {
 #project_page p {
 	letter-spacing: 0px;
 	line-height: 30px;
-	margin: 0px 0px 32px 0px;
+	margin: 0px 0px 16px 0px;
 }
 
 #project_page h1{
@@ -108,16 +108,23 @@ body {
 	font-size: 20px;
 }
 
+#project_page h2{
+	display: inline-block;
+	margin-right: 32px;
+	margin-top: 0px;
+	margin-bottom: 12px;
+}
+
 #project_page .date_heading h2{
 	display: inline-block;
 	margin-right: 32px;
 	margin-top: 0px;
-	margin-bottom: 6px;
+	margin-bottom: 12px;
 }
 
 #project_page img {
 	width: 100%;
-	margin: 0px 0px 24px 0px;
+	margin: 12px 0px 24px 0px;
 }
 
 #project_index h1, #about h1, #contact h1 {
