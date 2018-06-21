@@ -38,24 +38,19 @@
 		<img src="images/lesion_localize_simple_diagram.png" alt="flow diagram">
 		<figcaption>Diagram for the process of localizing skin lesions.</figcaption>
 	</figure>
-	
 	<p>
 	The process is inspired by a paper,  <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/9785/97850B/Acne-image-analysis-lesion-localization-and-classification/10.1117/12.2216444.full?SSO=1">"Acne image analysis: lesion localization and classification"</a>.
 	</p>
-	
 	<p>
 	An assumption of this process is that the input image is just skin and has
 	already been extracted. The first step is to convert the image from BGR to <a href="https://en.wikipedia.org/wiki/Lab_color_space#CIELAB">CIE L*a*b*</a> color space. Then three channels are mixed into one. The weights for each channel were found experimentally to work well as a general dark spot detector. 
 	</p>
-	
 	<p>
 	Then a guassian blur followed by adaptive thresholding is applied to the channel. Why adaptive thresholding? Simple thresholding like Otsu's method considers the entire image when choosing a threshold value but does not work particularly well here because of uneven lighting conditions. Adaptive thresholding applies different thresholds for different regions of the image based on the local conditions of that region.
 	</p>
-	
 	<p>
 	We are left with a binary image, white areas being the "blobs" that could be lesions. However some will be too small or clumped together so we apply open and erosion morphological transformations to filter some out. 
 	</p>
-	
 	<p>
 	 Finally we find contours (vectors of points that outline region-of-interest) of the blobs and filter those further by shape. Therfore contours that are still too small or too elongated will be discarded. All the contours left over should then correspond to skin lesions.
 	</p>
@@ -75,7 +70,8 @@
 	<p>
 	This process also works less well when a flash had been used to take the image. The flash reflects off the skin and distort what the skin actually looks like. Ideally images of the skin would be taken in uniform lighting with no flash.
 	</p>
-	<p><a href="https://github.com/austinpursley/ECEN-403-Smart-Mirror-Image-Analysis/tree/master/lesions/lesion-localize-simple">Github</a>, which includes C++ OpenCV code and example output results for several skin images.</p>
+	<p><a href="https://github.com/austinpursley/ECEN-403-Smart-Mirror-Image-Analysis/tree/master/lesions/lesion-localize-simple">Github</a>, which includes C++ OpenCV code and example output results for several skin images.
+	</p>
 	
 	<br>
 	
