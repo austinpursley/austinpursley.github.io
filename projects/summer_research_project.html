@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head> 
+	<title> Drought Stress Image Processing </title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../mobile.css" media="screen and (max-device-width: 850px)" />
+</head>
+
+<body id="project_page">
+
+	<div id="content_wrapper"><div id="content_area">
+	
+	<h1>Plant Drought Stress Image Processing Summer Project</h1> 
+	<p>
+	This work was for a summer research project course I took. It was loosely tied to someone else’s research project of using drones equipped with multiple cameras to analyze plants from above in a way that could be helpful for agriculture. My goal was to gather data on some plants and determine how “thirsty” i.e. drought stressed they were.  
+	</p>
+	
+	<figure>
+		<img src="images/srp_img_capture.jpg" alt="image capture">
+		<figcaption>Image capturing set-up in the greenhouse.</figcaption>
+	</figure>
+	
+	<h2> Overview </h2>
+	<p>
+	I first spent a week capturing images of plants. Half of them were not watered to make them drought-stressed. I had a Raspberry Pi hooked up  with a thermal (IR) and color (VL) camera on a breadboard and I would go to a greenhouse on campus multple times a day to capture the images. A white background was added to make the future image processing easier. I stream-lined the process thorughout the week by improving the Python image capturing script running on the Pi and getting faster at moving plants around.
+	</p>
+	
+	<figure>
+		<img src="images/srp_img_collection.png" alt="plant image collection">
+		<figcaption>Collection of plant images captured.</figcaption>
+	</figure>
+	
+	<p>
+	With the images collected, the "region of interest" (ROIs) of the images could be determined. In this case the ROI was simply the plant and the goal was to determine the set of pixels that corresponded to it. I almost completely automated this by applying simple 
+	<a href="image_processing_thermal.html">threshold and morphological operations </a>
+	(with Python + OpenCV). However, a set of threshold values didn't work for all images so there was a manual element in changing the values in order to get correct ROIs for all the images.
+	</p>
+	
+	<figure>
+		<img src="images/srp_roi.png" alt="region of interest">
+		<figcaption>Examples of finding region of interests.</figcaption>
+	</figure>
+	
+	<p>
+	With the region of interests I could find some image features. For VL the image feature I used was the hue color value. IR images were just a single channel image so the image feature for those was simply "plant surface temperature". Using the ROIs I calculated mean and variance of those properties and plotted them overtime. In short, there wasn't any strong correlation between the image features I calculated and the amount of time it had been since the plant had been watered. Therefore my results were inconclusive.
+	</p>
+	
+	<figure>
+		<img src="images/srp_plots.png" alt="plant image feature plots">
+		<figcaption>Sample plots of image features (see GitHub for more).</figcaption>
+	</figure>
+	
+	<h2> Conclusion </h2>
+	
+	<p>
+	For this project I got to collect all the images myself and then go on to anlayze those images to extract relevant features. It was an interesting hands-on look at the first few stages of a full data-analysis project. I think I especially got a lesson of how much care and thought has to go into creating a high-quality dataset for analysis. Altough there were plans to go on to applying machine learning, it was discouraged by the inconclusive result.
+	</p>
+	
+	<p>The <a href="https://github.com/austinpursley/Summer-Research-Plant-Drought-Stress-Image-Processing">Github</a> includes all the data, code, and a report with more details.
+	</p>
+	
+	<br>
+	
+	</div></div>
+	
+</body>
+
+
+
+</html>
