@@ -24,7 +24,7 @@
 	
 	<h2> Overview </h2>
 	<p>
-	I first spent a week capturing images of plants. Half of them were not watered to make them drought-stressed. I had a Raspberry Pi hooked up  with a thermal (IR) and color (VL) camera on a breadboard and I would go to a greenhouse on campus multple times a day to capture the images. A white background was added to make the future image processing easier. I stream-lined the process thorughout the week by improving the Python image capturing script running on the Pi and getting faster at moving plants around.
+	I first spent a week capturing images of plants, half of which were not watered to make them drought-stressed. I had a Raspberry Pi hooked up  with a thermal (IR) and color (VL) camera on a breadboard and would go to a greenhouse on campus multple times a day to capture the images. I also used a white background to make the future image processing easier. I stream-lined the process throughout the week by improving the Python image capturing script running on the Pi and getting faster at moving plants around.
 	</p>
 	
 	<figure>
@@ -44,7 +44,7 @@
 	</figure>
 	
 	<p>
-	With the region of interests I could find some image features. For VL the image feature I used was the hue color value. IR images were just a single channel image so the image feature for those was simply "plant surface temperature". Using the ROIs I calculated mean and variance of those properties and plotted them overtime. In short, there wasn't any strong correlation between the image features I calculated and the amount of time it had been since the plant had been watered. Therefore my results were inconclusive.
+	With the ROIs I could find some image features. For VL the image feature I used was the hue color value. IR images was just "plant surface temperature". Using the ROIs I calculated mean and variance of those properties and plotted them overtime. In short, there wasn't any strong correlation between the image features I calculated and the amount of time it had been since the plant had been watered. Therefore the results were inconclusive.
 	</p>
 	
 	<figure>
@@ -55,7 +55,7 @@
 	<h2> Conclusion </h2>
 	
 	<p>
-	For this project I collected images myself and then wemt on to anlayze those images to extract relevant features. It was an interesting hands-on look at the first few stages of a full data-analysis project. I think I especially learned a lesson of in how much care and thought has to go into creating a high-quality dataset. It was a shame that altough there were plans to go on to applying machine learning, it was discouraged by the inconclusive results.
+	For this project I collected images myself and then anlayzed those images to extract relevant features. It was an interesting hands-on look at the first few stages of a full data-analysis project. I think I especially learned a lesson in how much care and thought has to go into creating a high-quality dataset. It was a shame that altough there were plans to go on to applying machine learning, it was discouraged by the inconclusive results.
 	</p>
 	
 	<p>The <a href="https://github.com/austinpursley/Summer-Research-Plant-Drought-Stress-Image-Processing">Github</a> includes all the data, code, and a report with more details.
