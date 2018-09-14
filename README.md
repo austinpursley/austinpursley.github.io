@@ -1,5 +1,5 @@
 # austinpursley.github.io
-www.austinpursley.com  
+
 This is my personal website, its three noteworthy sections are: 
 a page for technical projects,
 a page for hiking pictures, 
