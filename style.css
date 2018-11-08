@@ -401,14 +401,14 @@ body {
 	text-decoration: none;
 }
 
-#squawk_index{background-color: white;color: black;}
+#squawk_index{background-color: black;color: black;}
 
 #squawk_index h1 {
-	color: black;
+	color: red;
 }
 
 #squawk_index a:link {
-	color: red;
+	color: #66ccff;
 }
 
 #squawk_index a:visited {
