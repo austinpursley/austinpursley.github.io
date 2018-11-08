@@ -16,7 +16,7 @@ body {
 }
 
 #index img {
-	width: 15%;
+	width: 13%;
 	margin: 5px;
 }
 
@@ -393,4 +393,33 @@ body {
 
 #bio_index li{
 	margin: 4px;
+}
+
+/* squawk index */
+
+#squawk_index a:link {
+	text-decoration: none;
+}
+
+#squawk_index{background-color: white;color: black;}
+
+#squawk_index h1 {
+	color: black;
+}
+
+#squawk_index a:link {
+	color: red;
+}
+
+#squawk_index a:visited {
+	color: maroon;
+}
+
+#squawk_index td, #squawk_index th {
+	padding: 4px 8px 4px 10px;
+}
+
+#squawk_index h1 {
+	padding: 8px 4px 0px 10px;
+	margin: 8px 0px 12px 0px;
 }
