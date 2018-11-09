@@ -115,7 +115,8 @@ body {
 	white-space: nowrap;
 }
 
-/* Hikes Style */
+/* HIKING */
+/* hiking pages */
 #hiking_page h1 {
 	visibility: hidden;
 }
@@ -135,7 +136,7 @@ body {
 #hiking_page .top {
 	height: 0px;
 }
-
+/* hiking index */
 #hike_index h1 {
 	position: absolute;
 	left: 220px;
@@ -192,7 +193,7 @@ body {
 	text-decoration: none;
 }
 
-/* style images page */
+/* images carousel style */
 #img_carousel #nxt_pre_bttns {
 	position:absolute;
 	width: 100%;
@@ -241,6 +242,7 @@ body {
 	z-index:1;
 }
 
+/* images gallery style */
 #img_gal .top {
 	height: 100px;
 	margin:0 auto;
@@ -312,7 +314,7 @@ top:10px;
 transform:rotate(-45deg);
 }
 
-/*wide_win_img_style*/
+/*wide_win_img_style* (both hiking and image pages)*/
 
 #hiking_page, #img_carousel {
 	height: 100%;

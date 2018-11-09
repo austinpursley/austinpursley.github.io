@@ -90,32 +90,76 @@ function contain_img() {
 	var thresh = 1.0; 	
 	//tolerance for header and button heights
 	var img_h_tol = img_h + 150; 
+	
+	//get width of screen (determine mobile or not)
+	var device_ar = window.devicePixelRatio || 1;
+	//var device_w = screen.width * device_ar;
+	var device_w = screen.width;
 	//css settings for img currently in use
 	var img_style = document.getElementById("img_style").href.split('/').pop();
-	//set style based on img and window size
-	if (win_ar > thresh) { // wide window
-		if (img_ar < thresh) { //narrow image
-			document.getElementById("img_style").href = "../wide_win_img_style.css";
+	if (device_w > 800) {
+		//set style based on img and window size
+		if (win_ar > thresh) { // wide window
+			if (img_ar < thresh) { //narrow image
+				document.getElementById("img_style").href = "../wide_win_img_style.css";
+			}
+			else { //wide image
+				if ((img_w > win_w) && (img_style == "wide_win_img_style.css")) {
+					document.getElementById("img_style").href = "../narrow_win_img_style.css";
+				}
+				else if ( img_h_tol > win_h && (img_style == "narrow_win_img_style.css")) {
+					document.getElementById("img_style").href = "../wide_win_img_style.css";
+				}
+			}
 		}
-		else { //wide image
-			if ((img_w > win_w) && (img_style == "wide_win_img_style.css")) {
+		else { // narrow window
+			if (img_ar > thresh) { //wide image
 				document.getElementById("img_style").href = "../narrow_win_img_style.css";
 			}
-			else if ( img_h_tol > win_h && (img_style == "narrow_win_img_style.css")) {
-				document.getElementById("img_style").href = "../wide_win_img_style.css";
+			else { //narrow image
+				if ( img_w > win_w && (img_style == "wide_win_img_style.css")) {
+					document.getElementById("img_style").href = "../narrow_win_img_style.css";
+				}
+				else if ((img_h_tol > win_h) && (img_style == "narrow_win_img_style.css")) {
+						document.getElementById("img_style").href = "../wide_win_img_style.css";
+				}
 			}
 		}
 	}
-	else { // narrow window
-		if (img_ar > thresh) { //wide image
-			document.getElementById("img_style").href = "../narrow_win_img_style.css";
-		}
-		else { //narrow image
-			if ( img_w > win_w && (img_style == "wide_win_img_style.css")) {
-				document.getElementById("img_style").href = "../narrow_win_img_style.css";
+	
+	else if (device_w <= 800) {
+		console.log(0)
+		//set style based on img and window size
+		if (win_ar > thresh) { // wide window
+			if (img_ar < thresh) { //narrow image
+				document.getElementById("img_style").href = "../mobile.css";
+				console.log(1)
 			}
-			else if ((img_h_tol > win_h) && (img_style == "narrow_win_img_style.css")) {
-					document.getElementById("img_style").href = "../wide_win_img_style.css";
+			else { //wide image
+				if ((img_w > win_w) && (img_style == "mobile.css")) {
+					document.getElementById("img_style").href = "../mobile_portrait.css";
+					console.log(2)
+				}
+				else if ( img_h_tol > win_h && (img_style == "mobile_portrait.css")) {
+					document.getElementById("img_style").href = "../mobile.css";
+					console.log(3)
+				}
+			}
+		}
+		else { // narrow window
+			if (img_ar > thresh) { //wide image
+				document.getElementById("img_style").href = "../mobile_portrait.css";
+				console.log(4)
+			}
+			else { //narrow image
+				if ( img_w > win_w && (img_style == "mobile.css")) {
+					document.getElementById("img_style").href = "../mobile_portrait.css";
+					console.log(5)
+				}
+				else if ((img_h_tol > win_h) && (img_style == "mobile_portrait.css")) {
+						document.getElementById("img_style").href = "../mobile.css";
+						console.log(6)
+				}
 			}
 		}
 	}
