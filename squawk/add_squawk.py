@@ -1,6 +1,5 @@
 import csv
-import importlib
-importlib.import_module("update")
+from update import update
 from datetime import datetime
 
 with open('data.csv','a', newline='') as data:
@@ -24,3 +23,5 @@ with open('data.csv', 'r', newline='') as data:
 with open('data.csv', 'w', newline='') as data:
     writer = csv.writer(data, quoting=csv.QUOTE_ALL)
     writer.writerows(sortdata)
+
+update.update()

@@ -53,7 +53,7 @@ def update():
     </html>
     """
     #update squawk index
-    with open('data.csv', "r+") as data:
+    with open('data.csv', "r+", newline='') as data:
         reader = csv.reader(data)
         index_mid = ""
         for row in reversed(list(reader)):
@@ -75,13 +75,15 @@ def update():
         Html_file.close()
 
     #update squawk pages
-    with open('data.csv', "r+") as data:
+    with open('data.csv', "r+", newline='') as data:
         reader = csv.reader(data)
         for row in reader:
             # write html files for each squawk page according to json
             id = row[2]
             file_name = id + '.html'
             text = row[0]
+            text = text.replace("\\n", "")
+            print(text)
             date = row[1]
             datetime_obj = datetime.strptime(date, '%Y%m%d%H%M%S')
             date = datetime_obj.strftime('%Y-%m-%d %H:%M:%S')
