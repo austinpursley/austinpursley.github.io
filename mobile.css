@@ -350,6 +350,10 @@ transform:rotate(-45deg);
 	margin: 8px 0px 12px 0px;
 }
 
+#squawk_index a{
+	font-size: 64px;
+}
+
 #squawk_index .home-icon {
 	display: block;
 	position: absolute;
