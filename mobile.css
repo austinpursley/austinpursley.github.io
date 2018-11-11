@@ -373,6 +373,11 @@ transform:rotate(-45deg);
 	height: 80px;
 }
 
+/* Squawk page */
+#squawk_page p {
+	font-size: 32px;
+}
+
 /* Style about page */
 
 #about p {
