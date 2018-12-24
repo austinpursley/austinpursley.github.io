@@ -24,7 +24,7 @@
 	
 	<h2> Overview </h2>
 	<p>
-	My first objective was to caputre image data of some plants, half of which would be drought-stressed. For this task I used a Raspberry Pi hooked up with a thermal (IR) and color (VL) camera, along with a white background to make future image processing easier. I visited the plants at a greenhouse multple times a day to capture the images. Throughout the week I streamlined the process by improving the Raspberry Pi's Python script for capturing images.
+	My first objective was to caputre image data of some plants, half of which would be drought-stressed. For this task I used a Raspberry Pi hooked up with thermal (IR) and color (VL) cameras. I visited the plants at a greenhouse multple times a day to capture the images. Throughout the week I streamlined the process by improving the Raspberry Pi's Python script for capturing images.
 	</p>
 	
 	<figure>
@@ -33,7 +33,7 @@
 	</figure>
 	
 	<p>
-	With the images collected, the "region of interest" (ROIs) of the images could be determined. In this case the ROI was simply the plant and the goal was to determine the set of pixels that corresponded to it. I almost completely automated this by applying simple 
+	With the plant images collected, the "region of interest" (ROIs) could be determined. In this case the ROI was simply the plant and the challenge was to determine the set of pixels that corresponded to it. I almost completely automated this by applying simple 
 	<a href="image_processing_thermal.html">threshold and morphological operations </a>
 	(with Python + OpenCV). However, a set of threshold values didn't work for all images so there was a manual element in changing the values in order to get correct ROIs for all the images.
 	</p>
