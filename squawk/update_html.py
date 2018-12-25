@@ -16,17 +16,18 @@ def update_html():
 
     <body id="squawk_index">
 
-        <!-- <div class="top"> -->
-               <!-- <h1>squawks</h1> -->
-        <!-- </div> -->
+        <div class="top">
+               <a href="../index.html"><img src="../squawk_logo.png"></img></a>
+        </div>
 
         <table>
     """
 
     html_index_mid_temp = """
         <tr>
-            <td>
-                <a href="squawk_page">date</a>
+			<td>
+			    <time><a href="squawk_page">date</a></time>
+                <p>sqwk_text</p>
             </td>
         </tr>
     """
@@ -60,13 +61,17 @@ def update_html():
 
             id = row[2]
             file_name = id + '.html'
+            text = row[0]
+            text = text.replace("\\n", "")
+            print(text)
             date = row[1]
             datetime_obj = datetime.strptime(date, '%Y%m%d%H%M%S')
-            index_date_format = datetime.strftime(datetime_obj, '%m.%d.%Y %I:%M %p')
+            index_date_format = datetime.strftime(datetime_obj, '%Y.%m.%d %I:%M %p')
             print(index_date_format)
 
             index_mid_part = html_index_mid_temp.replace("squawk_page", file_name)
             index_mid_part = index_mid_part.replace("date", index_date_format)
+            index_mid_part = index_mid_part.replace("sqwk_text", text)
             index_mid += index_mid_part
 
         html_str = html_index_start + index_mid + html_index_end

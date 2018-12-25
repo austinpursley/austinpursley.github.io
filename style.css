@@ -400,7 +400,7 @@ body {
 }
 
 /* #squawk_index{background-color: #ffcccc;color: maroon;} */
-#squawk_index{background-color: white;color: black;} 
+#squawk_index{background-color: #0d0d0d;color: #e6e6e6;} 
 
 #squawk_index h1 {
 	color: #330000;
@@ -408,20 +408,32 @@ body {
 
 #squawk_index a:link {
 	/* color: #004d80; */
-	color: #b30000;
-	font-size: 24px;
+	color: #ff4d4d;
+	font-size: 12px;
 }
 
 #squawk_index a:visited {
-	color: maroon;
+	color: #ff4d4d;
+}
+
+#squawk_index p {
+	margin: 8px 0px 48px 0px;
+	font-size: 16px;
 }
 
 #squawk_index table {
-	margin: 16px 0px 0px 8px;
+	background-color: #262626;
+	margin: 16px 0px 0px 48px;
+	border-collapse: collapse;
+	width: 500px;
+}
+
+#squawk_index tr {
+	border: 1.5px solid #737373;
 }
 
 #squawk_index td, #squawk_index th {
-	padding: 6px 8px 6px 10px;
+	padding: 6px 8px 6px 16px;
 }
 
 #squawk_index h1 {
@@ -429,15 +441,19 @@ body {
 	margin: 8px 0px 12px 0px;
 }
 
+#squawk_index img {
+	width: 75px;
+	margin: 0px 0px 0px 48px;
+}
+
 /* squawk page */
 #squawk_page time {
 	display:none;
 }
 
-#squawk_page{background-color: white;color: #004d80;}
+#squawk_page{background-color: #262626;color: #e6e6e6;}
 
 #squawk_page p {
-	color: black;
 	font-size: 1.25em;
 	line-height: 1.25em;
 	margin: 16px 0px 0px 12px;

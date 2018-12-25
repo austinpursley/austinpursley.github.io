@@ -28,5 +28,7 @@ if ask_if_new == 'y':
 ##    with open('data.csv', 'w', newline='') as data:
 ##        writer = csv.writer(data, quoting=csv.QUOTE_ALL)
 ##        writer.writerows(sortdata)
+else:
+	print('not adding new tweet')
 
 update_html()
