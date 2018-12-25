@@ -19,7 +19,7 @@
 	Equipped with a thermal and RGB camera, its primary purpose is to analyze a user's face and give health feedback. 
 	The subsystem I was responsible for was image processing and
 	my goal was to analyze the images to obtain health metrics.
-	Here I go over analyzing skin images to locate lesions.
+	On this page I go over analyzing skin images to locate lesions.
 	</p>
 	
 	<figure>
@@ -43,16 +43,16 @@
 	</p>
 	<p>
 	An assumption of this process is that the input image is just skin and has
-	already been extracted. The first step is to convert the image from BGR to <a href="https://en.wikipedia.org/wiki/Lab_color_space#CIELAB">CIE L*a*b*</a> color space. Then three channels are mixed into one. The weights for each channel were found experimentally to work well as a general dark spot detector. 
+	already been extracted. The first step is to convert the image from BGR to <a href="https://en.wikipedia.org/wiki/Lab_color_space#CIELAB">CIE L*a*b*</a> color space. Then three channels are mixed into one using weights that were found experimentally.
 	</p>
 	<p>
-	Then a guassian blur followed by adaptive thresholding is applied to the channel. Why adaptive thresholding? Simple thresholding like Otsu's method considers the entire image when choosing a threshold value but does not work particularly well here because of uneven lighting conditions. Adaptive thresholding applies different thresholds for different regions of the image based on the local conditions of that region.
+	A guassian blur and adaptive thresholding is then applied. Why adaptive thresholding? Thresholding like Otsu's method considers the entire image when choosing a threshold value but does not work particularly well here because of uneven lighting conditions. Adaptive thresholding applies different thresholds for different regions of the image based on the local conditions of that region.
 	</p>
 	<p>
-	We are left with a binary image, white areas being the "blobs" that could be lesions. However some will be too small or clumped together so we apply open and erosion morphological transformations to filter some out. 
+	We are left with a binary image, white areas being the "blobs" that could be lesions. However some will be too small or clumped together so we apply open and erosion morphological transformations to filter them out. 
 	</p>
 	<p>
-	 Finally we find contours (vectors of points that outline region-of-interest) of the blobs and filter those further by shape. Therfore contours that are still too small or too elongated will be discarded. All the contours left over should then correspond to skin lesions.
+	 Finally we find contours (vectors of points that outline region-of-interest) of the blobs and filter those further by discarding those that are still too small or too elongated. All the contours left over should then correspond to skin lesions.
 	</p>
 	
 	<h2> Parameters </h2>
@@ -60,15 +60,15 @@
 	There are parameters that should be adjusted depending on how large the image is and how large the lesions are. These are: Gaussian filter k-size, adaptive threshold block size, size of the morphological elements, and the minimum and maximum contour area. These parameters go up if the image is large or if the lesions take up a large area of the image. You could apply several rounds of this process to detect lesions of various sizes.
 	</p>
 	<p>
-	The weights of the channel mixing are parameters that can affect what kinds of blobs are detected. You can experiment with other color spaces and combinations of channels to detect different kinds of lesions. For example the Cr channel of the YCrCb color space does a pretty good job of detecting red lesions. I will probably be doing a whole post on experiments with this.
+	The weights of the channel mixing are parameters that can affect what kinds of blobs are detected. You can experiment with other color spaces and combinations of channels to detect different kinds of lesions. For example the Cr channel of the YCrCb color space does a pretty good job of detecting red lesions.
 	</p>
 	
 	<h2> Corner Cases</h2>
 	<p>
-	This particular case is suppose to catch general skin lesions that are darker than the surrounding skin. However there are cases where the skin lesions are lighter than the surrounding skin, particularily for those who have darker skin. Therefore this process will not work for all skin and lesion types.
+	This particular case is suppose to catch skin lesions that are darker than the surrounding skin. However there are cases where the skin lesions are lighter than the surrounding skin, particularily for those who have darker skin. Therefore this process will not work for all skin and lesion types.
 	</p>
 	<p>
-	This process also works less well when a flash had been used to take the image. The flash reflects off the skin and distort what the skin actually looks like. Ideally images of the skin would be taken in uniform lighting with no flash.
+	This process also works less well when a flash had been used when taking the image. The flash reflects off the skin and distort what the skin actually looks like. Ideally images of the skin would be taken in uniform lighting with no flash.
 	</p>
 	<p><a href="https://github.com/austinpursley/ECEN-403-Smart-Mirror-Image-Analysis/tree/master/lesions/lesion-localize-simple">Github</a>, which includes C++ OpenCV code and example output results for several skin images.
 	</p>
