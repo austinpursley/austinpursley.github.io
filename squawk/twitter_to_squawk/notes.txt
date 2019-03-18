@@ -1,0 +1,4 @@
+On Twitter, can download archive for your account.
+
+I used the provided "tweets.csv" file (needs some editing: timestamps, /n characters, ect.)
+and python script to add rows to the current "squawks" csv data file.

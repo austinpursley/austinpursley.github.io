@@ -62,12 +62,10 @@ def update_html():
             id = row[2]
             file_name = id + '.html'
             text = row[0]
-            text = text.replace("\\n", "")
-            print(text)
+            text = text.replace("\\n", "<br>")
             date = row[1]
-            datetime_obj = datetime.strptime(date, '%Y%m%d%H%M%S')
+            datetime_obj = datetime.strptime(date, '%Y%m%d%H%M')
             index_date_format = datetime.strftime(datetime_obj, '%Y.%m.%d %I:%M %p')
-            print(index_date_format)
 
             index_mid_part = html_index_mid_temp.replace("squawk_page", file_name)
             index_mid_part = index_mid_part.replace("date", index_date_format)
@@ -87,11 +85,10 @@ def update_html():
             id = row[2]
             file_name = id + '.html'
             text = row[0]
-            text = text.replace("\\n", "")
-            print(text)
+            text = text.replace("\\n", "<br>")
             date = row[1]
-            datetime_obj = datetime.strptime(date, '%Y%m%d%H%M%S')
-            date = datetime_obj.strftime('%Y-%m-%d %H:%M:%S')
+            datetime_obj = datetime.strptime(date, '%Y%m%d%H%M')
+            date = datetime_obj.strftime('%Y-%m-%d %H:%M')
             html_str = html_page_temp.replace("sqwk_id", id)
             html_str = html_str.replace("sqwk_text",text)
             html_str = html_str.replace("sqwk_date", date)
