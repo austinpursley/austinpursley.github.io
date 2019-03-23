@@ -39,8 +39,7 @@
 	<a href="http://www.robots.ox.ac.uk/~vgg/publications/2011/Mittal11/mittal11.pdf">idea</a>	
 	behind the skin extraction process here is that if you know where 
 	the face is then you have an approximation of what the rest of the skin 
-	looks like.	This works well because of how easy it is to incorporate face 
-	detection and can be used for all face colors.
+	looks like.	This works well because face detection is robust and easy to implement and works for all skin colors.
 	The process can also be improved by detecting and removing eyes and mouth 
 	before the skin color range is calculated.
 	</p>
@@ -55,7 +54,7 @@
 	color of the user. In addition, accuracy of skin detection depends on the 
 	accuracy of face and face feature detection. For the length of this project 
 	I used OpenCV's Haar Cascade classifiers for this detection however they were not all that accurate, 
-	especially for mouth and eye detection. if I were to go back I would look at 
+	especially for mouth and eye detection. If I were to go back I would look at 
 	alternatives such as
 	<a href="https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/">
 	facial landmarks with dlib</a>.
