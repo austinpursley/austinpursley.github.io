@@ -14,7 +14,7 @@
 	
 	<h1>Word Mix Creativity Trick in Python</h1> 
 	<p>
-	 Unrelated ideas can meet and produce better ideas. I think I got that concept from <a href="https://www.ted.com/talks/shimpei_takahashi_play_this_game_to_come_up_with_original_ideas?referrer=playlist-simple_ways_to_spark_your_creativity#t-123642">this TED talk</a> a long time ago. It must of stuck with me because I was compelled to throw together a Python script using that same creative technique.
+	 Unrelated ideas can meet and produce better ideas. I think I got that concept from <a href="https://www.ted.com/talks/shimpei_takahashi_play_this_game_to_come_up_with_original_ideas?referrer=playlist-simple_ways_to_spark_your_creativity#t-123642">this TED talk</a> a long time ago. It must of stuck with me because I was compelled to throw together a Python script to help with that same creative technique.
 	</p>
 	
 	<!-- <figure> -->
@@ -24,23 +24,19 @@
 	
 	<h2> Overview </h2>
 	<p>
-    It starts with a list of words the program can sample from. I defined my own list with a mix of buzzwords and terms related to engineering and science. The program will ask "How many random subjects?", meaning how many words from your list do you want to brainstorm with (I found anything over 3 to be distracting). Then it will output the set number of words, an oppurtunity to review the words, and finally let you start typing away your ideas. When trying to be creative, it can be helpful to first write whatever comes to you and worry about if it's bad later. I wanted to make it more fun by adding a time limit but that proved more difficult than it was worth. The ideas entered are written to a text document, an example of which you can see below.
-    <code style="white-space: pre">
-    Date: 2018-09-12
-    Subjects: VL camera, armadillo armour, Foot pedal, 
-    17:27:03 A foot pedal for proffesional photographers that 
-            can tun settings with. Or maybe like an under shoe 
-            sensor where they can tap in a certain way. all 
-            hands free
-    17:27:43 You put a go-pro in some transparent armoured 
-            ball and let it go off a mountain side or in the 
-            ocean and hope someone finds it or whatever
-    17:28:25 A foot pedal for a TV. foot remote
-    17:28:52 foot pedal for gaming, just for extra fun
-    17:29:13 x-ray of armadillo armour
-    17:30:18 A smell camera? e-nose array? pugnant photography?
-    </code>
+    It starts with a list of words the program can sample from. I defined my own list with a mix of buzzwords and terms related to engineering and science. The program will ask "How many random subjects?", meaning how many words from your list do you want to brainstorm with (I found anything over 3 to be distracting). Then it will output the set number of words, an oppurtunity to review the words, and finally let you start typing away your ideas. I tried to implement a time limit to encourage writing whatever comes to mind and worrying about bad ideas later, but I wasn't able to get it working like I wanted without ditching the raw_input function. <br>The ideas entered are written to a text document, an example of mine you can see below.
     </p>
+    <code>
+    Date: 2018-09-12<br>
+    Subjects: VL camera, armadillo armour, Foot pedal, <br>
+    17:27:03 A foot pedal for proffesional photographers that can tun settings with. Or maybe like an under shoe sensor where they can tap in a certain way. all hands free<br>
+    17:27:43 You put a go-pro in some transparent armoured  ball and let it go off a mountain side or in the ocean and hope someone finds it or whatever<br>
+    17:28:25 A foot pedal for a TV. foot remote<br>
+    17:28:52 foot pedal for gaming, just for extra fun<br>
+    17:29:13 x-ray of armadillo armour<br>
+    17:30:18 A smell camera? e-nose array? pugnant photography?<br>
+    <br>
+    </code>
     <p> I couldn't tell you if this is actually useful or if it's just another ineffective way to <a href="https://www.youtube.com/watch?v=9C_HReR_McQ">force creativity</a>. But it's kinda fun.</p>
     <p> See the <a href="https://github.com/austinpursley/brainstorm_tool">GitHub</a> to try it out </p>
 </body>
