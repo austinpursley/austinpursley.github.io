@@ -78,12 +78,14 @@ def update_html():
         Html_file.close()
 
     #update squawk pages
+    pages = []
     with open('data.csv', "r+", newline='') as data:
         reader = csv.reader(data)
         for row in reader:
             # write html files for each squawk page according to json
             id = row[2]
             file_name = id + '.html'
+            pages.append(file_name)
             text = row[0]
             text = text.replace("\\n", "<br>")
             date = row[1]
@@ -95,3 +97,9 @@ def update_html():
             Html_file = open(file_name, "w")
             Html_file.write(html_str)
             Html_file.close()
+            
+    files = os.listdir(os.curdir)
+    for f in files:
+        if f[:7] == 'squawk_':
+            if f not in pages:
+                os.remove(f)
