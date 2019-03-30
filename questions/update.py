@@ -5,6 +5,6 @@ ask_if_new = input("add new question? enter y for yes ")
 if ask_if_new == 'y':
     update_data()
 else:
-    print('not adding new tweet')
+    print('not adding new question')
 
 update_html()

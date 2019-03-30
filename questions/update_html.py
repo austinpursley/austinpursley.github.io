@@ -48,12 +48,12 @@ def update_html():
             <title> q_id </title>
             <link rel="stylesheet" href="../style.css">
             <link rel="stylesheet" href="../mobile.css" media="screen and (max-device-width: 800px)" />
-            <time>question_date</time>
         </head>
         <body id="question_page">
             <div id="question">
-                <p>question_text</p>
+                <h1>question_text</h1>
             </div>
+            <time>question_date</time>
             <div id="answer">
             </div>
         </body>
