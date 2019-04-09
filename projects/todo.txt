@@ -1,0 +1,3 @@
+detailed post on raspberry pi image capturing script
+
+add diagram to summer research project of cameras + raspberry Pis
