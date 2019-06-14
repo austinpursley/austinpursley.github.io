@@ -14,7 +14,7 @@
 	
 	<h1>Plant Drought Stress Image Processing Summer Project</h1> 
 	<p>
-	Over the summer I did some work with another's research project that involved drones equipped with multiple cameras to analyze plants for agriculture. My goal was to gather data on some plants and determine how “thirsty” i.e. drought stressed they were with image processing.  
+	Over the summer I did some work with a research project exploring the use of drones equipped with cameras to analyze plants for agriculture. Altough I didn't get to play with drones, I did do some data collection and image processing. My goal was to use images of plants to determine if they were “thirsty” i.e. drought stressed.
 	</p>
 	
 	<figure>
@@ -24,7 +24,7 @@
 	
 	<h2> Overview </h2>
 	<p>
-	My first objective was to capture image data of some plants, half of which would be drought-stressed. For this task I used a Raspberry Pi hooked up with thermal (IR) and color (VL) cameras. I visited the plants at a greenhouse multple times a day to capture the images. Throughout the week I streamlined the process by improving the Raspberry Pi's Python script for capturing images.
+	The first thing I had to do was gather some image data of plants, half of which would be drought-stressed. For this task I was given a Raspberry Pi with thermal (IR) and color (VL) cameras. <a href="images/pi_and_cameras.jpg">This setup<a> was used as a prototype for something small and portable that could be attached to a drone. I visited the plants at a greenhouse multple times a day to capture the images. Throughout the week I developed and improved a <a href="https://github.com/austinpursley/Summer-Research-Plant-Drought-Stress-Image-Processing/blob/master/capture_imgs/capture_imgs.py">Python script</a> for streamlining the image capturing with the Raspberry Pi. A white background was placed behind the plants to help the future image processing.
 	</p>
 	
 	<figure>
@@ -33,14 +33,12 @@
 	</figure>
 	
 	<p>
-	With the plant images collected, the "region of interest" (ROIs) could be determined. In this case the ROI was simply the plant and the challenge was to determine the set of pixels that corresponded to it. I almost completely automated this by applying simple 
-	<a href="image_processing_thermal.html">threshold and morphological operations </a>
-	(with Python + OpenCV). However, a set of threshold values didn't work for all images so there was a manual element in changing the values in order to get correct ROIs for all the images.
+	With the plant images collected, the "region of interest" (ROIs) could be determined. In this case the ROI was simply the plant and the challenge was to determine the set of pixels that corresponded to it. Using a <a href="image_processing_thermal.html">familiar technique</a>, I almost completely automated this by applying simple threshold and morphological operations (with Python + OpenCV). However, a set of threshold values didn't work for all images so there was a manual element in changing the values in order to get correct ROIs for all the images.
 	</p>
 	
 	<figure>
 		<img src="images/srp_roi.png" alt="region of interest">
-		<figcaption>Examples of finding region of interests.</figcaption>
+		<figcaption>Examples of finding ROIs.</figcaption>
 	</figure>
 	
 	<p>
@@ -55,7 +53,7 @@
 	<h2> Conclusion </h2>
 	
 	<p>
-	This was an interesting project where I had to do all the data collection and analysis myself. I think I especially learned a lesson in how much care and thought has to go into creating a high-quality dataset.
+	Altough not very advanced, this was a fun project where I had to do all the data collection and analysis myself. That meant I had to consider the quality of the data I was collecting and how to make it good for processing. Presenting the data/results was also a challenge and I found Python's <a href="https://matplotlib.org/">matplotlib</a> to be a great tool for making neat plots and figures.
 	</p>
 	
 	<p>The <a href="https://github.com/austinpursley/Summer-Research-Plant-Drought-Stress-Image-Processing">Github</a> includes all the data, code, and a report with more details.
