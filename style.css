@@ -92,7 +92,7 @@ body {
 #project_page p {
 	letter-spacing: 0px;
 	line-height: 30px;
-	margin: 0px 0px 16px 0px;
+	margin: 6px 0px 16px 0px;
 }
 
 #project_page h1{
@@ -111,14 +111,17 @@ body {
 	display: inline-block;
 	margin-right: 32px;
 	margin-top: 0px;
-	margin-bottom: 12px;
+	margin-bottom: 6px;
 }
 
-#project_page .date_heading h2{
-	display: inline-block;
+#project_page .date_heading h1{
 	margin-right: 32px;
 	margin-top: 0px;
 	margin-bottom: 12px;
+}
+
+project_page .date_heading {
+	margin-bottom: 32px;
 }
 
 #project_page img {
