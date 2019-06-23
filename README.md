@@ -1,5 +1,5 @@
 # austinpursley.github.io
-(currently offline / under construction)
+
 This is my personal website. Its three noteworthy sections are: 
 a page for technical projects,
 a page for hiking pictures, 

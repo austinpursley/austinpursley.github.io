@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+<head> 
+	<title> Skin Extraction Image Processing </title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../mobile.css" media="screen and (max-device-width: 850px)" />
+</head>
+
+<body id="project_page">
+
+	<div id="content_wrapper"><div id="content_area">
+	
+	<div class="date_heading">
+	<h1>Image Processing Part 3: Skin Extraction</h1>
+	4.28.2018
+	</div>
+	
+	<p>
+	The senior design project I have been working on in school is a "smart mirror". 
+	Equipped with a thermal and RGB camera, its primary purpose is to analyze a user's face and give health feedback. 
+	The subsystem I was responsible for was image processing and
+	my goal was to analyze user images to obtain health metrics.
+	In this post I go over extracting the user's skin.
+	</p>
+
+	<h2> Skin </h2>	
+	<p>
+	If you take a picture of someone and want to do some image analysis of their
+	skin lesions, first you have to determine which part of the image is their skin.
+	A major requirment for this process is that it has to be more flexible than
+	simply providing a fixed range of color values meant to include all human 
+	skin types.
+	</p>
+	<h2> Process </h2>
+	<figure>
+		<img src="images/skin_extract_diagram.png" alt="skin extraction diagram">
+		<figcaption>Skin extraction process steps.</figcaption>
+	</figure>
+	<p>
+	The
+	<a href="http://www.robots.ox.ac.uk/~vgg/publications/2011/Mittal11/mittal11.pdf">idea</a>	
+	behind the skin extraction process here is that if you know where 
+	the face is then you have an approximation of what the rest of the skin 
+	looks like.	This works well because face detection is robust and easy to implement and works for all skin colors.
+	The process can also be improved by detecting and removing eyes and mouth 
+	before the skin color range is calculated.
+	</p>
+	<figure>
+		<img src="images/skin_extract_pic1.png" alt="skin extraction sample results">
+		<figcaption>Sample results (mouth and eyes not removed).</figcaption>
+	</figure>
+	
+	<h2> Corner Cases </h2>
+	<p>
+	This process will still include any background areas or hair that are too similar to the skin
+	color of the user. In addition, accuracy of skin detection depends on the 
+	accuracy of face and face feature detection. For the length of this project 
+	I used OpenCV's Haar Cascade classifiers for this detection however they were not all that accurate, 
+	especially for mouth and eye detection. If I were to go back I would look at 
+	alternatives such as
+	<a href="https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/">
+	facial landmarks with dlib</a>.
+	</p>
+	<p>
+	<a href="https://github.com/austinpursley/ECEN-Senior-Design-Smart-Mirror-Image-Processing/tree/master/rgb/skin_extract">Github</a> for OpenCV code, in C++.
+	</p>
+	
+	
+</body>
+
+
+
+</html>

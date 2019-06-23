@@ -1,0 +1,238 @@
+/* hiking page style */
+
+#hiking_page h1 {
+	visibility: hidden;
+	font-size: 32px;
+	text-align: center;
+	padding: 50px;
+	margin: 0px;
+}
+
+#hiking_page .home-icon {
+	display: block;
+	position: absolute;
+	left: 28px;
+	top: 7px;
+}
+
+#hiking_page .secondary-icon {
+	display: block;
+	position: absolute;
+	left: 140px;
+	top: 8px;
+}
+
+#hiking_page .logo {
+	width: 100px;
+}
+
+#hiking_page .top {
+	height: 125px;
+}
+
+#hiking_page #nxt_pre_bttns {
+	position:absolute;
+	width: 400px;
+	height: 13%;
+	bottom: 0px;
+	right: 25%;
+    left: 50%;
+	margin-left:-200px;
+	text-align: center;
+	margin-top: 16px;
+}
+
+#hiking_page .previous, #hiking_page .next {
+	font-size: 64px;
+	border-radius: 50%;
+	width: 125px;
+	height: 125px;
+}
+
+/* hiking index style */
+
+#hike_index h1 {
+	position: absolute;
+	left: 250px;
+	top: 7px;
+	font-size: 64px;
+}
+
+/* Index table settings */
+#project_index th, #project_index td, #hike_index th, #hike_index td {
+	padding: 16px 0px 16px 16px;
+	font-size: 36px;
+	white-space: normal;
+}
+
+td.date {
+	display:none;
+}
+
+/* image carousel setting */
+#img_carousel #nxt_pre_bttns {
+	position:absolute;
+	width: 600px;
+	height: 13%;
+	bottom: 0px;
+	right:25%;
+    left:50%;
+	margin-left:-300px;
+	text-align: center;
+	margin-top: 16px;
+}
+
+#img_carousel .previous, #img_carousel .next {
+	font-size: 64px;
+	border-radius: 50%;
+	width: 125px;
+	height: 125px;
+}
+
+#img_carousel .top {
+	height: 125px;
+	margin:0 auto;
+}
+
+#img_carousel .logo {
+	display: inline-block;
+	width: 100px;
+}
+
+#img_carousel .logo img {
+	width: 100%;
+}
+
+#img_carousel .home-icon {
+	position: absolute;
+	left: 24px;
+	top: 18px;
+}
+
+#img_carousel .secondary-icon {
+	position: absolute;
+	left: 140px;
+	top: 18px;
+}
+
+/* image gallery setting */
+#img_gal .top {
+	height: 125px;
+	margin:0 auto;
+}
+
+#img_gal .logo {
+	display: inline-block;
+	width: 100px;
+}
+
+#img_gal .home-icon {
+	position: absolute;
+	left: 24px;
+	top: 16px;
+}
+
+#img_gal .secondary-icon {
+	position: absolute;
+	left: 154px;
+	top: 18px;
+}
+a.lightbox-close {
+display: block;
+width:100px;
+height:100px;
+box-sizing: border-box;
+background: white;
+color: black;
+text-decoration: none;
+position: absolute;
+top: -100px;
+right: 0;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+a.lightbox-close:before {
+content: "";
+display: block;
+height: 80px;
+width: 1px;
+background: black;
+position: absolute;
+left: 50px;
+top:10px;
+-webkit-transform:rotate(45deg);
+-moz-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:after {
+content: "";
+display: block;
+height: 80px;
+width: 1px;
+background: black;
+position: absolute;
+left: 50px;
+top:10px;
+-webkit-transform:rotate(-45deg);
+-moz-transform:rotate(-45deg);
+-o-transform:rotate(-45deg);
+transform:rotate(-45deg);
+}
+
+/*narrowwin_img_style* (both hiking and image pages)*/
+
+#hiking_page, #img_carousel {
+	height: auto;
+	margin: 0;
+}
+
+#hiking_page #templateArea {
+	height: auto;
+	width: 100%;
+}
+
+#slideshow {
+	height: auto;
+	width: 97%;
+	margin:0 auto;
+}
+
+#hiking_page img, #img_carousel img {
+	height: auto;
+	width: 100%;
+	margin:0px auto;
+	display: block; 
+}
+
+/* Squawk index */
+#squawk_index h1 {
+	font-size: 48px;
+	padding: 8px 46px 8px 0px;
+	margin: 16px 0px 0px 8px;
+}
+
+#squawk_index .home-icon {
+	display: block;
+	position: absolute;
+	left: 28px;
+	top: 7px;
+}
+
+#squawk_index .secondary-icon {
+	display: block;
+	position: absolute;
+	left: 130px;
+	top: 8px;
+	
+}
+
+#squawk_index .top {
+	height: 80px;
+}
