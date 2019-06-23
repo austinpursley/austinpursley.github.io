@@ -20,7 +20,8 @@ html_temp = """
 	<div class="top">
 	
 		<div class="home-icon logo">
-			<a href="../index.html"> <img src="home_logo_hike.png"/> </a>
+			<!-- <a href="../index.html"> <img src="home_logo_hike.png"/> </a> -->
+                        <a href="../home.html"> <img src="home_logo_hike.png"/> </a>
 		</div>
 		
 		<div class="logo secondary-icon logo">

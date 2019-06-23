@@ -44,7 +44,8 @@ html_gal_start = """
 <body id="img_gal">
 	<div class="top">
 	   <div class="logo home-icon">
-		   <a href="../index.html"> <img src="home_logo_images.png"/> </a>
+                   <!-- <a href="../index.html"> <img src="home_logo_images.png"/> </a> -->
+		   <a href="../home.html"> <img src="home_logo_images.png"/> </a>
 	   </div>
 	   <div class="logo secondary-icon">
 		   <a href="img_carousel.html"><img src="img_carousel_logo.png"/> </a>
@@ -107,7 +108,8 @@ html_carousel = """
 
 	<div class="top">
 	   <div class="logo home-icon">
-		   <a href="../index.html"> <img src="home_logo_images.png"/> </a>
+		   <!-- <a href="../index.html"> <img src="home_logo_images.png"/> </a> -->
+                   <a href="../home.html"> <img src="home_logo_images.png"/> </a>
 	   </div>
 	   <div class="logo secondary-icon">
 		   <a href="img_gal.html"><img src="img_gallery_logo.png"/> </a>
