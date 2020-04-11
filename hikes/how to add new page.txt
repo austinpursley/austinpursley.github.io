@@ -1,6 +1,0 @@
-* create folder for hiking location, add photos.
-* Edit data.json: add a new item to "set" (copy and paste the last one at top). 
-  Edit the date, title1, title2, and id. Do NOT add img array or html data.
-* Run the update.py (I use pycharm). This will create the html file and update the
-  json data.
-* If you add or remove photos from any folder, just run update.py.
