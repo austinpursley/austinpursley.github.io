@@ -19,7 +19,7 @@
 	
 	<p>
 	The senior design project I have been working on in school is a "smart mirror". 
-	Equipped with a thermal and RGB camera, its primary purpose is to analyze a user's face and give health feedback. 
+	Equipped with a thermal and RGB camera, its primary goal is to analyze a user's face and give health feedback. 
 	The subsystem I was responsible for was image processing and
 	my goal was to analyze user images to obtain health metrics.
 	In this post I go over extracting the user's skin.
@@ -49,22 +49,22 @@
 	</p>
 	<figure>
 		<img src="images/skin_extract_pic1.png" alt="skin extraction sample results">
-		<figcaption>Sample results (mouth and eyes not removed).</figcaption>
+		<figcaption>Sample results with well-liked celebrities (mouth and eyes not removed).</figcaption>
 	</figure>
 	
 	<h2> Corner Cases </h2>
 	<p>
 	This process will still include any background areas or hair that are too similar to the skin
-	color of the user. In addition, accuracy of skin detection depends on the 
+	color of the user. Teeth are also kind of hit-or-miss but something tells me no one will be smiling at a smart mirror. In addition, accuracy of skin detection depends on the 
 	accuracy of face and face feature detection. For the length of this project 
-	I used OpenCV's Haar Cascade classifiers for this detection however they were not all that accurate, 
-	especially for mouth and eye detection. If I were to go back I would look at 
+	I used OpenCV's Haar Cascade classifiers for this detection however they were not that accurate, 
+	especially for mouth and eye detection. If I was looking at this again, I would look at 
 	alternatives such as
 	<a href="https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/">
 	facial landmarks with dlib</a>.
 	</p>
 	<p>
-	<a href="https://github.com/austinpursley/ECEN-Senior-Design-Smart-Mirror-Image-Processing/tree/master/rgb/skin_extract">Github</a> for OpenCV code, in C++.
+	<a href="https://github.com/austinpursley/ECEN-Senior-Design-Smart-Mirror-Image-Processing/tree/master/rgb/skin_extract">Github</a> for C++, OpenCV code.
 	</p>
 	
 	
