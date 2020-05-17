@@ -21,6 +21,57 @@ html {
 
 /*}*/
 
+/* Index style */
+#index {
+	background-color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	text-align: center;
+	height: 100%;
+}
+
+#index img {
+	width: 13%;
+	margin: 5px;
+}
+
+#index h1 {
+	font-size: 15%;
+}
+
+#index a {
+	text-decoration: none;
+	width: 15%;
+}
+
+#index .title {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+	width: 60%;
+}
+
+/* Style about page */
+#about {
+	background-color: black; 
+}
+
+#about p {
+	width: 700px;
+	margin: 16px;
+	font-size: 24px;
+}
+
+#about h1 {
+	font-size: 48px;
+}
+
+#about a {
+	text-decoration: none;
+	color: white;
+}
+
 /*images style*/
 
 #images .top {
@@ -191,7 +242,16 @@ html {
 	padding: 0px 0px 0px 0px;
 }
 
-/* Content styling */
+/* Scroll / Content styling */
+
+#content a.squawk_link:link  {
+	color: LightGreen;
+}
+
+#content a.squawk_link:visited  {
+	color: darkorchid;
+}
+
 
 #content .logo {
 	display: inline-block;
@@ -256,4 +316,61 @@ html {
 
 #content .image {
 	display: inline-block;
+}
+
+/****** LIKES ******/
+
+#likes .logo {
+	display: inline-block;
+	height: 70px;
+	margin: 5px 0px 0px 10px;
+}
+
+/*#likes .top {*/
+/*	height: 70px;*/
+/*}*/
+
+#likes {
+/*	background-color: #fffebb*/
+/*	background-color: #300835*/
+	background-color: #073340
+}
+
+#likes a {
+/*	color: #1f3fbf;*/
+	color: #f7f437;
+	text-decoration: none;
+}
+
+#likes a:visited {
+	color: #5aa25e;
+/*	color: #6a0091;*/
+}
+
+#likes tr.like  {
+	display: block;
+	margin: 5px 0px 0px 10px;
+	padding: 0px 0px 0px 0px;
+}
+
+#likes td.like  {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#likes_page {
+	width: 600px;
+	color: #fff3f5;
+	background-color: #36393f;
+	line-height: 1.75;
+	font-weight: 300;
+	font-family: sans-serif;
+}
+
+#likes_page a {
+	color: #f7f437;
+}
+
+#likes_page a:visited {
+	color: #5aa25e;
 }
