@@ -132,8 +132,15 @@ html {
 	height: 70px;
 }
 
+#squawk_page a:link, #squawks a.squawk_link:link  {
+	color: aqua;
+}
 
-#squawks a, body, #squawk_page {
+#squawk_page a:visited, #squawks a.squawk_link:visited  {
+	color: darkorchid;
+}
+
+#squawks body, #squawks a, #squawk_page {
 	color: #f2f2f2;
 }
 

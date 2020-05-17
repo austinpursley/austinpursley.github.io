@@ -1,0 +1,10 @@
+To add a new image:
+    (1) add image to "images" directory
+    (2) add a corresponding thumbnail (smaller version of same image with same image) to "/images/thumbnail" directory
+    (3) run 'update.py'
+
+To add a new "squawk" / text post:
+    (1) add html file to "squawk" page with same template as the others
+        (a) the easiest way to do this is to run "add_squawk.py"
+        (b) other way can be to copy an existing squawk html file and manually edit that. format must be the same
+    (2) run 'update.py'
