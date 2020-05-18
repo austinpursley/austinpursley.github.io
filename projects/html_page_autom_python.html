@@ -31,26 +31,20 @@
         #do stuff here
     </pre></code>
 
-    <p>I also want to know when the image was created ('Datetime') or any captions ('UserComment') that might have been set. This can be contained in the image's <a href="https://en.wikipedia.org/wiki/Exif">EXIF</a> metadata. Images should usually have 'DateTime' metadata but other metadata like "UserComment" can be set with photo managment software. The example code below extracts UserComment data:</p>
+    <p>I also want to know when the image was created ('Datetime') or any captions ('UserComment') that might have been set. This can be contained in the image's <a href="https://en.wikipedia.org/wiki/Exif">EXIF</a> metadata. Images should usually have 'DateTime' metadata but other metadata like "UserComment" can be set with photo managment software. The simple example code below extracts UserComment data:</p>
 
     <pre><code>
     # the Pillow (PIL) and piexif libraries
     # worth mentioning, very helpful
     from PIL import Image
     import piexif
-
     # [...]
-
     im = Image.open(img_dir)
-    if im.info.get("exif") is None:
-            exif_ifd = {}
-            exif_dict = {"Exif": exif_ifd}
-        else:
-            exif_dict = piexif.load(im.info.get("exif"))
+    exif_dict = piexif.load(im.info.get("exif"))
     user_comment = exif_dict["Exif"].get(piexif.ExifIFD.UserComment)
     </pre></code>
 
-    <p> Once the image data is extracted, that data can be exported into a CSV. </p>	
+    <p> Once the image data is extracted, it can be exported into a CSV. </p>	
 
     <img src="images/p2h_csv_ex.png"></img>
 
