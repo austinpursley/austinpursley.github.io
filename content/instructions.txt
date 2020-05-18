@@ -1,6 +1,7 @@
 To add a new image:
     (1) add image to "images" directory
-    (2) add a corresponding thumbnail (smaller version of same image with same image) to "/images/thumbnail" directory
+    (2) make sure metadata is set for "DateTime" and "UserComment"
+        (a) Right now I am using Shotwell (photo management software) to do this
     (3) run 'update.py'
 
 To add a new "squawk" / text post:

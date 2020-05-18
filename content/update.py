@@ -69,6 +69,41 @@ def build_html_pages(html_start_str, mid_pages_arr, html_end_str, title):
 
 ################################################################################################################
 
+# Create thumbnails for images
+
+def create_thumbnails(in_dir, out_dir=None, tn_name_extra="", size=(128, 128)):
+    if in_dir == None:
+        in_dir = ""
+    else:
+        if in_dir[-1] != "/":
+            in_dir += "/"
+    if out_dir == None:
+        out_dir = ""
+    else:
+        if out_dir[-1] != "/":
+            out_dir += "/"           
+    for infile in glob.glob(in_dir + "*.jpg"):
+        f, ext = os.path.splitext(infile)
+        thumbnail_dir = out_dir + os.path.basename(f) + tn_name_extra + ".jpg"
+        if not os.path.isfile(thumbnail_dir):
+            im = Image.open(infile)
+            im.thumbnail(size)
+            im.save(thumbnail_dir, "JPEG")
+
+thumbnail_dir = 'images/thumbnail'
+images_dir = "images"
+# Add thumbnails
+files = glob.glob(thumbnail_dir + '/*.jpg')
+create_thumbnails(images_dir, thumbnail_dir, size=(500, 500))
+# Remove thumbnails that are no longer in images dir
+for infile in glob.glob(thumbnail_dir + "/*.jpg"):
+    if not os.path.isfile(images_dir + "/" + os.path.basename(infile)):
+        print(images_dir + "/" + infile)        
+        print(infile)
+        os.remove(infile) 
+
+################################################################################################################
+
 # Fetch the data
 
 with open('data.csv', "r+", newline='') as data:
