@@ -12,7 +12,7 @@
 	<div id="content_wrapper"><div id="content_area">
 	
 	<div class="date_heading">
-		<h1>Song Lyrics Swap</h1> 
+		<h1>Song Lyrics Phoneme Swap</h1> 
 		5.9.2020	
 	</div>	
 	
@@ -20,11 +20,11 @@
 		
 	<pre><code>"Fly me to the moon"</code></pre>
 
-	<p> We can split it into phonemes with <a href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict">CMUdict</a>: </p>
+	<p> We can find the phonemes for the words with <a href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict">CMUdict</a>: </p>
 	
 	<pre><code>['F L AY1', 'M IY1', 'T UW1', 'DH AH0', 'M UW1 N']</code></pre>
 
-	<p>Find some new word boundaries:</p>
+	<p>Define some new word boundaries (in this case merging two words into one, however more combos are possible):</p>
 
 	<pre><code>['F L AY1', 'M IY1 T UW1', 'DH AH0', 'M UW1 N']</code></pre>
 
@@ -40,7 +40,7 @@
 
 	<p>(it can take awhile to find a combo of word boundaries and wildcards that works)</p>	
 
-	<p>This new line is somewhat reminiscent of the original despite having one less word. To continue the fun, we can do some more lines from the song:</p>
+	<p>And there you go, the line has had some of its phonemes swapped. To continue the fun, we can do some more lines from the song:</p>
 
 	<pre><code>
 	Let me play among the stars
