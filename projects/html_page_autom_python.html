@@ -48,24 +48,50 @@
 
     <img src="images/p2h_csv_ex.png"></img>
 
-    <p>With that data in place, it's simple to insert into some HTML templates. Example code:</p>
+    <p>With that data in place, it's simple to insert it into some HTML templates. Example code:</p>
     
     <pre><code>
+    html_start_str = """
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+
+    &lt;head&gt;
+        &lt;title&gt; the_title &lt;/title&gt;
+        &lt;link rel="stylesheet" href="style.css"&gt;
+        &lt;link rel="stylesheet" href="mobile.css" media="screen and (max-device-width: 850px)" /&gt;
+        &lt;link rel="stylesheet" href="mobile_portrait.css" media="screen and (max-device-width: 500px)" /&gt;
+    &lt;/head&gt;
+
+    &lt;body id="id_text"&gt;
+    &lt;top&gt;&lt;/top&gt;
+        &lt;table&gt;
+    """
+
     html_image_entry_temp = """
     &lt;tr class="content"&gt;
 	    &lt;td class="date"&gt;&lt;time&gt;date_text&lt;/time&gt;&lt;/td&gt;
 	    &lt;td class="image"&gt;&lt;a href="img_src"&gt;&lt;img src="thumbnail_src"&gt;&lt;/a&gt;&lt;p&gt;caption&lt;/p&gt;&lt;/td&gt;
     &lt;/tr&gt;
-    """
     image_mid = ""
 
-    # [...]
+    html_end_str = """
+        &lt;/table&gt;
 
-    image_entry = html_image_entry_temp.replace("img_src", img_dir)
-    image_entry = image_entry.replace("thumbnail_src", thumbnail_dir)
-    image_entry = image_entry.replace("date_text", date)
-    image_entry = image_entry.replace("caption", caption)
-    image_mid += image_entry
+    &lt;/body&gt;
+
+    &lt;/html&gt;
+    """
+
+    # [...]
+    for row in data:
+        date = row[0]		
+        elem_type = row[1]		
+        file_name = row[2]
+        image_entry = html_image_entry_temp.replace("img_src", img_dir)
+        image_entry = image_entry.replace("thumbnail_src", thumbnail_dir)
+        image_entry = image_entry.replace("date_text", date)
+        image_entry = image_entry.replace("caption", caption)
+        image_mid += image_entry
 
     # [...]
 
@@ -76,14 +102,14 @@
     
      </pre></code>
 
-    <p> The final result only has two steps: (1) set images in the folder with correct EXIF metadata, and (2) run the program. Pretty easy. If there are enough images, new HTML pages will be created to put them on so that not too many are on one page. Thumbnails will also be generated. Example page:</p>
+    <p> The final result only has two steps: (1) set images in the folder with correct EXIF metadata, and (2) run the program. Pretty easy. If there are enough images, new HTML pages will be created that not too many images are on one page. Thumbnails will also be generated. Example page:</p>
 
     <img src="images/p2h_images_example.png"></img>
 
     <p>You can visit the images page <a href="../content/images.html">here</a>. I also did a similiar process process for <a href="../content/squawks.html">text posts</a> and <a href="../content/scroll.html">combined</a> image and text posts. All of these pages generate when the "update.py" program is run.<p>
 
 	<p>See <a href="https://github.com/austinpursley/austinpursley.github.io/tree/master/content">
-	GitHub</a> for code and many more details.</p> 
+	GitHub</a> for code and more details.</p> 
 
 </body>
 
