@@ -2,7 +2,7 @@
 <html>
 
 <head> 
-	<title> HTML Webpage Automation with Python </title>
+	<title> HTML Web page Automation with Python </title>
 	<link rel="stylesheet" href="../style.css">
 	<link rel="stylesheet" href="../mobile.css" media="screen and (max-device-width: 850px)" />
 </head>
@@ -12,11 +12,11 @@
 	<div id="content_wrapper"><div id="content_area">
 	
 	<div class="date_heading">
-		<h1>HTML Webpage Automation with Python</h1> 
+		<h1>Static Site Generation with Python</h1> 
 		5.17.2020	
 	</div>	
 	
-	<p>Hosting this site on <a href="">GitHub Pages</a> means I can't do anything backend like PHP. This presents an interesting problem of how to maintain static HTML pages. It can take a long time to manually edit HTML pages, especially if the same information is being edited in many different places. I created an automated process with Python for generatng HTML content pages.</p>
+	<p> All of the content on this website is (so far) simple static HTML pages with CSS. This works out fine because a personal website like this does not need to be dynamic for user interaction (plus, I can't use backend tools like PHP because I host the site on <a href="https://pages.github.com/">GitHub Pages</a>). However, manually editing HTML files can be tedious, especially if the same information is being edited in many different places. One solution for this is a <a href="https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators">static site generator</a>. There are tools out there for static site generation, but I didn't know that when I started this project. I ended up programming my own Python script, where all I have to do is edit data and run the script to automatically generate HTML pages.</p>
     
     <p>Let's say I want a page to show off some photos. As a starting point, I could fill a folder with images that I want to share:</p>
     
@@ -31,7 +31,7 @@
         #do stuff here
     </pre></code>
 
-    <p>I also want to know when the image was created ('Datetime') or any captions ('UserComment') that might have been set. This can be contained in the image's <a href="https://en.wikipedia.org/wiki/Exif">EXIF</a> metadata. Images should usually have 'DateTime' metadata but other metadata like "UserComment" can be set with photo managment software. The simplified example code below extracts UserComment data:</p>
+    <p>I also want to know when the image was created ('Datetime') or any captions ('UserComment') that might have been set. This can be contained in the image's <a href="https://en.wikipedia.org/wiki/Exif">EXIF</a> metadata. Images should usually have 'DateTime' metadata but other metadata like "UserComment" can be set with photo management software. The simplified example code below extracts UserComment data:</p>
 
     <pre><code>
     # the Pillow (PIL) and piexif libraries
@@ -106,7 +106,7 @@
 
     <img src="images/p2h_images_example.png"></img>
 
-    <p>You can visit the images page <a href="../content/images.html">here</a>. I also did a similiar process process for <a href="../content/squawks.html">text posts</a> and <a href="../content/scroll.html">combined</a> image and text posts. All of these pages generate when the "update.py" program is run.<p>
+    <p>You can visit the images page <a href="../content/images.html">here</a>. I also did a similar process process for <a href="../content/squawks.html">text posts</a> and <a href="../content/scroll.html">combined</a> image and text posts. All of these pages generate when the "update.py" program is run.<p>
 
 	<p>See <a href="https://github.com/austinpursley/austinpursley.github.io/tree/master/content">
 	GitHub</a> for code and more details.</p> 
