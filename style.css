@@ -91,11 +91,11 @@ body {
 	color: #008080;
 }
 
-#project_page h2, #project_page .date_heading {
+#project_page h2, #project_page #date_heading {
 	color: #660033;
 }
 
-/* #project_page .date_heading {
+/* #project_page .date_heading f{
 	color: #c9c684;
 } */
 
