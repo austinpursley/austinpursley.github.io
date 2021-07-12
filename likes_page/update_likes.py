@@ -62,7 +62,7 @@ html_end = """
 # INDEX
 html_top_likes = """
     <div class="top">
-               <a href="index.html"><img class="logo home" src="likes_logo.png"/> </a>
+               <a href="../index.html"><img class="logo home" src="likes_logo.png"/> </a>
        </div>
 """
 
