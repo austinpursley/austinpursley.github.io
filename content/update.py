@@ -193,6 +193,7 @@ html_start = """
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="mobile.css" media="screen and (max-device-width: 850px)" />
         <link rel="stylesheet" href="mobile_portrait.css" media="screen and (max-device-width: 500px)" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
 
     <body id="id_text">
