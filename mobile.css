@@ -114,3 +114,26 @@ body {
 	font-size: 28px;
 	white-space: nowrap;
 }
+
+/*likes*/
+#likes {
+	width: 80%;
+}
+
+#likes .logo {
+	height: 100px;
+}
+
+#likes tr.like  {
+	display: block;
+	margin: 15px 0px 0px 10px;
+}
+
+#likes td.like  {
+    font-size: 24px;
+}
+
+#likes_page {
+	width: 90%;
+    font-size: 16px;
+}

@@ -229,3 +229,61 @@ project_page .date_heading {
 #project_index th, #project_index td, #hike_index th, #hike_index td {
 	padding: 8px 16px 8px 16px;
 }
+
+/****** LIKES ******/
+
+#likes .logo {
+	display: inline-block;
+	height: 70px;
+	margin: 5px 0px 0px 10px;
+}
+
+/*#likes .top {*/
+/*	height: 70px;*/
+/*}*/
+
+#likes {
+/*	background-color: #fffebb*/
+/*	background-color: #300835*/
+	background-color: #073340
+}
+
+#likes a {
+/*	color: #1f3fbf;*/
+	color: #f7f437;
+	text-decoration: none;
+}
+
+#likes a:visited {
+	color: #5aa25e;
+/*	color: #6a0091;*/
+}
+
+#likes tr.like  {
+	display: block;
+	margin: 5px 0px 0px 10px;
+	padding: 0px 0px 0px 0px;
+}
+
+#likes td.like  {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#likes_page {
+	width: 600px;
+	color: #fff3f5;
+	background-color: #36393f;
+	line-height: 1.75;
+	font-weight: 300;
+	font-family: sans-serif;
+}
+
+#likes_page a {
+	color: #f7f437;
+}
+
+#likes_page a:visited {
+	color: #5aa25e;
+}
+
