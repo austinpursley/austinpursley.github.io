@@ -21,7 +21,7 @@ html_start2 = """
     <head>
         <link rel="stylesheet" href="_STYLE_">
         <link rel="stylesheet" href="_MSTYLE_" media="screen and (max-device-width: _MDW_)" />
-
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 """
