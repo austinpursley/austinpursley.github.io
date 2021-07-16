@@ -190,9 +190,8 @@ html_start = """
 
     <head>
         <title> the_title </title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="mobile.css" media="screen and (max-device-width: 850px)" />
-        <link rel="stylesheet" href="mobile_portrait.css" media="screen and (max-device-width: 500px)" />
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../mobile.css" media="screen and (max-device-width: 850px)" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
 
@@ -203,7 +202,7 @@ html_start = """
 
 html_top_scroll = """
 	<div class="top">
-		<a href="../index.html"><img class="logo home" src="home_logo.png"/> </a>
+<!--		<a href="../index.html"><img class="logo home" src="home_logo.png"/> </a> -->
 	</div>
 """
 html_top_image = """
