@@ -32,7 +32,10 @@ html_start3 = """
 
     <body id="id_text">
     <top></top>
-        <table>
+        <table>     
+        <tr class="like">
+	    <td class="like">[experimental page]</td>
+        </tr>
 """
 
 # HEADER

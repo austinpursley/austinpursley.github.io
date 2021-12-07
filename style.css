@@ -525,7 +525,7 @@ project_page .date_heading {
 	color: #fff3f5;
 	background-color: #36393f;
 	line-height: 1.75;
-	font-weight: 300;
+    /*font-weight: 300;*/
 	font-family: sans-serif;
 }
 
