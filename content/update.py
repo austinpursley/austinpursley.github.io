@@ -206,16 +206,23 @@ html_start = """
     <top></top>
         <table>
     """
-
+# home logo is commented out here
+#html_top_scroll = """
+#	<div class="top">
+#<!--		<a href="../index.html"><img class="logo home" src="home_logo.png"/> </a> -->
+#	</div>
+#"""
 html_top_scroll = """
 	<div class="top">
-<!--		<a href="../index.html"><img class="logo home" src="home_logo.png"/> </a> -->
+		<a href="../index.html"><img class="logo home" src="home_logo.png"/> </a>
+		<a href="images.html"><img class="logo home" src="images_logo_white.png"/> </a>
 	</div>
 """
 html_top_image = """
 	<div class="top">
-               <a href="../index.html"><img class="logo home" src="images_logo.png"/></a>
-       </div>
+       <a href="../index.html"><img class="logo home" src="home_logo.png"/></a>
+       <a href="scroll.html"><img class="logo home" src="images_logo.png"/> </a>
+   </div>
 """
 
 html_top_squawk = """
