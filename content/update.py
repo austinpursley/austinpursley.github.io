@@ -8,6 +8,13 @@ from PIL import Image
 import piexif
 import piexif.helper
 
+def imgs_in_dir(in_dir):
+    extensions = ("*.png","*.jpg","*.jpeg","*.JPG",)
+    img_arr = []
+    for e in extensions:
+        pattern = in_dir + e
+        img_arr.extend(sorted((os.path.basename(x) for x in glob.glob(pattern)), reverse=True))
+    return sorted(img_arr, reverse=True)
 
 def build_html_pages(html_start_str, mid_pages_arr, html_end_str, title):
     """ creates HTML pages given template pieces
@@ -81,26 +88,25 @@ def create_thumbnails(in_dir, out_dir=None, tn_name_extra="", size=(128, 128)):
         out_dir = ""
     else:
         if out_dir[-1] != "/":
-            out_dir += "/"           
-    for infile in glob.glob(in_dir + "*.jpg"):
-        f, ext = os.path.splitext(infile)
-        thumbnail_dir = out_dir + os.path.basename(f) + tn_name_extra + ".jpg"
+            out_dir += "/"     
+    img_arr = imgs_in_dir(in_dir) 
+    for fn in img_arr:
+        f, ext = os.path.splitext(fn)
+        thumbnail_dir = out_dir + f + tn_name_extra + ext
         if not os.path.isfile(thumbnail_dir):
-            im = Image.open(infile)
+            im = Image.open(in_dir + fn)
             im.thumbnail(size)
             im.save(thumbnail_dir, "JPEG")
 
-thumbnail_dir = 'images/thumbnail'
-images_dir = "images"
+thumbnail_dir = 'images/thumbnail/'
+images_dir = "images/"
 # Add thumbnails
-files = glob.glob(thumbnail_dir + '/*.jpg')
 create_thumbnails(images_dir, thumbnail_dir, size=(500, 500))
 # Remove thumbnails that are no longer in images dir
-for infile in glob.glob(thumbnail_dir + "/*.jpg"):
+thumbnail_arr = imgs_in_dir(thumbnail_dir)
+for infile in thumbnail_arr:
     if not os.path.isfile(images_dir + "/" + os.path.basename(infile)):
-        print(images_dir + "/" + infile)        
-        print(infile)
-        os.remove(infile) 
+        os.remove(thumbnail_dir + infile) 
 
 ################################################################################################################
 
@@ -117,8 +123,9 @@ with open('data.csv', "r+", newline='') as data:
     #newpath = os.path.dirname(os.path.realpath(__file__)) + '/'
     #newpath += 'images/'
     #get list of image file names from directory
-    pattern = 'images/*.jpg'
-    img_arr = sorted((os.path.basename(x) for x in glob.glob(pattern)), reverse=True)
+    img_arr = imgs_in_dir('images/')
+    # pattern = 'images/*.jpg'
+    # img_arr = sorted((os.path.basename(x) for x in glob.glob(pattern)), reverse=True)
     for img in img_arr:
         # Get EXIF metadata from image
         im = Image.open("images/" + img)
