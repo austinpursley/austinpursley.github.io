@@ -156,9 +156,15 @@ with open('data.csv', "r+", newline='') as data:
         # Get UserComment from EXIF
         # UserComment is being used for the image caption
         # I use Shotwell to add these user comments / captions
+        if (piexif.ImageIFD.ImageDescription in exif_dict["0th"]):
+            print(exif_dict["0th"][piexif.ImageIFD.ImageDescription])
+            exif_dict["Exif"][piexif.ExifIFD.UserComment] = exif_dict["0th"][piexif.ImageIFD.ImageDescription]
         user_comment = exif_dict["Exif"].get(piexif.ExifIFD.UserComment)
         if type(user_comment) is bytes:
             user_comment = user_comment.decode("utf-8").strip('\x00')
+        print(user_comment)
+        if user_comment and ("OLYMPUS DIGITAL CAMERA" in user_comment or "Maker:" in user_comment):
+            user_comment = ""
         writer.writerow([dt_str, "image", img, user_comment])
 
 	##### squawks #####
