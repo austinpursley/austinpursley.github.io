@@ -8,8 +8,7 @@ from PIL import Image
 import piexif
 import piexif.helper
 
-def imgs_in_dir(in_dir):
-    extensions = ("*.png","*.jpg","*.jpeg","*.JPG",)
+def imgs_in_dir(in_dir, extensions = ("*.png","*.jpg","*.jpeg","*.JPG","*.gif",)):  
     img_arr = []
     for e in extensions:
         pattern = in_dir + e
@@ -77,7 +76,7 @@ def build_html_pages(html_start_str, mid_pages_arr, html_end_str, title):
 ################################################################################################################
 
 # Create thumbnails for images
-
+# note: no handling for .gifs yet. maybe not even pngs, need to test
 def create_thumbnails(in_dir, out_dir=None, tn_name_extra="", size=(128, 128)):
     if in_dir == None:
         in_dir = ""
@@ -89,7 +88,7 @@ def create_thumbnails(in_dir, out_dir=None, tn_name_extra="", size=(128, 128)):
     else:
         if out_dir[-1] != "/":
             out_dir += "/"     
-    img_arr = imgs_in_dir(in_dir) 
+    img_arr = imgs_in_dir(in_dir, extensions = ("*.png","*.jpg","*.jpeg","*.JPG",)) 
     for fn in img_arr:
         f, ext = os.path.splitext(fn)
         thumbnail_dir = out_dir + f + tn_name_extra + ext
@@ -127,43 +126,52 @@ with open('data.csv', "r+", newline='') as data:
     # pattern = 'images/*.jpg'
     # img_arr = sorted((os.path.basename(x) for x in glob.glob(pattern)), reverse=True)
     for img in img_arr:
-        # Get EXIF metadata from image
-        im = Image.open("images/" + img)
-        if im.info.get("exif") is None:
-            exif_ifd = {}
-            exif_dict = {"Exif": exif_ifd}
-#            exif_bytes = piexif.dump(exif_dict)
-#            piexif.insert(exif_bytes, "images/" + img)
+        img_ext = img[-4:].lower()
+        if img_ext == ".jpg" or img_ext == ".jpeg": 
+            # Get EXIF metadata from image
+            im = Image.open("images/" + img)
+            if im.info.get("exif") is None:
+                exif_ifd = {}
+                exif_dict = {"Exif": exif_ifd}
+    #            exif_bytes = piexif.dump(exif_dict)
+    #            piexif.insert(exif_bytes, "images/" + img)
+            else:
+                exif_dict = piexif.load(im.info.get("exif"))
+            # Get datetime from EXIF
+            dt_exif = exif_dict["Exif"].get(piexif.ExifIFD.DateTimeOriginal)
+            if dt_exif is None:
+                # get datetime EXIF from filename instead (old method)
+                img_no_ext = os.path.splitext(img)[0]
+                dt = datetime.strptime(img_no_ext, '%Y%m%d%H%M')
+                dt_str = datetime.strftime(dt, '%Y.%m.%d %I:%M %p')
+                # go ahead and insert datetime into the image EXIF
+                exif_dict["Exif"][piexif.ExifIFD.DateTimeOriginal] = datetime.strftime(dt, u'%Y:%m:%d %H:%M:%S')
+                exif_bytes = piexif.dump(exif_dict)
+                piexif.insert(exif_bytes, "images/" + img)
+            else:
+                # EXIF data contains datetime info
+                if type(dt_exif) is bytes:
+                    dt_exif = dt_exif.decode("utf-8").strip('\x00')
+                dt = datetime.strptime(dt_exif, '%Y:%m:%d %H:%M:%S')
+                dt_str = datetime.strftime(dt, '%Y.%m.%d %I:%M %p')
+            # Get UserComment from EXIF
+            # UserComment is being used for the image caption
+            # I use Shotwell to add these user comments / captions
+            if (exif_dict["0th"] and piexif.ImageIFD.ImageDescription in exif_dict["0th"]):
+                print(exif_dict["0th"][piexif.ImageIFD.ImageDescription])
+                exif_dict["Exif"][piexif.ExifIFD.UserComment] = exif_dict["0th"][piexif.ImageIFD.ImageDescription]
+            user_comment = exif_dict["Exif"].get(piexif.ExifIFD.UserComment)
+            if type(user_comment) is bytes:
+                user_comment = user_comment.decode("utf-8").strip('\x00')
+            print(img)
+            if user_comment and ("OLYMPUS DIGITAL CAMERA" in user_comment or "Maker:" in user_comment):
+                user_comment = ""
         else:
-            exif_dict = piexif.load(im.info.get("exif"))
-        # Get datetime from EXIF
-        dt_exif = exif_dict["Exif"].get(piexif.ExifIFD.DateTimeOriginal)
-        if dt_exif is None:
-            # get datetime EXIF from filename instead (old method)
+            # .png and .gifs (for now)
+            print(img)
             img_no_ext = os.path.splitext(img)[0]
             dt = datetime.strptime(img_no_ext, '%Y%m%d%H%M')
             dt_str = datetime.strftime(dt, '%Y.%m.%d %I:%M %p')
-            # go ahead and insert datetime into the image EXIF
-            exif_dict["Exif"][piexif.ExifIFD.DateTimeOriginal] = datetime.strftime(dt, u'%Y:%m:%d %H:%M:%S')
-            exif_bytes = piexif.dump(exif_dict)
-            piexif.insert(exif_bytes, "images/" + img)
-        else:
-            # EXIF data contains datetime info
-            if type(dt_exif) is bytes:
-                dt_exif = dt_exif.decode("utf-8").strip('\x00')
-            dt = datetime.strptime(dt_exif, '%Y:%m:%d %H:%M:%S')
-            dt_str = datetime.strftime(dt, '%Y.%m.%d %I:%M %p')
-        # Get UserComment from EXIF
-        # UserComment is being used for the image caption
-        # I use Shotwell to add these user comments / captions
-        if (piexif.ImageIFD.ImageDescription in exif_dict["0th"]):
-            print(exif_dict["0th"][piexif.ImageIFD.ImageDescription])
-            exif_dict["Exif"][piexif.ExifIFD.UserComment] = exif_dict["0th"][piexif.ImageIFD.ImageDescription]
-        user_comment = exif_dict["Exif"].get(piexif.ExifIFD.UserComment)
-        if type(user_comment) is bytes:
-            user_comment = user_comment.decode("utf-8").strip('\x00')
-        print(user_comment)
-        if user_comment and ("OLYMPUS DIGITAL CAMERA" in user_comment or "Maker:" in user_comment):
             user_comment = ""
         writer.writerow([dt_str, "image", img, user_comment])
 
