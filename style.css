@@ -260,7 +260,25 @@ project_page .date_heading {
 }	
 
 
-#content a, body {
+#content a, a:visited {
+    text-decoration: none;
+}
+
+#content td.squawk {
+    color: #f2ebf5;
+}
+
+#content a.content_link {
+    color: SpringGreen;
+    text-decoration: underline;
+}
+
+#content a.content_link:visited {
+    color: Orchid;
+    text-decoration: underline;
+}
+
+#content body {
 	color: #f2ebf5;
 }
 
@@ -270,10 +288,6 @@ project_page .date_heading {
 
 #content tr.content {
 	border-color: #31adc2;
-}
-
-#content a {
-	text-decoration: none;
 }
 
 #content table {
