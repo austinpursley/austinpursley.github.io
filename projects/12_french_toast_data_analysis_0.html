@@ -2,7 +2,7 @@
 <html>
 
 <head> 
-	<title> And Serve You French Toast (Data Analysis) Again, Part 1: Collect and Clean </title>
+	<title> And Serve You French Toast (Data) Again, Part 1: Collect and Clean </title>
 	<link rel="stylesheet" href="../style.css">
 	<link rel="stylesheet" href="../mobile.css" media="screen and (max-device-width: 850px)" />
 </head>
@@ -12,13 +12,13 @@
 <div id="content_wrapper"><div id="content_area">
 
 <div id="date_heading">
-	<h1>And Serve You French Toast (Data Analysis) Again, Part 1: Collect and Clean</h1> 
+	<h1>And Serve You French Toast (Data) Again, Part 1: Collect and Clean</h1> 
 	4.8.2022
 </div>	
 
 <p> French toast is one of the few things I think I've cooked more than half a dozen times. That's probably what compelled me to attempt a data analysis project of french toast recipes. After all, with the internet, untold french toast recipes lay at my finger tips. Just what secrets could we unlock looking into their depths? Probably not much, but at least I'd get a gee-whiz data analysis 101 project out of it.</p>
 <figure>
-    <img src="images/beloved_food_french_toast.png"><img>
+    <img src="images/beloved_food_french_toast.png">
 	<figcaption>French toast is great.</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ recipereg = re.compile(pattern)
 <p>See the screenshot from <a href="https://regex101.com/">regex101.com</a> below for an overview of how this works out. The recipe title, number and type, and ingredients correspond to the <a href="https://docs.python.org/3/howto/regex.html#grouping"> capture groups</a> i.e. the regex in parentheses "(...)". The non-capture groups, i.e. the regex in "(?:...)", are ignored.</p>
 
 <figure>
-    <img src="images/french-toast-regex-example.png"><img>
+    <img src="images/french-toast-regex-example.png">
 	<figcaption>Regex pattern for recipe data in text files.</figcaption>
 </figure>
    
@@ -143,17 +143,17 @@ df.to_csv("french_toast_recipes.csv", index=False)
 <p>And there we go, I now had what presumably could be considered an alright set of french toast recipes from this allrecipes.com data set.</p>
 
 <figure>
-    <img src="images/french-toast-csv-example.png"><img>
+    <img src="images/french-toast-csv-example.png">
 	<figcaption>Example of what the tabular data looks like.</figcaption>
 </figure>
 
 <h2> You're Gonna Clean That Data</h2>
 <figure>
-    <img src="images/french-toast-cass.jpg"><img>
+    <img src="images/french-toast-cass.jpg">
 	<figcaption>French toast casserole? Doesn't count.</figcaption>
 </figure>
 
-<p> So that was pretty easy and cool, but I was far from being done. Just because "french" and "toast" were in the title, doesn't mean these were real deal french toast recipes. Furthermore, it didn't take long to figure out the ingredients data was, from an analysis perspective, junk. The units and quantities were not separated, even the simplest ingredients had dozens of variants, some lines had multiple ingredients in them, etc. A strenuous cleanse was in order.</p>
+<p> So that was pretty easy and cool, but I was far from being done. Just because "french" and "toast" were in the title, doesn't mean these were real deal french toast recipes. Furthermore, it didn't take long to figure out the ingredients data was, from an analysis perspective, junk. The units and quantities were not separated, even the simplest ingredients had dozens of variants, some lines had multiple ingredients in them, etc. A cleanse was in order.</p>
 
 <p> At the start, I hadn't realized the hard task I had haphazardly jumped into. My cleaning process at the start was pretty "whatever", I learned as I went, and it was iterative. I would clean data in one dimension, stepped back to clean in another, then re-do a previous cleanse, etc. I ended up writing 7 Python script files that either cleaned the data or helped me inspect / visualize it. Interwoven into the cleaning process was additional restructuring as well.</p>
 <p> Here's a summary of the cleaning process: </p>
@@ -165,7 +165,7 @@ df.to_csv("french_toast_recipes.csv", index=False)
 qc_check_flavor = ft_recipes.loc[ft_recipes["category"] == "flavor", ["ingr"]].value_counts()
 </pre></code>
 <figure>
-    <img src="images/french-toast-qa-check-example.png"><img>
+    <img src="images/french-toast-qa-check-example.png">
 	<figcaption>Example of flavor value counts. Shout out to Spyder's variable explorer.</figcaption>
 </figure>
 
@@ -212,7 +212,7 @@ ft[~mask_var].to_csv("0_cut_ft_recipes/french_toast_recipes_cut_variants.csv",in
 
 <li>Simplify and categorize the ingredients. I wanted to make the data more uniform and simplify many variants of what were (basically) the same ingredients. For example, see below. The category is easy enough, this is the milk/cream used for the custard. However, notice that "1% fat milk" was changed to "low fat milk". I did this because, as a culinary cipher like myself finds out, there are quite a few variations of milk and names for defining them. "1% milk" is the same as "low fat milk", but other recipes would use one or the other, so I had to choose just one name for all recipes. Another example: some ingredients had "or"s in them, e.g. "italian or french bread", and for those I decided to always go with the first option. </li>
 <figure>
-    <img src="images/french-toast-ingr-breakdown-example.png"><img>
+    <img src="images/french-toast-ingr-breakdown-example.png">
 	<figcaption>Example of ingredient breakdown.</figcaption>
 </figure>
 </ul>
@@ -228,14 +228,15 @@ The largest issue / side quest I ran into was deciding whether "baked" variants 
 <p>At the end of the process, each ingredient had been broken down into components: a quantity, units, cut, name of ingredient, category and subcategory. Special attention was paid to the three core ingredients bread, milk/creams, and eggs. </p>
 
 <figure>
-    <img src="images/french-toast-ingr-cleaned-sample.png"><img>
+    <img src="images/french-toast-ingr-cleaned-sample.png">
 	<figcaption>Sample of final cleaned data set.</figcaption>
 </figure>
 
-<a href="https://github.com/austinpursley/french-toast-data-analysis">Full GitHub code here.</a>
+<p><a href="13_french_toast_data_analysis_1.html">Part 2</a></p>
+<p><a href="14_french_toast_data_analysis_2.html"> Part 3</a></p>
+<p><a href="https://github.com/austinpursley/french-toast-data-analysis">GitHub code</a></p>
 
-<p>In the next part, I'll go over some analysis of this data.</p>
-
+</div></div>
 </body>
 
 </html>

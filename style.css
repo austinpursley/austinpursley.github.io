@@ -211,6 +211,11 @@ project_page .date_heading {
 #project_page img {
 	width: 100%;
 	margin: 12px 0px 24px 0px;
+	display:block; 
+	margin-top: 12px;
+	margin-bottom: 24px;
+	margin-left: auto; 
+	margin-right: auto;
 }
 
 #project_page iframe {
