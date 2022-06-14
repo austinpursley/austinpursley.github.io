@@ -24,42 +24,48 @@ def build_html_pages(html_start_str, mid_pages_arr, html_end_str, title):
     "param title: what the HTML file will be named
     """
     next_page_entry1 = """
-	    <tr class="nav">
-		    <td style="visibility: hidden;" class="nav_button"></td>
-		    <td class="nav_button"><a href="next_page_link">next page</a></td>
+    <table class="nav">
+	    <tr>
+		    <td style="visibility: hidden;" class="nav_button prev"></td>
+		    <td class="nav_button next"><a href="next_page_link">next page</a></td>
 	    </tr>
+    </table>
     """
     next_page_entry2 = """
-	    <tr class="nav">
-		    <td class="nav_button"><a href="prev_page_link">prev page</a></td>
-		    <td class="nav_button"><a href="next_page_link">next page</a></td>
+    <table class="nav">
+	    <tr>
+		    <td class="nav_button prev"><a href="prev_page_link">prev page</a></td>
+		    <td class="nav_button next"><a href="next_page_link">next page</a></td>
 	    </tr>
+    </table>
 	    """
     next_page_entry3 = """
-	    <tr class="nav">
-		    <td class="nav_button"><a href="prev_page_link">prev page</a></td>
-		    <td style="visibility: hidden;" class="nav_button"></td>
+    <table class="nav">
+	    <tr>
+		    <td class="nav_button prev"><a href="prev_page_link">prev page</a></td>
+		    <td style="visibility: hidden;" class="nav_button next"></td>
 	    </tr>
+    </table>
     """
     mid_num = len(mid_pages_arr)
     print(mid_num)
     if mid_num == 1:
         #case where only writing one HTML page
         html_str = html_start_str + mid_pages_arr[0] + html_end_str
-        Html_file = open(title + ".html", "w")
+        Html_file = open(title + "1.html", "w")
         Html_file.write(html_str)
         Html_file.close()	
     else:
         #writing two or more HTML pages
         for page_num, mid in enumerate(mid_pages_arr, 1):
             if page_num == 1:
-	            Html_file = open(title + ".html", "w")
+	            Html_file = open(title + "1.html", "w")
 	            mid += next_page_entry1.replace("next_page_link", title + "2.html")
             else:
 	            curr_page_link = title + str(page_num) + ".html"				
 	            next_page_link = title + str(page_num+1) + ".html"
 	            if page_num == 2:
-		            prev_page_link = title + ".html"
+		            prev_page_link = title + "1.html"
 	            else:
 		            prev_page_link = title + str(page_num-1) + ".html"
 	            if page_num == mid_num:
@@ -205,20 +211,10 @@ with open('data.csv', 'w', newline='') as data:
 
 # HTML templates
 
-html_start = """
-    <!DOCTYPE html>
-    <html>
-
-    <head>
-        <title> the_title </title>
-        <link rel="stylesheet" href="../style.css">
-        <link rel="stylesheet" href="../mobile.css" media="screen and (max-device-width: 850px)" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    </head>
-
-    <body id="id_text">
-    <top></top>
-        <table>
+html_start = """---
+title: id_text
+tags: id_text
+---
     """
 # home logo is commented out here
 #html_top_scroll = """
@@ -226,44 +222,44 @@ html_start = """
 #<!--		<a href="../index.html"><img class="logo home" src="home_logo.png"/> </a> -->
 #	</div>
 #"""
-html_top_scroll = """
-	<div class="top">
-		<a href="../index.html"><img class="logo home" src="home_logo.png"/> </a>
-		<a href="images.html"><img class="logo home" src="images_logo_white.png"/> </a>
-	</div>
-"""
-html_top_image = """
-	<div class="top">
-       <a href="../index.html"><img class="logo home" src="home_logo.png"/></a>
-       <a href="scroll.html"><img class="logo home" src="images_logo.png"/> </a>
-   </div>
-"""
+# html_top_scroll = """
+# 	<div class="top">
+# 		<a href="../index.html"><img class="logo home" src="home_logo.png"/> </a>
+# 		<a href="images.html"><img class="logo home" src="images_logo_white.png"/> </a>
+# 	</div>
+# """
+# html_top_image = """
+# 	<div class="top">
+#        <a href="../index.html"><img class="logo home" src="home_logo.png"/></a>
+#        <a href="scroll.html"><img class="logo home" src="images_logo.png"/> </a>
+#    </div>
+# """
 
-html_top_squawk = """
-	<div class="top">
-               <a href="../index.html"><img class="logo home" src="squawk_logo.png"/> </a>
-       </div>
-"""
+# html_top_squawk = """
+# 	<div class="top">
+#                <a href="../index.html"><img class="logo home" src="squawk_logo.png"/> </a>
+#        </div>
+# """
 
 html_image_entry_temp = """
-	<tr class="content">
+	<tr>
 		<td class="date"><time>date_text</time></td>
-		<td class="image"><a href="img_src"><img src="thumbnail_src"></a><p>caption</p></td>
+		<td class="image">
+            <a href="img_src"><img src="thumbnail_src"></a>
+            caption
+        </td>
 	</tr>
 """
 html_squawk_entry_temp = """
-        <tr class="content">
+        <tr>
 		<td class="date"><time>date_text</a></time></td>
-		<td class="squawk"><a href="squawk_page">sqwk_text</a></td>
+ 		<td class="text">
+             text_text
+        </td>
         </tr>
     """
 
 html_end = """
-        </table>
-
-    </body>
-
-    </html>
 """
 
 ## below (currently commented out) is alternative for above. havn't made up mind yet
@@ -289,20 +285,20 @@ html_end = """
 #       </div>
 #"""
 
-id_text = "content"
+content_id = "content"
 html_start_scroll = html_start.replace("the_title", "scroll")
-html_start_scroll = html_start_scroll.replace("id_text", id_text)
-html_start_scroll = html_start_scroll.replace("<top></top>", html_top_scroll)
+html_start_scroll = html_start_scroll.replace("id_text", content_id)
+# html_start_scroll = html_start_scroll.replace("<top></top>", html_top_scroll)
 
-id_text = "squawks"
-html_start_squawk = html_start.replace("the_title", "squawks")
-html_start_squawk = html_start_squawk.replace("id_text", id_text)
-html_start_squawk = html_start_squawk.replace("<top></top>", html_top_squawk)
+txt_id = "text"
+html_start_squawk = html_start.replace("the_title", "text")
+html_start_squawk = html_start_squawk.replace("id_text", txt_id)
+# html_start_squawk = html_start_squawk.replace("<top></top>", html_top_squawk)
 
-id_text = "images"
+img_id = "images"
 html_start_image = html_start.replace("the_title", "images")
-html_start_image = html_start_image.replace("id_text", id_text)
-html_start_image = html_start_image.replace("<top></top>", html_top_image)
+html_start_image = html_start_image.replace("id_text", img_id)
+# html_start_image = html_start_image.replace("<top></top>", html_top_image)
 
 ################################################################################################################
 
@@ -319,7 +315,7 @@ with open('data.csv', "r+", newline='') as data:
     scroll_mid = ""
     squawk_mid = ""
     image_mid = ""
-    loops_thresh = 120 
+    loops_thresh = 300
     scroll_loop_count = 0
     squawk_loop_count = 0
     image_loop_count = 0
@@ -335,9 +331,11 @@ with open('data.csv', "r+", newline='') as data:
 #		datetime_obj = datetime.strptime(date, '%Y.%m.%d %I:%M %p')
 #		scroll_date_format = datetime.strftime(datetime_obj, '%Y.%m.%d %I:%M %p')
         if elem_type == "image":
-            caption = row[3]
-            img_dir = "images/" + file_name
-            thumbnail_dir = "images/thumbnail/" + file_name
+            caption = ""
+            if row[3]:
+                caption = "<figcaption>" + row[3] + "</figcaption>"
+            img_dir = "/content/images/" + file_name
+            thumbnail_dir = "/content/images/thumbnail/" + file_name
             image_entry = html_image_entry_temp.replace("img_src", img_dir)
             image_entry = image_entry.replace("thumbnail_src", thumbnail_dir)
             image_entry = image_entry.replace("date_text", date)
@@ -349,31 +347,34 @@ with open('data.csv', "r+", newline='') as data:
         elif elem_type == "text":
             text = row[3]
             file_dir = "squawk/" + file_name
-            squawk_entry = html_squawk_entry_temp.replace("squawk_page", file_dir)
+            squawk_entry = html_squawk_entry_temp.replace("text_page", file_dir)
             squawk_entry = squawk_entry.replace("date_text", date)
-            squawk_entry = squawk_entry.replace("sqwk_text", text)
+            squawk_entry = squawk_entry.replace("text_text", text)
             scroll_mid += squawk_entry
             squawk_mid += squawk_entry
             scroll_loop_count += 1
             squawk_loop_count += 1
 		
-        if scroll_loop_count >= loops_thresh:
-	        scroll_loop_count = 0
-	        mid_pages_arr.append(scroll_mid)
-	        scroll_mid = ""
-        if image_loop_count >= loops_thresh:
-	        image_loop_count = 0
-	        mid_pages_imgs_arr.append(image_mid)	
-	        image_mid = ""	
-        if squawk_loop_count >= loops_thresh:
-	        squawk_loop_count = 0
-	        mid_pages_sqwk_arr.append(squawk_mid)
-	        squawk_mid = ""
-    mid_pages_arr.append(scroll_mid)
-    mid_pages_sqwk_arr.append(squawk_mid)
-    mid_pages_imgs_arr.append(image_mid)
+            if scroll_loop_count >= loops_thresh:
+                scroll_loop_count = 0
+                scroll_mid = r'<table class="index content">' + "\n" + scroll_mid + "</table>\n"
+                mid_pages_arr.append(scroll_mid)
+                scroll_mid = ""
+            if image_loop_count >= loops_thresh:
+                image_loop_count = 0
+                image_mid = r'<table class="index ' + img_id + r'">' + "\n" + image_mid + "</table>\n"
+                mid_pages_imgs_arr.append(image_mid)	
+                image_mid = ""	
+            if squawk_loop_count >= loops_thresh:
+                squawk_loop_count = 0
+                squawk_mid = r'<table class="index ' + txt_id + r'">' + "\n" + squawk_mid + "</table>\n"
+                mid_pages_sqwk_arr.append(squawk_mid)
+                squawk_mid = ""
+    mid_pages_arr.append(r'<table class="index content">' + "\n" + scroll_mid + "</table>\n")
+    mid_pages_sqwk_arr.append(r'<table class="index ' + txt_id + r'">' + "\n" + squawk_mid + "</table>\n")
+    mid_pages_imgs_arr.append(r'<table class="index ' + img_id + r'">' + "\n" + image_mid + "</table>\n")
     build_html_pages(html_start_scroll, mid_pages_arr, html_end, "scroll")
-    build_html_pages(html_start_image, mid_pages_imgs_arr, html_end, "images")
-    build_html_pages(html_start_squawk, mid_pages_sqwk_arr, html_end, "squawks")
+    build_html_pages(html_start_image, mid_pages_imgs_arr, html_end, img_id)
+    build_html_pages(html_start_squawk, mid_pages_sqwk_arr, html_end, txt_id)
 
 ################################################################################################################

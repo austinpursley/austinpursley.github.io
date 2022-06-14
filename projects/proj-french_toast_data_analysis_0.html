@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>And Serve You French Toast (Data) Again, Part 1: Collect and Clean | austinpursley.com</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="And Serve You French Toast (Data) Again, Part 1: Collect and Clean" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="French toast is one of the few things I think I’ve cooked more than half a dozen times. That’s probably what compelled me to attempt a data analysis project of french toast recipes. After all, with the internet, untold french toast recipes lay at my finger tips. Just what secrets could we unlock looking into their depths? Probably not much, but at least I’d get a gee-whiz data analysis 101 project out of it." />
+<meta property="og:description" content="French toast is one of the few things I think I’ve cooked more than half a dozen times. That’s probably what compelled me to attempt a data analysis project of french toast recipes. After all, with the internet, untold french toast recipes lay at my finger tips. Just what secrets could we unlock looking into their depths? Probably not much, but at least I’d get a gee-whiz data analysis 101 project out of it." />
+<link rel="canonical" href="http://austinpursley.com/projects/proj-french_toast_data_analysis_0.html" />
+<meta property="og:url" content="http://austinpursley.com/projects/proj-french_toast_data_analysis_0.html" />
+<meta property="og:site_name" content="austinpursley.com" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-08T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="And Serve You French Toast (Data) Again, Part 1: Collect and Clean" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-04-08T00:00:00-04:00","datePublished":"2022-04-08T00:00:00-04:00","description":"French toast is one of the few things I think I’ve cooked more than half a dozen times. That’s probably what compelled me to attempt a data analysis project of french toast recipes. After all, with the internet, untold french toast recipes lay at my finger tips. Just what secrets could we unlock looking into their depths? Probably not much, but at least I’d get a gee-whiz data analysis 101 project out of it.","headline":"And Serve You French Toast (Data) Again, Part 1: Collect and Clean","mainEntityOfPage":{"@type":"WebPage","@id":"http://austinpursley.com/projects/proj-french_toast_data_analysis_0.html"},"url":"http://austinpursley.com/projects/proj-french_toast_data_analysis_0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="http://austinpursley.com/feed.xml" title="austinpursley.com" /></head>
+<body>
+    <main class="page-content" aria-label="Content">
+	
+      <div class="wrapper project">
+	
+        <h1>And Serve You French Toast (Data) Again, Part 1: Collect and Clean</h1>
+<p>08 Apr 2022</p>
+
+<p>French toast is one of the few things I think I’ve cooked more than half a dozen times. That’s probably what compelled me to attempt a data analysis project of french toast recipes. After all, with the internet, untold french toast recipes lay at my finger tips. Just what secrets could we unlock looking into their depths? Probably not much, but at least I’d get a gee-whiz data analysis 101 project out of it.</p>
+
+<p><img src="/assets/images/beloved_food_french_toast.png" alt="" />
+<em>French toast is great.</em></p>
+
+<h2 id="no-really-why-i-am-doing-this-exactly">No really, why I am doing this exactly??</h2>
+
+<p>Usually, data anlaysis is done to answer a question, test a hypothesis, etc. But I didn’t really have any clear cut reasons from the beginning. That’s part of the fun of doing personal project; when I’m interested in something, I like to just jump in and get started.</p>
+
+<p>That being said, I still had *some* ideas, such as:</p>
+
+<ul>
+  <li>If you had enough recipes, could you normalize the data and figure out an “average” version of that recipe?</li>
+  <li>How many types of bread, eggs, and milk/cream (i.e. essential ingredients) would you find among french toast recipes?</li>
+  <li>What kind of variations of french toast are there?</li>
+  <li>What are the unique ingredients beyond the bread, eggs, and milk/cream?</li>
+</ul>
+
+<h2> <a href="https://twitter.com/dril/status/377333121554718720" style="all:unset">I am simply here to collect data</a></h2>
+
+<p>I found some recipe data more or less put together on GitHub, user onzie9’s
+ <a href="https://github.com/onzie9/all_recipes_data">all_recipe_data</a> 
+ . 250k+ recipe ingredients scraped from allrecipes.com and organized into text files. Below is an example of the content of those text files. Each recipe has a “=” delimiter, recipe title, recipe number and type, and ingredient list.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="code"><pre><span class="o">=======================================</span>
+<span class="n">mexican</span><span class="o">-</span><span class="n">strawberry</span><span class="o">-</span><span class="n">water</span><span class="o">-</span><span class="n">agua</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="n">fresa</span>
+<span class="mi">3</span> <span class="n">main</span>
+<span class="p">[</span><span class="mi">4</span> <span class="n">cups</span> <span class="n">strawberries</span><span class="p">,</span> <span class="n">sliced</span>
+ <span class="mi">1</span> <span class="n">cup</span> <span class="n">white</span> <span class="n">sugar</span>
+ <span class="mi">8</span> <span class="n">cups</span> <span class="n">cold</span> <span class="n">water</span>
+ <span class="mi">1</span> <span class="n">lime</span><span class="p">,</span> <span class="n">cut</span> <span class="n">into</span> <span class="mi">8</span> <span class="n">wedges</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span>
+ <span class="mi">8</span> <span class="n">fresh</span> <span class="n">mint</span> <span class="n">sprigs</span> <span class="p">(</span><span class="n">optional</span><span class="p">)]</span>
+<span class="o">=======================================</span>
+<span class="n">crispy</span><span class="o">-</span><span class="n">cheese</span><span class="o">-</span><span class="n">twists</span>
+<span class="mi">6663</span> <span class="n">main</span>
+<span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">cup</span> <span class="n">Parmesan</span> <span class="n">cheese</span>
+ <span class="mi">3</span><span class="o">/</span><span class="mi">4</span> <span class="n">teaspoon</span> <span class="n">ground</span> <span class="n">black</span> <span class="n">pepper</span>
+ <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">teaspoon</span> <span class="n">garlic</span> <span class="n">powder</span>
+ <span class="mi">1</span> <span class="p">(</span><span class="mf">17.5</span> <span class="n">ounce</span><span class="p">)</span> <span class="n">package</span> <span class="n">frozen</span> <span class="n">puff</span> <span class="n">pastry</span><span class="p">,</span> <span class="n">thawed</span>
+ <span class="mi">1</span> <span class="n">egg</span> <span class="n">white</span><span class="p">]</span>
+<span class="o">=======================================</span>
+<span class="n">basil</span><span class="o">-</span><span class="n">roasted</span><span class="o">-</span><span class="n">peppers</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">monterey</span><span class="o">-</span><span class="n">jack</span><span class="o">-</span><span class="n">cornbread</span>
+<span class="mi">6664</span> <span class="n">Bread</span>
+<span class="p">...</span>
+<span class="p">[</span><span class="n">recipes</span> <span class="k">continue</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="how-the-tables-turn">How the tables turn</h2>
+
+<p>This was pretty good. But I wanted this “raw data” to be restructured into a tabular format instead, something I could manipulate as a Pandas data frame and save as a CSV file.</p>
+
+<p>I (of course) used Python to get there, starting with defining the location of the data I got off of GitHub.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">regex</span> <span class="k">as</span> <span class="n">re</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">raw_recipe_data_dir</span> <span class="o">=</span> <span class="s">"all_recipes_data-master/DataFiles/"</span>
+<span class="n">raw_data_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">"raw_data_1.txt"</span><span class="p">,</span> <span class="s">"raw_data_2.txt"</span><span class="p">,</span> <span class="s">"raw_data_3.txt"</span><span class="p">,</span>
+                 <span class="s">"raw_data_4.txt"</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Then I defined a regex pattern to extract the data.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s">"=======================================(?:\n|\r\n?)((?:.+))(?:\n|\r\n?)((?:.+))(?:\n|\r\n?)(\[(?:[^=]|\n)+\])"</span>
+<span class="n">recipereg</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>See the screenshot from
+ <a href="https://regex101.com/">regex101.com</a> 
+ below for an overview of how this works out. The recipe title, number and type, and ingredients correspond to the
+ <a href="https://docs.python.org/3/howto/regex.html#grouping">capture groups</a> 
+ i.e. the regex in parentheses “(…)”. The non-capture groups, i.e. the regex in “(?:…)”, are ignored.</p>
+
+<p><img src="/assets/images/french-toast-regex-example.png" alt="" />
+<em>Regex pattern for recipe data in text files.</em></p>
+
+<p>The next part of code iterates through each text file, applies the regex pattern, and saves matches into a Pandas data frame.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">"Title"</span><span class="p">,</span> <span class="s">"Type"</span><span class="p">,</span> <span class="s">"Ingredients"</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">raw_data_list</span><span class="p">:</span>
+    <span class="c1"># get text file contents
+</span>    <span class="n">f_loc</span> <span class="o">=</span> <span class="n">raw_recipe_data_dir</span> <span class="o">+</span> <span class="n">fn</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">raw_recipe_data_dir</span> <span class="o">+</span> <span class="n">fn</span><span class="p">)</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+    
+    <span class="c1"># find regex pattern matches in contents 
+</span>    <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">contents</span><span class="p">)</span>
+    
+    <span class="c1"># input matches into dataframe
+</span>    <span class="n">df_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">"Title"</span><span class="p">,</span> <span class="s">"Type"</span><span class="p">,</span> <span class="s">"Ingredients"</span><span class="p">])</span>
+    <span class="n">df_temp</span><span class="p">[</span><span class="s">"Title"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">m</span><span class="p">]</span>
+    <span class="n">df_temp</span><span class="p">[</span><span class="s">"Type"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">m</span><span class="p">]</span>
+    <span class="n">df_temp</span><span class="p">[</span><span class="s">"Ingredients"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">m</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_temp</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Boom, that’s our data in tabular form.</p>
+
+<h2 id="the-first-cut-is-the-deepest">The First Cut Is The Deepest</h2>
+
+<p>Next, I wanted to get the approximate subset of recipes for french toast. I used a simple solution: just drop the recipe if its title did not contain both “french” and “toast”.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre><span class="c1"># drop unnecessary columns
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'Type'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># make sure everything is lowercase
+</span><span class="n">df</span><span class="p">[</span><span class="s">"Title"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">"Title"</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s">"Ingredients"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">"Ingredients"</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># drops rows that don't contain "french" and "toast" in the title of recipe
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s">"Title"</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">"french"</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">"Title"</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">"toast"</span><span class="p">))]</span>
+
+<span class="c1"># drop duplicate rows
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+
+<span class="c1"># double check ingredient frequency / no duplicates
+</span><span class="n">count_ingredients</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">"Ingredients"</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="c1"># write CSV
+</span><span class="n">df</span><span class="p">[</span><span class="s">"Ingredients"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">"Ingredients"</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'[]'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">"french_toast_recipes.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>This also simplifies things by ignoring other names for french toast, of which there are
+ <a href="https://en.wikipedia.org/wiki/French_toast">quite a few</a> 
+ , such as the French “pain perdu” or the British “eggy bread”.</p>
+
+<p>And there we go, I now had what presumably could be considered an alright set of french toast recipes from this allrecipes.com data set.</p>
+
+<p><img src="/assets/images/french-toast-csv-example.png" alt="" />
+<em>Example of what the tabular data looks like.</em></p>
+
+<h2 id="youre-gonna-clean-that-data">You’re Gonna Clean That Data</h2>
+
+<p><img src="/assets/images/french-toast-cass.jpg" alt="" />
+<em>French toast casserole? Doesn’t count.</em></p>
+
+<p>So that was pretty easy and cool, but I was far from being done. Just because “french” and “toast” were in the title, doesn’t mean these were real deal french toast recipes. Furthermore, it didn’t take long to figure out the ingredients data was, from an analysis perspective, junk. The units and quantities were not separated, even the simplest ingredients had dozens of variants, some lines had multiple ingredients in them, etc. A cleanse was in order.</p>
+
+<p>At the start, I hadn’t realized the hard task I had haphazardly jumped into. My cleaning process at the start was pretty “whatever”, I learned as I went, and it was iterative. I would clean data in one dimension, stepped back to clean in another, then re-do a previous cleanse, etc. I ended up writing 7 Python script files that either cleaned the data or helped me inspect / visualize it. Interwoven into the cleaning process was additional restructuring as well.</p>
+
+<p>Here’s a summary of the cleaning process:</p>
+
+<ul>
+  <li>Do “quality checks” on the data. For example, below I am checking the unique values in the “flavor” category. It’s a quick read on unique values and how often they appear, and therefore makes it easy to spot anomalies such as duplicates, typos, missing values, etc.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="n">qc_check_flavor</span> <span class="o">=</span> <span class="n">ft_recipes</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ft_recipes</span><span class="p">[</span><span class="s">"category"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"flavor"</span><span class="p">,</span> <span class="p">[</span><span class="s">"ingr"</span><span class="p">]].</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p><img src="/assets/images/french-toast-qa-check-example.png" alt="" />
+<em>Example of flavor value counts. Shout out to Spyder’s variable explorer.</em></p>
+
+<ul>
+  <li>Cut out recipes that did not meet certain french toast qualifications. For example, the code below cuts out recipes that do not have the core ingredients of bread, eggs, and milk/cream.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="code"><pre><span class="c1"># looking for recipes that don't have basic ingredients (bread, milk, eggs)
+# bread
+</span><span class="n">bread</span> <span class="o">=</span> <span class="p">[</span><span class="s">"bread"</span><span class="p">,</span> <span class="s">"toast"</span><span class="p">,</span> <span class="s">"baguette"</span><span class="p">,</span> <span class="s">"croissant"</span><span class="p">,</span> <span class="s">"hawaiian"</span><span class="p">,</span> 
+                <span class="s">"challah"</span><span class="p">,</span> <span class="s">"brioche"</span><span class="p">,</span> <span class="s">"mexican bolillo rolls"</span><span class="p">,</span> <span class="s">"pannetone"</span><span class="p">,</span>
+                <span class="s">"italian bread"</span><span class="p">]</span>
+<span class="n">mask_bread</span> <span class="o">=</span> <span class="n">ft</span><span class="p">[</span><span class="s">"Ingredients"</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s">'\b(?:{})\b'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'|'</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">bread</span><span class="p">)))</span>
+<span class="n">ft</span><span class="p">[</span><span class="o">~</span><span class="n">mask_bread</span><span class="p">].</span><span class="n">to_csv</span><span class="p">(</span><span class="s">"0_cut_ft_recipes/french_toast_recipes_cut_no_bread.csv"</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="c1">#milk
+</span><span class="n">milk</span> <span class="o">=</span> <span class="p">[</span><span class="s">"milk"</span><span class="p">,</span> <span class="s">"milks"</span><span class="p">,</span> <span class="s">"half-and-half"</span><span class="p">,</span> <span class="s">"half and half"</span><span class="p">,</span> <span class="s">"heavy whipping cream"</span><span class="p">,</span> 
+                 <span class="s">"heavy cream"</span><span class="p">,</span> <span class="s">"egg nog"</span><span class="p">,</span> <span class="s">"eggnog"</span><span class="p">,</span> <span class="s">"whipping cream"</span><span class="p">,</span> <span class="s">"light cream"</span><span class="p">,</span> 
+                 <span class="s">"mascarpone cheese"</span><span class="p">,</span> <span class="s">"irish cream liqueur"</span><span class="p">]</span>
+<span class="n">mask_milk</span> <span class="o">=</span> <span class="n">ft</span><span class="p">[</span><span class="s">"Ingredients"</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s">'\b(?:{})\b'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'|'</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">milk</span><span class="p">)))</span>
+<span class="n">ft</span><span class="p">[</span><span class="o">~</span><span class="n">mask_milk</span><span class="p">].</span><span class="n">to_csv</span><span class="p">(</span><span class="s">"0_cut_ft_recipes/french_toast_recipes_cut_no_milk.csv"</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="c1"># eggs
+</span><span class="n">eggs</span> <span class="o">=</span> <span class="p">[</span><span class="s">"egg"</span><span class="p">,</span> <span class="s">"eggs"</span><span class="p">,</span> <span class="s">"egg substitute"</span><span class="p">,</span> <span class="s">"egg beaters"</span><span class="p">]</span>
+<span class="n">mask_egg</span> <span class="o">=</span> <span class="n">ft</span><span class="p">[</span><span class="s">"Ingredients"</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s">'\b(?:{})\b'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'|'</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">eggs</span><span class="p">)))</span>
+<span class="n">ft</span><span class="p">[</span><span class="o">~</span><span class="n">mask_egg</span><span class="p">].</span><span class="n">to_csv</span><span class="p">(</span><span class="s">"0_cut_ft_recipes/french_toast_recipes_cut_no_egg.csv"</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">mask</span> <span class="o">=</span> <span class="n">mask_var</span> <span class="o">&amp;</span> <span class="n">mask_bread</span> <span class="o">&amp;</span> <span class="n">mask_milk</span> <span class="o">&amp;</span> <span class="n">mask_egg</span>
+
+<span class="n">ft_non</span> <span class="o">=</span> <span class="n">ft</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span> 
+<span class="n">ft_clean</span> <span class="o">=</span> <span class="n">ft</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Another example: cutting out french toast variations. Some of these were straight abominations and would never pass as french toast, e.g. “casseroles” and “souffles”. Others were straddling the line of french toast purity. Ultimately, I chose the more “purist” approach (see further below for the whole “does baked count” thing).</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="n">ft</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"french_toast_recipes.csv"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="c1"># removing variants
+</span><span class="n">var</span> <span class="o">=</span> <span class="p">[</span><span class="s">"casserole"</span><span class="p">,</span> <span class="s">"sandwhich"</span><span class="p">,</span> <span class="s">"sandwich"</span><span class="p">,</span> <span class="s">"sandwhiches"</span><span class="p">,</span> <span class="s">"sandwiches"</span><span class="p">,</span> <span class="s">"stick"</span><span class="p">,</span> <span class="s">"sticks"</span><span class="p">,</span> 
+             <span class="s">"fingers"</span><span class="p">,</span> <span class="s">"bites"</span><span class="p">,</span> <span class="s">"roll-ups"</span><span class="p">,</span> <span class="s">"banana-roll"</span><span class="p">,</span> <span class="s">"cookies"</span><span class="p">,</span> <span class="s">"wrapped-in-bacon"</span><span class="p">,</span>
+             <span class="s">"toast-bake"</span><span class="p">,</span> <span class="s">"kabobs"</span><span class="p">,</span> <span class="s">"strata"</span><span class="p">,</span> <span class="s">"souffle"</span><span class="p">,</span> <span class="s">"soufle"</span><span class="p">,</span> <span class="s">"cobbler"</span><span class="p">,</span> <span class="s">"in-a-cup"</span><span class="p">,</span>
+             <span class="s">"baked"</span><span class="p">,</span> <span class="s">"bake"</span><span class="p">,</span> <span class="s">"cups"</span><span class="p">,</span> <span class="s">"slow-cooker"</span><span class="p">,</span> <span class="s">"no-fry"</span><span class="p">,</span> <span class="s">"overnight"</span><span class="p">]</span>
+<span class="n">mask_var</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="n">ft</span><span class="p">[</span><span class="s">"Title"</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="sa">r</span><span class="s">'\b(?:{})\b'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s">'|'</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">var</span><span class="p">))))</span>
+<span class="n">ft</span><span class="p">[</span><span class="o">~</span><span class="n">mask_var</span><span class="p">].</span><span class="n">to_csv</span><span class="p">(</span><span class="s">"0_cut_ft_recipes/french_toast_recipes_cut_variants.csv"</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Break down data into ingredient (just words), units, and quantities. Easy enough to separate numbers from words. We can even apply a first guess of the units by looking at first word that occurs after the first number. But after that, it required a lot of manual data review to get correct breakdowns.</li>
+  <li>Simplify and categorize the ingredients. I wanted to make the data more uniform and simplify many variants of what were (basically) the same ingredients. For example, see below. The category is easy enough, this is the milk/cream used for the custard. However, notice that “1% fat milk” was changed to “low fat milk”. I did this because, as a culinary cipher like myself finds out, there are quite a few variations of milk and names for defining them. “1% milk” is the same as “low fat milk”, but other recipes would use one or the other, so I had to choose just one name for all recipes. Another example: some ingredients had “or”s in them, e.g. “italian or french bread”, and for those I decided to always go with the first option.</li>
+</ul>
+
+<p><img src="/assets/images/french-toast-ingr-breakdown-example.png" alt="" /></p>
+
+<p>Example of ingredient breakdown.</p>
+
+<h3 id="bake-or-nah">Bake? Or nah?</h3>
+
+<p>The largest issue / side quest I ran into was deciding whether “baked” variants of french toast were allowed. After I thought I was mostly done with cleaning, I did
+ <a href="/assets/def_of_french_toast.txt">some research</a>, and decided french toast had to be fried/sautéed. Therefore, I decided to cut all recipes that were primarily cooked through baking. Unfortunately, this ended up being quite involved. After trying to make cuts off of titles and ingredients alone, I realize I would have to look at the recipe instructions to determine if the recipe was baked or not.</p>
+
+<p>Problem was, the instructions were not included in the data I had. But I had to commit to what I started, so I ended up writing an entire new Python script just to scrape data from allrecipes.com and acquire the missing instructions. Then it was a long process of manually checking each of the suspect recieps to determine how they were cooked. Despite the challenge, this worked out nicely and I think I succeeded in my purge. But it also cut out many recipes, to the point where I wondered if I was being too much of a purist.</p>
+
+<h2 id="its-over">It’s Over</h2>
+
+<p>At the end of the process, each ingredient had been broken down into components: a quantity, units, cut, name of ingredient, category and subcategory. Special attention was paid to the three core ingredients bread, milk/creams, and eggs.</p>
+
+<p><img src="/assets/images/french-toast-ingr-cleaned-sample.png" alt="" />
+<em>Sample of final cleaned data set.</em></p>
+
+<p><a href="/projects/proj-french_toast_data_analysis_1.html">Part 2</a></p>
+
+<p><a href="/projects/proj-french_toast_data_analysis_2.html">Part 3</a></p>
+
+<p><a href="https://github.com/austinpursley/french-toast-data-analysis">GitHub code</a></p>
+
+
+
+      </div>
+    </main>
+  </body>
+
+</html>
