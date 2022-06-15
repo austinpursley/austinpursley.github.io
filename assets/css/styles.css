@@ -1,4 +1,6 @@
 /* @mixin media-query($device) { @media screen and (max-width: $device) { @content; } } @mixin relative-font-size($ratio) { font-size: $base-font-size * $ratio; } */
+main { /*	display:flex; flex-wrap:wrap; margin:2rem auto; */ padding: 1rem; }
+
 html { height: 100%; }
 
 img { max-width: 100%; }
@@ -57,6 +59,8 @@ table.images img { max-height: 400px; }
 
 table.images td.image { display: inline-block; margin: 1rem; }
 
+.wrapper.images table.nav { font-size: 1.5rem; }
+
 /**************************************/
 /*             NAV                    */
 /**************************************/
@@ -65,8 +69,6 @@ table.nav { margin: 1rem 0px 0px 0px; width: 85%; }
 td.nav_buton.prev { text-align: left; }
 
 td.nav_button.next { text-align: right; }
-
-main { display: flex; flex-wrap: wrap; margin: 2rem auto; padding: 1rem; }
 
 .highlight table td { padding: 5px; }
 

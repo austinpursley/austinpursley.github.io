@@ -315,7 +315,7 @@ with open('data.csv', "r+", newline='') as data:
     scroll_mid = ""
     squawk_mid = ""
     image_mid = ""
-    loops_thresh = 300
+    loops_thresh = 500
     scroll_loop_count = 0
     squawk_loop_count = 0
     image_loop_count = 0
@@ -355,21 +355,21 @@ with open('data.csv', "r+", newline='') as data:
             scroll_loop_count += 1
             squawk_loop_count += 1
 		
-            if scroll_loop_count >= loops_thresh:
-                scroll_loop_count = 0
-                scroll_mid = r'<table class="index content">' + "\n" + scroll_mid + "</table>\n"
-                mid_pages_arr.append(scroll_mid)
-                scroll_mid = ""
-            if image_loop_count >= loops_thresh:
-                image_loop_count = 0
-                image_mid = r'<table class="index ' + img_id + r'">' + "\n" + image_mid + "</table>\n"
-                mid_pages_imgs_arr.append(image_mid)	
-                image_mid = ""	
-            if squawk_loop_count >= loops_thresh:
-                squawk_loop_count = 0
-                squawk_mid = r'<table class="index ' + txt_id + r'">' + "\n" + squawk_mid + "</table>\n"
-                mid_pages_sqwk_arr.append(squawk_mid)
-                squawk_mid = ""
+        if scroll_loop_count >= loops_thresh:
+            scroll_loop_count = 0
+            scroll_mid = r'<table class="index content">' + "\n" + scroll_mid + "</table>\n"
+            mid_pages_arr.append(scroll_mid)
+            scroll_mid = ""
+        if image_loop_count >= loops_thresh:
+            image_loop_count = 0
+            image_mid = r'<table class="index ' + img_id + r'">' + "\n" + image_mid + "</table>\n"
+            mid_pages_imgs_arr.append(image_mid)	
+            image_mid = ""	
+        if squawk_loop_count >= loops_thresh:
+            squawk_loop_count = 0
+            squawk_mid = r'<table class="index ' + txt_id + r'">' + "\n" + squawk_mid + "</table>\n"
+            mid_pages_sqwk_arr.append(squawk_mid)
+            squawk_mid = ""
     mid_pages_arr.append(r'<table class="index content">' + "\n" + scroll_mid + "</table>\n")
     mid_pages_sqwk_arr.append(r'<table class="index ' + txt_id + r'">' + "\n" + squawk_mid + "</table>\n")
     mid_pages_imgs_arr.append(r'<table class="index ' + img_id + r'">' + "\n" + image_mid + "</table>\n")
