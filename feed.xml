@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-15T07:21:04-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">austinpursley.com</title><subtitle>Personal website of Austin Pursley.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/projects/jekyll/update/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-05-24T22:24:52-04:00</published><updated>2022-05-24T22:24:52-04:00</updated><id>http://localhost:4000/projects/jekyll/update/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/projects/jekyll/update/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-15T16:16:28-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">austinpursley.com</title><subtitle>Personal website of Austin Pursley.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/projects/jekyll/update/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-05-24T22:24:52-04:00</published><updated>2022-05-24T22:24:52-04:00</updated><id>http://localhost:4000/projects/jekyll/update/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/projects/jekyll/update/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
@@ -14,11 +14,13 @@
 <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
 <span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="projects" /><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">And Serve You French Toast (Data) Again, Part 2: Quantities</title><link href="http://localhost:4000/projects/proj-french_toast_data_analysis_1.html" rel="alternate" type="text/html" title="And Serve You French Toast (Data) Again, Part 2: Quantities" /><published>2022-05-23T00:00:00-04:00</published><updated>2022-05-23T00:00:00-04:00</updated><id>http://localhost:4000/projects/proj-french_toast_data_analysis_1</id><content type="html" xml:base="http://localhost:4000/projects/proj-french_toast_data_analysis_1.html"><![CDATA[<p><img src="/assets/images/egg2.gif" alt="" />
-<img src="/assets/images/bread1.gif" alt="" />
-<img src="/assets/images/milk.gif" alt="" />
-<img src="/assets/images/bread1.gif" alt="" />
-<img src="/assets/images/egg2.gif" alt="" /></p>
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="projects" /><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">And Serve You French Toast (Data) Again, Part 2: Quantities</title><link href="http://localhost:4000/projects/proj-french_toast_data_analysis_1.html" rel="alternate" type="text/html" title="And Serve You French Toast (Data) Again, Part 2: Quantities" /><published>2022-05-23T00:00:00-04:00</published><updated>2022-05-23T00:00:00-04:00</updated><id>http://localhost:4000/projects/proj-french_toast_data_analysis_1</id><content type="html" xml:base="http://localhost:4000/projects/proj-french_toast_data_analysis_1.html"><![CDATA[<div style="display:flex; flex-wrap:nowrap;text-align:center; width:100%;">
+  <p><span style="width:19%;display:inline-block"> <img src="/assets/images/egg2.gif" alt="" /> </span>
+<span style="width:19%;display:inline-block"> <img src="/assets/images/bread1.gif" alt="" /> </span> 
+<span style="width:19%;display:inline-block"> <img src="/assets/images/milk.gif" alt="" /> </span> 
+<span style="width:19%;display:inline-block"> <img src="/assets/images/bread1.gif" alt="" /> </span> 
+<span style="width:19%;display:inline-block"> <img src="/assets/images/egg2.gif" alt="" /> </span></p>
+</div>
 
 <p>Here my goal is to do some light analysis and data viz of the ingredient quantities from the
  <a href="/projects/proj-french_toast_data_analysis_0.html">allrecipes.com french toast recipe data</a> 
@@ -326,8 +328,8 @@
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="code"><pre><span class="n">e2m_vc</span> <span class="o">=</span> <span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio"</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">norm</span><span class="p">[</span><span class="s">"eggs (fl oz)"</span><span class="p">]</span> <span class="o">/</span> <span class="n">norm</span><span class="p">[</span><span class="s">"milk/cream (fl oz)"</span><span class="p">]</span> 
+</pre></td><td class="code"><pre><span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">norm</span><span class="p">[</span><span class="s">"eggs (fl oz)"</span><span class="p">]</span> <span class="o">/</span> <span class="n">norm</span><span class="p">[</span><span class="s">"milk/cream (fl oz)"</span><span class="p">]</span> 
+<span class="n">e2m_vc</span> <span class="o">=</span> <span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio"</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>And we can do a quick plot of the data.</p>
@@ -347,7 +349,7 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <p><img src="/assets/images/french-toast-egg2milk-ratio-bar1.png" alt="" />
-<em>Initial bar chart of egg-to-milk ratios.</em></p>
+<em>Initial bar chart of french toast recipe egg-to-milk ratios.</em></p>
 
 <p>This gives us sense that there is a cluster around 3 or 4 eggs for every cup of milk. However, this graph could be better. Let’s start over (inside scoop into the learning process here).</p>
 
@@ -383,17 +385,13 @@
 30
 31
 32
-33
-34
 </pre></td><td class="code"><pre><span class="c1"># BAR CHART
 # set-up data
-</span><span class="n">norm</span><span class="p">[</span><span class="s">"b2e ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">norm</span><span class="p">[</span><span class="s">"bread slices"</span><span class="p">]</span> <span class="o">/</span> <span class="n">norm</span><span class="p">[</span><span class="s">"eggs (fl oz)"</span><span class="p">]</span>
-<span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">norm</span><span class="p">[</span><span class="s">"eggs (fl oz)"</span><span class="p">]</span> <span class="o">/</span> <span class="n">norm</span><span class="p">[</span><span class="s">"milk/cream (fl oz)"</span><span class="p">]</span>
+</span><span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio"</span><span class="p">]</span> <span class="o">=</span> <span class="n">norm</span><span class="p">[</span><span class="s">"eggs (fl oz)"</span><span class="p">]</span> <span class="o">/</span> <span class="n">norm</span><span class="p">[</span><span class="s">"milk/cream (fl oz)"</span><span class="p">]</span>
 <span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio, # eggs to 1 cup milk"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio"</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1.7</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span>
 <span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio, # eggs to 1 cup milk"</span><span class="p">]</span> <span class="o">=</span> <span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio, # eggs to 1 cup milk"</span><span class="p">].</span><span class="nb">round</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">e2m_vc</span> <span class="o">=</span> <span class="n">norm</span><span class="p">[</span><span class="s">"e2m ratio, # eggs to 1 cup milk"</span><span class="p">].</span><span class="n">value_counts</span><span class="p">().</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">e2m_vc</span> <span class="o">=</span> <span class="n">e2m_vc</span><span class="p">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s">'index'</span><span class="p">])</span>
-
 <span class="c1"># figure, font size
 </span><span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="p">.</span><span class="n">rc</span><span class="p">(</span><span class="s">'axes'</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>    <span class="c1"># fontsize of the x and y labels
@@ -422,7 +420,7 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <p><img src="/assets/images/french-toast-egg2milk-ratio-bar2.png" alt="" />
-<em>Round 2, looking better.</em></p>
+<em>Bar chart of french toast recipe egg-to-milk ratios (looking better)</em></p>
 
 <p>This plot more clearly shows the count for each ratio. And, look at that, it turns out that 4 eggs to 1 cup is seen more often among these recipes, as opposed to Serious Eats’ reccomendation. Who’s to say why this is.</p>
 
@@ -463,9 +461,9 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <p><img src="/assets/images/french-toast-egg2milk-ratio-hist1.png" alt="" />
-<em>Histogram of egg-to-milk ratios.</em></p>
+<em>Histogram of egg-to-milk ratios (subset of data).</em></p>
 
-<p>“Neat”.</p>
+<p>Nice.</p>
 
 <p><a href="/projects/proj-french_toast_data_analysis_0.html">Part 1</a></p>
 
@@ -946,7 +944,7 @@
 
 <p>This was pretty good. But I wanted this “raw data” to be restructured into a tabular format instead, something I could manipulate as a Pandas data frame and save as a CSV file.</p>
 
-<p>I (of course) used Python to get there, starting with defining the location of the data I got off of GitHub.</p>
+<p>I used Python to get there, starting with defining the GitHub data locations on my computer.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -962,7 +960,7 @@
                  <span class="s">"raw_data_4.txt"</span><span class="p">]</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Then I defined a regex pattern to extract the data.</p>
+<p>Then I define a regex pattern for extracting the data.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -1184,7 +1182,7 @@
 
 <h2 id="its-over">It’s Over</h2>
 
-<p>At the end of the process, each ingredient had been broken down into components: a quantity, units, cut, name of ingredient, category and subcategory. Special attention was paid to the three core ingredients bread, milk/creams, and eggs.</p>
+<p>At the end of the process, each ingredient had been broken down into components: a quantity, units, cut, name of ingredient, category and subcategory. Special attention was paid to bread, milk/creams, and eggs.</p>
 
 <p><img src="/assets/images/french-toast-ingr-cleaned-sample.png" alt="" />
 <em>Sample of final cleaned data set.</em></p>
