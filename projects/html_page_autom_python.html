@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Static Site Generation with Python | austinpursley.com</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Static Site Generation with Python" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="All of the content on this website is (so far) simple static HTML pages with CSS. This works out fine because a personal website like this does not need to be dynamic for user interaction (plus, I can’t use backend tools like PHP because I host the site on GitHub Pages ). However, manually editing HTML files can be tedious, especially if the same information is being edited in many different places. One solution for this is a static site generator . There are tools out there for static site generation, but I didn’t know that when I started this project. That ignorance plus getting carried away ended up with me programming my own mini generator with Python, where all I have to do is edit data and run the script to automatically generate HTML pages." />
+<meta property="og:description" content="All of the content on this website is (so far) simple static HTML pages with CSS. This works out fine because a personal website like this does not need to be dynamic for user interaction (plus, I can’t use backend tools like PHP because I host the site on GitHub Pages ). However, manually editing HTML files can be tedious, especially if the same information is being edited in many different places. One solution for this is a static site generator . There are tools out there for static site generation, but I didn’t know that when I started this project. That ignorance plus getting carried away ended up with me programming my own mini generator with Python, where all I have to do is edit data and run the script to automatically generate HTML pages." />
+<link rel="canonical" href="http://localhost:4000/projects/html_page_autom_python.html" />
+<meta property="og:url" content="http://localhost:4000/projects/html_page_autom_python.html" />
+<meta property="og:site_name" content="austinpursley.com" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-17T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Static Site Generation with Python" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-05-17T00:00:00-04:00","datePublished":"2020-05-17T00:00:00-04:00","description":"All of the content on this website is (so far) simple static HTML pages with CSS. This works out fine because a personal website like this does not need to be dynamic for user interaction (plus, I can’t use backend tools like PHP because I host the site on GitHub Pages ). However, manually editing HTML files can be tedious, especially if the same information is being edited in many different places. One solution for this is a static site generator . There are tools out there for static site generation, but I didn’t know that when I started this project. That ignorance plus getting carried away ended up with me programming my own mini generator with Python, where all I have to do is edit data and run the script to automatically generate HTML pages.","headline":"Static Site Generation with Python","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/html_page_autom_python.html"},"url":"http://localhost:4000/projects/html_page_autom_python.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="austinpursley.com" /></head>
+<body>
+    <main class="page-content" aria-label="Content">
+	
+      <div class="wrapper project">
+	
+        <h1>Static Site Generation with Python</h1>
+<p>17 May 2020</p>
+
+<p>All of the content on this website is (so far) simple static HTML pages with CSS. This works out fine because a personal website like this does not need to be dynamic for user interaction (plus, I can’t use backend tools like PHP because I host the site on
+ <a href="https://pages.github.com/">GitHub Pages</a> 
+ ). However, manually editing HTML files can be tedious, especially if the same information is being edited in many different places. One solution for this is a
+ <a href="https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators">static site generator</a> 
+ . There are tools out there for static site generation, but I didn’t know that when I started this project. That ignorance plus getting carried away ended up with me programming my own mini generator with Python, where all I have to do is edit data and run the script to automatically generate HTML pages.</p>
+
+<p>Let’s say I want a page to show off some photos. As a starting point, I could fill a folder with images that I want to share:</p>
+
+<p><img src="/assets/images/p2h_images_in_folder.png" alt="" /></p>
+
+<p>With Python, it’s easy to iterate through the images:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="n">pattern</span> <span class="o">=</span> <span class="s">'/assets/images/*.jpg'</span>
+<span class="n">img_arr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">pattern</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">img_dir</span> <span class="ow">in</span> <span class="n">img_arr</span><span class="p">:</span>
+<span class="c1">#do stuff here
+</span>    
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>I also want to know when the image was created (‘Datetime’) or any captions (‘UserComment’) that might have been set. This can be contained in the image’s
+ <a href="https://en.wikipedia.org/wiki/Exif">EXIF</a> 
+ metadata. Images should usually have ‘DateTime’ metadata but other metadata like “UserComment” can be set with photo management software. The simplified example code below extracts UserComment data:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="c1"># the Pillow (PIL) and piexif libraries
+# worth mentioning, very helpful
+</span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">piexif</span>
+<span class="c1"># [...]
+</span><span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="n">img_dir</span><span class="p">)</span>
+<span class="n">exif_dict</span> <span class="o">=</span> <span class="n">piexif</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">im</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"exif"</span><span class="p">))</span>
+<span class="n">user_comment</span> <span class="o">=</span> <span class="n">exif_dict</span><span class="p">[</span><span class="s">"Exif"</span><span class="p">].</span><span class="n">get</span><span class="p">(</span><span class="n">piexif</span><span class="p">.</span><span class="n">ExifIFD</span><span class="p">.</span><span class="n">UserComment</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>The extracted image data can be exported into a CSV file.</p>
+
+<p><img src="/assets/images/p2h_csv_ex.png" alt="" /></p>
+
+<p>With that data in place, it’s simple to insert it into some HTML templates. Example code:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+</pre></td><td class="code"><pre><span class="n">html_start_str</span> <span class="o">=</span> <span class="s">"""
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;title&gt; the_title &lt;/title&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;link rel="stylesheet" href="mobile.css" media="screen and (max-device-width: 850px)" /&gt;
+&lt;link rel="stylesheet" href="mobile_portrait.css" media="screen and (max-device-width: 500px)" /&gt;
+&lt;/head&gt;
+
+&lt;body id="id_text"&gt;
+&lt;top&gt;&lt;/top&gt;
+&lt;table&gt;
+"""</span>
+
+<span class="n">html_image_entry_temp</span> <span class="o">=</span> <span class="s">"""
+&lt;tr class="content"&gt;
+    &lt;td class="date"&gt;&lt;time&gt;date_text&lt;/time&gt;&lt;/td&gt;
+    &lt;td class="image"&gt;&lt;a href="img_src"&gt;&lt;img src="thumbnail_src"&gt;&lt;/a&gt;&lt;p&gt;caption&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+image_mid = ""
+
+html_end_str = """</span>
+<span class="o">&lt;/</span><span class="n">table</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="s">"""
+
+# [...]
+for row in data:
+date = row[0]		
+elem_type = row[1]		
+file_name = row[2]
+image_entry = html_image_entry_temp.replace("img_src", img_dir)
+image_entry = image_entry.replace("thumbnail_src", thumbnail_dir)
+image_entry = image_entry.replace("date_text", date)
+image_entry = image_entry.replace("caption", caption)
+image_mid += image_entry
+
+# [...]
+
+Html_file = open(title + ".html", "w")
+html_str = html_start_str + image_mid + html_end_str
+Html_file.write(html_str)
+Html_file.close()
+
+     </span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>The final result only has two steps: (1) set images in the folder with correct EXIF metadata, and (2) run the program. Pretty easy. If there are enough images, new HTML pages will be created so that not too many images are on one page. Thumbnails will also be generated. Example page:</p>
+
+<p><img src="/assets/images/p2h_images_example.png" alt="" /></p>
+
+<p>You can visit the images page
+ <a href="../content/images.html">here</a> 
+ . I also did a similar process process for
+ <a href="../content/squawks.html">text posts</a> 
+ and
+ <a href="../content/scroll.html">combined</a> 
+ image and text posts. All of these pages generate when the “update.py” program is run.</p>
+
+<p>See
+ <a href="https://github.com/austinpursley/austinpursley.github.io/tree/master/content">GitHub</a> 
+ for code and more details.</p>
+
+
+
+      </div>
+    </main>
+  </body>
+
+</html>
