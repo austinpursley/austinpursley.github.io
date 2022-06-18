@@ -30,7 +30,7 @@
 
 <p>French toast is one of the few things I think I’ve cooked more than half a dozen times. That’s probably what compelled me to attempt a data analysis project of french toast recipes. After all, with the internet, untold french toast recipes lay at my finger tips. Just what secrets could we unlock looking into their depths? Probably not much, but at least I’d get a gee-whiz data analysis 101 project out of it.</p>
 
-<p><img src="/assets/images/beloved_food_french_toast.png" alt="" />
+<p><img src="/assets/images/beloved_food_french_toast.webp" alt="" />
 <em>French toast is great.</em></p>
 
 <h2 id="no-really-why-i-am-doing-this-exactly">No really, why I am doing this exactly??</h2>
@@ -130,7 +130,7 @@
  <a href="https://docs.python.org/3/howto/regex.html#grouping">capture groups</a> 
  i.e. the regex in parentheses “(…)”. The non-capture groups, i.e. the regex in “(?:…)”, are ignored.</p>
 
-<p><img src="/assets/images/french-toast-regex-example.png" alt="" />
+<p><img src="/assets/images/french-toast-regex-example.webp" alt="" />
 <em>Regex pattern for recipe data in text files.</em></p>
 
 <p>The next part of code iterates through each text file, applies the regex pattern, and saves matches into a Pandas data frame.</p>
@@ -221,12 +221,12 @@
 
 <p>And there we go, I now had what presumably could be considered an alright set of french toast recipes from this allrecipes.com data set.</p>
 
-<p><img src="/assets/images/french-toast-csv-example.png" alt="" />
+<p><img src="/assets/images/french-toast-csv-example.webp" alt="" />
 <em>Example of what the tabular data looks like.</em></p>
 
 <h2 id="youre-gonna-clean-that-data">You’re Gonna Clean That Data</h2>
 
-<p><img src="/assets/images/french-toast-cass.jpg" alt="" />
+<p><img src="/assets/images/french-toast-cass.webp" alt="" />
 <em>French toast casserole? Doesn’t count.</em></p>
 
 <p>So that was pretty easy and cool, but I was far from being done. Just because “french” and “toast” were in the title, doesn’t mean these were real deal french toast recipes. Furthermore, it didn’t take long to figure out the ingredients data was, from an analysis perspective, junk. The units and quantities were not separated, even the simplest ingredients had dozens of variants, some lines had multiple ingredients in them, etc. A cleanse was in order.</p>
@@ -243,7 +243,7 @@
 </pre></td><td class="code"><pre><span class="n">qc_check_flavor</span> <span class="o">=</span> <span class="n">ft_recipes</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ft_recipes</span><span class="p">[</span><span class="s">"category"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"flavor"</span><span class="p">,</span> <span class="p">[</span><span class="s">"ingr"</span><span class="p">]].</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><img src="/assets/images/french-toast-qa-check-example.png" alt="" />
+<p><img src="/assets/images/french-toast-qa-check-example.webp" alt="" />
 <em>Example of flavor value counts. Shout out to Spyder’s variable explorer.</em></p>
 
 <ul>
@@ -325,7 +325,7 @@
   <li>Simplify and categorize the ingredients. I wanted to make the data more uniform and simplify many variants of what were (basically) the same ingredients. For example, see below. The category is easy enough, this is the milk/cream used for the custard. However, notice that “1% fat milk” was changed to “low fat milk”. I did this because, as a culinary cipher like myself finds out, there are quite a few variations of milk and names for defining them. “1% milk” is the same as “low fat milk”, but other recipes would use one or the other, so I had to choose just one name for all recipes. Another example: some ingredients had “or”s in them, e.g. “italian or french bread”, and for those I decided to always go with the first option.</li>
 </ul>
 
-<p><img src="/assets/images/french-toast-ingr-breakdown-example.png" alt="" /></p>
+<p><img src="/assets/images/french-toast-ingr-breakdown-example.webp" alt="" /></p>
 
 <p>Example of ingredient breakdown.</p>
 
@@ -340,7 +340,7 @@
 
 <p>At the end of the process, each ingredient had been broken down into components: a quantity, units, cut, name of ingredient, category and subcategory. Special attention was paid to bread, milk/creams, and eggs.</p>
 
-<p><img src="/assets/images/french-toast-ingr-cleaned-sample.png" alt="" />
+<p><img src="/assets/images/french-toast-ingr-cleaned-sample.webp" alt="" />
 <em>Sample of final cleaned data set.</em></p>
 
 <p><a href="/projects/french_toast_data_analysis_1.html">Part 2</a></p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-17T10:49:04-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">austinpursley.com</title><subtitle>Personal website of Austin Pursley.</subtitle><entry><title type="html">Static Site Generation with Jekyll</title><link href="http://localhost:4000/projects/jekyll.html" rel="alternate" type="text/html" title="Static Site Generation with Jekyll" /><published>2022-06-15T00:00:00-04:00</published><updated>2022-06-15T00:00:00-04:00</updated><id>http://localhost:4000/projects/jekyll</id><content type="html" xml:base="http://localhost:4000/projects/jekyll.html"><![CDATA[<p><img src="/assets/images/dalle-mini-jekyll-making-a-website.png" alt="" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-18T18:38:21-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">austinpursley.com</title><subtitle>Personal website of Austin Pursley.</subtitle><entry><title type="html">Static Site Generation with Jekyll</title><link href="http://localhost:4000/projects/jekyll.html" rel="alternate" type="text/html" title="Static Site Generation with Jekyll" /><published>2022-06-15T00:00:00-04:00</published><updated>2022-06-15T00:00:00-04:00</updated><id>http://localhost:4000/projects/jekyll</id><content type="html" xml:base="http://localhost:4000/projects/jekyll.html"><![CDATA[<p><img src="/assets/images/dalle-mini-jekyll-making-a-website.webp" alt="" />
 <em>Late train Jekyll + bandwagon DALL·E</em></p>
 
 <p>I have started using a static site generator for this website, Jekyll. Before I was just editing HTML and CSS files, plus a <a href="/projects/html_page_autom_python.html">bit of Python</a>. Creating a website “from scratch” that way had a simplicity that appealed to me, even if I was re-inventing the wheel sometimes. But static site generators are so commonplace and easy, it was only a matter of time that I switched to one.</p>
@@ -9,7 +9,7 @@
 
 <p>I also reset the style to a blank canvas, white background and black text, as I consider what the next look will be.</p>
 
-<p><img src="/assets/images/2022-06-15-jekyll-site-home.png" alt="" />
+<p><img src="/assets/images/2022-06-15-jekyll-site-home.webp" alt="" />
 <em>What the homepage looks like right now.</em></p>]]></content><author><name></name></author><category term="projects" /><category term="project" /><category term="programming" /><summary type="html"><![CDATA[Late train Jekyll + bandwagon DALL·E]]></summary></entry><entry><title type="html">And Serve You French Toast (Data) Again, Part 2: Quantities</title><link href="http://localhost:4000/projects/french_toast_data_analysis_1.html" rel="alternate" type="text/html" title="And Serve You French Toast (Data) Again, Part 2: Quantities" /><published>2022-05-23T00:00:00-04:00</published><updated>2022-05-23T00:00:00-04:00</updated><id>http://localhost:4000/projects/french_toast_data_analysis_1</id><content type="html" xml:base="http://localhost:4000/projects/french_toast_data_analysis_1.html"><![CDATA[<div style="display:flex; flex-wrap:nowrap;text-align:center; width:100%;">
   <p><span style="width:19%;display:inline-block"> <img src="/assets/images/egg2.gif" alt="" /> </span>
 <span style="width:19%;display:inline-block"> <img src="/assets/images/bread1.gif" alt="" /> </span> 
@@ -94,7 +94,7 @@
 </span><span class="n">norm_cnt</span> <span class="o">=</span> <span class="n">norm</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">"title"</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="bp">False</span><span class="p">).</span><span class="n">agg</span><span class="p">(</span><span class="s">"count"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><img src="/assets/images/french-toast-norm.png" alt="" />
+<p><img src="/assets/images/french-toast-norm.webp" alt="" />
 <em>Dataframe of normalized units.</em></p>
 
 <h2 id="basic-stats">Basic Stats</h2>
@@ -212,10 +212,10 @@
 <span class="n">ax</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'tight'</span><span class="p">)</span>
 <span class="n">table</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="n">table</span><span class="p">(</span><span class="n">cellText</span><span class="o">=</span><span class="n">df</span><span class="p">.</span><span class="n">values</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s">'center'</span><span class="p">,</span> <span class="n">cellLoc</span><span class="o">=</span><span class="s">'left'</span><span class="p">,</span> <span class="n">colWidths</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.1</span><span class="p">])</span>
 <span class="n">fig</span><span class="p">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french-toast-basic-stats_tbl.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french-toast-basic-stats_tbl.webp'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><img src="/assets/images/french-toast-basic-stats_tbl.png" alt="" /></p>
+<p><img src="/assets/images/french-toast-basic-stats_tbl.webp" alt="" /></p>
 
 <h2 id="visualizing-ingredient-quantities">Visualizing Ingredient Quantities</h2>
 
@@ -308,10 +308,10 @@
 <span class="n">m</span> <span class="o">=</span> <span class="n">norm</span><span class="p">[</span><span class="s">"milk/cream (fl oz)"</span><span class="p">].</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">ax</span><span class="p">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"mean"</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">'r'</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s">'dashed'</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french-toast-hist-essn-ingr2.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french-toast-hist-essn-ingr2.webp'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><img src="/assets/images/french-toast-hist-essn-ingr2.png" alt="" />
+<p><img src="/assets/images/french-toast-hist-essn-ingr2.webp" alt="" />
 <em>Histograms of essential ingredients.</em></p>
 
 <h2 id="egg-to-milk-ratios">Egg to Milk Ratios</h2>
@@ -341,10 +341,10 @@
 <span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'# of French Toast Recipes'</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="n">vlines</span><span class="p">(</span><span class="mf">0.6375</span>  <span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">"gray"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">'dashed'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"standard 3 eggs : 1 cup milk"</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french-toast-egg2milk-ratio-bar1.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french-toast-egg2milk-ratio-bar1.webp'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><img src="/assets/images/french-toast-egg2milk-ratio-bar1.png" alt="" />
+<p><img src="/assets/images/french-toast-egg2milk-ratio-bar1.webp" alt="" />
 <em>Initial bar chart of french toast recipe egg-to-milk ratios.</em></p>
 
 <p>This gives us sense that there is a cluster around 3 or 4 eggs for every cup of milk. However, this graph could be better. Let’s start over (inside scoop into the learning process here).</p>
@@ -411,11 +411,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">10</span> <span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">c3</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">'dashed'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">"~eggs = milk"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.25</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="c1"># save as an image
-</span><span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french-toast-egg2milk-ratio-bar2.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french-toast-egg2milk-ratio-bar2.webp'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><img src="/assets/images/french-toast-egg2milk-ratio-bar2.png" alt="" />
+<p><img src="/assets/images/french-toast-egg2milk-ratio-bar2.webp" alt="" />
 <em>Bar chart of french toast recipe egg-to-milk ratios (looking better)</em></p>
 
 <p>This plot more clearly shows the count for each ratio. And, look at that, it turns out that 4 eggs to 1 cup is seen more often among these recipes, as opposed to Serious Eats’ reccomendation. Who’s to say why this is.</p>
@@ -453,10 +453,10 @@
 <span class="n">ax</span><span class="p">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">24</span><span class="p">])</span>
 <span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Eggs to 1 cup Milk Ratio'</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'# of French Toast Recipes'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french-toast-egg2milk-ratio-hist1.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french-toast-egg2milk-ratio-hist1.webp'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><img src="/assets/images/french-toast-egg2milk-ratio-hist1.png" alt="" />
+<p><img src="/assets/images/french-toast-egg2milk-ratio-hist1.webp" alt="" />
 <em>Histogram of egg-to-milk ratios (subset of data).</em></p>
 
 <p>Nice.</p>
@@ -471,7 +471,7 @@
 
 <h2 id="pie-charts">Pie Charts</h2>
 
-<p><img src="/assets/images/thatsamore.png" alt="" /></p>
+<p><img src="/assets/images/thatsamore.webp" alt="" /></p>
 
 <p>For the three “essential” ingredients, I wanted visualize all the unique variants. My first instinct was to do pie charts. However, in trying to make pie charts, I learned that (1) they are a pain to make and (2) they are also apperently
  <a href="https://scc.ms.unimelb.edu.au/resources/data-visualisation-and-exploration/no_pie-charts?utm_source=pocket_mylist">not that great</a> 
@@ -481,7 +481,7 @@
 
 <p>I experimented with a few different pi chart styles.</p>
 
-<p><img src="/assets/images/french_toast_pie_plot_exp.png" alt="" /></p>
+<p><img src="/assets/images/french_toast_pie_plot_exp.webp" alt="" /></p>
 
 <p>And I finally settled for style below. First, I’ll include portion of code:</p>
 
@@ -607,7 +607,7 @@
 
 <p>And then the charts themselves:</p>
 
-<p><img src="/assets/images/french_toast_pie_plot.png" alt="" /></p>
+<p><img src="/assets/images/french_toast_pie_plot.webp" alt="" /></p>
 
 <p>At least they are colorful.</p>
 
@@ -743,7 +743,7 @@
 
 <p>And the plot output:</p>
 
-<p><img src="/assets/images/french_toast_bar_plot2.png" alt="" /></p>
+<p><img src="/assets/images/french_toast_bar_plot2.webp" alt="" /></p>
 
 <p>Overall, this seems good.</p>
 
@@ -858,10 +858,10 @@
 </span>    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">.</span><span class="n">spines</span><span class="p">:</span>
         <span class="n">ax</span><span class="p">.</span><span class="n">spines</span><span class="p">[</span><span class="n">s</span><span class="p">].</span><span class="n">set_visible</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
         
-<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french_toast_bar_plot_other.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'2_analysis/french_toast_bar_plot_other.webp'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><img src="/assets/images/french_toast_bar_plot_other.png" alt="" />
+<p><img src="/assets/images/french_toast_bar_plot_other.webp" alt="" />
 <em>Categories: flavor, sugar, syrup, fruit, spread, dairy, nuts, and cereal.</em></p>
 
 <p><a href="/projects/french_toast_data_analysis_0.html">Part 1</a></p>
@@ -870,7 +870,7 @@
 
 <p><a href="https://github.com/austinpursley/french-toast-data-analysis">GitHub code</a></p>]]></content><author><name></name></author><category term="projects" /><category term="project" /><summary type="html"><![CDATA[Here my goal is to visualize the variety and number of ingredients used among the allrecipes.com french toast recipe data I gathered.]]></summary></entry><entry><title type="html">And Serve You French Toast (Data) Again, Part 1: Collect and Clean</title><link href="http://localhost:4000/projects/french_toast_data_analysis_0.html" rel="alternate" type="text/html" title="And Serve You French Toast (Data) Again, Part 1: Collect and Clean" /><published>2022-04-08T00:00:00-04:00</published><updated>2022-04-08T00:00:00-04:00</updated><id>http://localhost:4000/projects/french_toast_data_analysis_0</id><content type="html" xml:base="http://localhost:4000/projects/french_toast_data_analysis_0.html"><![CDATA[<p>French toast is one of the few things I think I’ve cooked more than half a dozen times. That’s probably what compelled me to attempt a data analysis project of french toast recipes. After all, with the internet, untold french toast recipes lay at my finger tips. Just what secrets could we unlock looking into their depths? Probably not much, but at least I’d get a gee-whiz data analysis 101 project out of it.</p>
 
-<p><img src="/assets/images/beloved_food_french_toast.png" alt="" />
+<p><img src="/assets/images/beloved_food_french_toast.webp" alt="" />
 <em>French toast is great.</em></p>
 
 <h2 id="no-really-why-i-am-doing-this-exactly">No really, why I am doing this exactly??</h2>
@@ -970,7 +970,7 @@
  <a href="https://docs.python.org/3/howto/regex.html#grouping">capture groups</a> 
  i.e. the regex in parentheses “(…)”. The non-capture groups, i.e. the regex in “(?:…)”, are ignored.</p>
 
-<p><img src="/assets/images/french-toast-regex-example.png" alt="" />
+<p><img src="/assets/images/french-toast-regex-example.webp" alt="" />
 <em>Regex pattern for recipe data in text files.</em></p>
 
 <p>The next part of code iterates through each text file, applies the regex pattern, and saves matches into a Pandas data frame.</p>
@@ -1061,12 +1061,12 @@
 
 <p>And there we go, I now had what presumably could be considered an alright set of french toast recipes from this allrecipes.com data set.</p>
 
-<p><img src="/assets/images/french-toast-csv-example.png" alt="" />
+<p><img src="/assets/images/french-toast-csv-example.webp" alt="" />
 <em>Example of what the tabular data looks like.</em></p>
 
 <h2 id="youre-gonna-clean-that-data">You’re Gonna Clean That Data</h2>
 
-<p><img src="/assets/images/french-toast-cass.jpg" alt="" />
+<p><img src="/assets/images/french-toast-cass.webp" alt="" />
 <em>French toast casserole? Doesn’t count.</em></p>
 
 <p>So that was pretty easy and cool, but I was far from being done. Just because “french” and “toast” were in the title, doesn’t mean these were real deal french toast recipes. Furthermore, it didn’t take long to figure out the ingredients data was, from an analysis perspective, junk. The units and quantities were not separated, even the simplest ingredients had dozens of variants, some lines had multiple ingredients in them, etc. A cleanse was in order.</p>
@@ -1083,7 +1083,7 @@
 </pre></td><td class="code"><pre><span class="n">qc_check_flavor</span> <span class="o">=</span> <span class="n">ft_recipes</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ft_recipes</span><span class="p">[</span><span class="s">"category"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"flavor"</span><span class="p">,</span> <span class="p">[</span><span class="s">"ingr"</span><span class="p">]].</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><img src="/assets/images/french-toast-qa-check-example.png" alt="" />
+<p><img src="/assets/images/french-toast-qa-check-example.webp" alt="" />
 <em>Example of flavor value counts. Shout out to Spyder’s variable explorer.</em></p>
 
 <ul>
@@ -1165,7 +1165,7 @@
   <li>Simplify and categorize the ingredients. I wanted to make the data more uniform and simplify many variants of what were (basically) the same ingredients. For example, see below. The category is easy enough, this is the milk/cream used for the custard. However, notice that “1% fat milk” was changed to “low fat milk”. I did this because, as a culinary cipher like myself finds out, there are quite a few variations of milk and names for defining them. “1% milk” is the same as “low fat milk”, but other recipes would use one or the other, so I had to choose just one name for all recipes. Another example: some ingredients had “or”s in them, e.g. “italian or french bread”, and for those I decided to always go with the first option.</li>
 </ul>
 
-<p><img src="/assets/images/french-toast-ingr-breakdown-example.png" alt="" /></p>
+<p><img src="/assets/images/french-toast-ingr-breakdown-example.webp" alt="" /></p>
 
 <p>Example of ingredient breakdown.</p>
 
@@ -1180,7 +1180,7 @@
 
 <p>At the end of the process, each ingredient had been broken down into components: a quantity, units, cut, name of ingredient, category and subcategory. Special attention was paid to bread, milk/creams, and eggs.</p>
 
-<p><img src="/assets/images/french-toast-ingr-cleaned-sample.png" alt="" />
+<p><img src="/assets/images/french-toast-ingr-cleaned-sample.webp" alt="" />
 <em>Sample of final cleaned data set.</em></p>
 
 <p><a href="/projects/french_toast_data_analysis_1.html">Part 2</a></p>
@@ -1197,7 +1197,7 @@
 
 <p>-Charles Darwin</p>
 
-<p><img src="/assets/images/202004171208.jpg" alt="venus fly trap" />
+<p><img src="/assets/images/202004171208.webp" alt="venus fly trap" />
 <em>Dionaea muscipula / venus flytrap, observed by myself</em></p>
 
 <p><a href="https://en.wikipedia.org/wiki/INaturalist">iNaturalist</a> 
@@ -1241,7 +1241,7 @@
       </td>
     </tr>
   </table>
-  <script type="text/javascript" charset="utf-8" src="https://www.inaturalist.org/observations/autrpy.widget?layout=small&amp;limit=16&amp;order=desc&amp;order_by=observed_on"></script>
+  <script type="text/javascript" charset="utf-8" src="https://www.inaturalist.org/observations/autrpy.widget?layout=medium&amp;limit=8&amp;order=desc&amp;order_by=observed_on"></script>
 </div>
 
 <!--    ===========================================================================================================-->]]></content><author><name></name></author><category term="projects" /><category term="project" /><summary type="html"><![CDATA[My iNaturalist Observations]]></summary></entry><entry><title type="html">Static Site Generation with Python</title><link href="http://localhost:4000/projects/html_page_autom_python.html" rel="alternate" type="text/html" title="Static Site Generation with Python" /><published>2020-05-17T00:00:00-04:00</published><updated>2020-05-17T00:00:00-04:00</updated><id>http://localhost:4000/projects/html_page_autom_python</id><content type="html" xml:base="http://localhost:4000/projects/html_page_autom_python.html"><![CDATA[<p>All of the content on this website is (so far) simple static HTML pages with CSS. This works out fine because a personal website like this does not need to be dynamic for user interaction (plus, I can’t use backend tools like PHP because I host the site on
@@ -1252,7 +1252,7 @@
 
 <p>Let’s say I want a page to show off some photos. As a starting point, I could fill a folder with images that I want to share:</p>
 
-<p><img src="/assets/images/p2h_images_in_folder.png" alt="" /></p>
+<p><img src="/assets/images/p2h_images_in_folder.webp" alt="" /></p>
 
 <p>With Python, it’s easy to iterate through the images:</p>
 
@@ -1261,7 +1261,7 @@
 3
 4
 5
-</pre></td><td class="code"><pre><span class="n">pattern</span> <span class="o">=</span> <span class="s">'/assets/images/*.jpg'</span>
+</pre></td><td class="code"><pre><span class="n">pattern</span> <span class="o">=</span> <span class="s">'/assets/images/*.webp'</span>
 <span class="n">img_arr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">pattern</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">img_dir</span> <span class="ow">in</span> <span class="n">img_arr</span><span class="p">:</span>
 <span class="c1">#do stuff here
@@ -1292,7 +1292,7 @@
 
 <p>The extracted image data can be exported into a CSV file.</p>
 
-<p><img src="/assets/images/p2h_csv_ex.png" alt="" /></p>
+<p><img src="/assets/images/p2h_csv_ex.webp" alt="" /></p>
 
 <p>With that data in place, it’s simple to insert it into some HTML templates. Example code:</p>
 
@@ -1400,7 +1400,7 @@ Html_file.close()
 
 <p>The final result only has two steps: (1) set images in the folder with correct EXIF metadata, and (2) run the program. Pretty easy. If there are enough images, new HTML pages will be created so that not too many images are on one page. Thumbnails will also be generated. Example page:</p>
 
-<p><img src="/assets/images/p2h_images_example.png" alt="" /></p>
+<p><img src="/assets/images/p2h_images_example.webp" alt="" /></p>
 
 <p>You can visit the images page
  <a href="../content/images.html">here</a> 

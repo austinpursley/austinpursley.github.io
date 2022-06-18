@@ -36,7 +36,7 @@
 
 <p>Let’s say I want a page to show off some photos. As a starting point, I could fill a folder with images that I want to share:</p>
 
-<p><img src="/assets/images/p2h_images_in_folder.png" alt="" /></p>
+<p><img src="/assets/images/p2h_images_in_folder.webp" alt="" /></p>
 
 <p>With Python, it’s easy to iterate through the images:</p>
 
@@ -45,7 +45,7 @@
 3
 4
 5
-</pre></td><td class="code"><pre><span class="n">pattern</span> <span class="o">=</span> <span class="s">'/assets/images/*.jpg'</span>
+</pre></td><td class="code"><pre><span class="n">pattern</span> <span class="o">=</span> <span class="s">'/assets/images/*.webp'</span>
 <span class="n">img_arr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">pattern</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">img_dir</span> <span class="ow">in</span> <span class="n">img_arr</span><span class="p">:</span>
 <span class="c1">#do stuff here
@@ -76,7 +76,7 @@
 
 <p>The extracted image data can be exported into a CSV file.</p>
 
-<p><img src="/assets/images/p2h_csv_ex.png" alt="" /></p>
+<p><img src="/assets/images/p2h_csv_ex.webp" alt="" /></p>
 
 <p>With that data in place, it’s simple to insert it into some HTML templates. Example code:</p>
 
@@ -184,7 +184,7 @@ Html_file.close()
 
 <p>The final result only has two steps: (1) set images in the folder with correct EXIF metadata, and (2) run the program. Pretty easy. If there are enough images, new HTML pages will be created so that not too many images are on one page. Thumbnails will also be generated. Example page:</p>
 
-<p><img src="/assets/images/p2h_images_example.png" alt="" /></p>
+<p><img src="/assets/images/p2h_images_example.webp" alt="" /></p>
 
 <p>You can visit the images page
  <a href="../content/images.html">here</a> 

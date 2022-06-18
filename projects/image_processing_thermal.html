@@ -34,7 +34,7 @@
  my goal was to analyze the images to obtain health metrics.
  In this post, I go over getting a skin tempeprature metric from thermal images.</p>
 
-<p><img src="/assets/images/fever.png" alt="fever" />
+<p><img src="/assets/images/fever.webp" alt="fever" />
 <em>Ever wanted your mirror to tell you if you’re catching a fever? No? Okay, well…</em></p>
 
 <h2 id="skin-temperature">Skin Temperature</h2>
@@ -44,7 +44,7 @@
 
 <h2 id="process">Process</h2>
 
-<p><img src="/assets/images/thermal.png" alt="flow diagram" />
+<p><img src="/assets/images/thermal.webp" alt="flow diagram" />
 <em>Diagram for the process of getting skin temperature.</em></p>
 
 <p>The thermal images come from a
@@ -64,7 +64,7 @@
  I use the median because it is less affected by very hot or cold objects caught in the image. 
  With a threshold, any pixel with a value over that value will be white and any under will be black. Here I refer to the white part as the “mask”.</p>
 
-<p><img src="/assets/images/thermal_img_process.png" alt="skin temperature process images" />
+<p><img src="/assets/images/thermal_img_process.webp" alt="skin temperature process images" />
 <em>Visualized Process: Original, Thresholded, Open+Close, and Orginal Masked</em></p>
 
 <p>The mask needs to be ‘adjusted’, so the second step is to apply some
