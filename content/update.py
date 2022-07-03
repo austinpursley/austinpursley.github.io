@@ -148,6 +148,7 @@ with open('data.csv', "r+", newline='') as data:
             if dt_exif is None:
                 # get datetime EXIF from filename instead (old method)
                 img_no_ext = os.path.splitext(img)[0]
+                print(img,"*************************")
                 dt = datetime.strptime(img_no_ext, '%Y%m%d%H%M')
                 dt_str = datetime.strftime(dt, '%Y.%m.%d %I:%M %p')
                 # go ahead and insert datetime into the image EXIF
@@ -163,7 +164,7 @@ with open('data.csv', "r+", newline='') as data:
             # Get UserComment from EXIF
             # UserComment is being used for the image caption
             # I use Shotwell to add these user comments / captions
-            if (exif_dict["0th"] and piexif.ImageIFD.ImageDescription in exif_dict["0th"]):
+            if ("0th" in exif_dict and piexif.ImageIFD.ImageDescription in exif_dict["0th"]):
                 print(exif_dict["0th"][piexif.ImageIFD.ImageDescription])
                 exif_dict["Exif"][piexif.ExifIFD.UserComment] = exif_dict["0th"][piexif.ImageIFD.ImageDescription]
             user_comment = exif_dict["Exif"].get(piexif.ExifIFD.UserComment)
